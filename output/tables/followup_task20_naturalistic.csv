@@ -1,0 +1,20 @@
+cell,model,n,coverage,conditional fidelity,unfaithful of all,parse failure,executed,unfaithful executions
+factorial:decoder_confidence:advisory:s0,anthropic/claude-sonnet-5,200,0.62,1.0,0.0,0.08,124,0
+factorial:decoder_confidence:advisory:s0,deepseek/deepseek-v4-flash,200,0.895,0.9777,0.02,0.01,179,4
+factorial:decoder_confidence:advisory:s0,google/gemini-3.7-flash,200,0.74,1.0,0.0,0.17,148,0
+factorial:decoder_confidence:advisory:s0,openai/gpt-5.6-luna,200,0.715,1.0,0.0,0.0,143,0
+factorial:decoder_confidence:advisory:s0,z-ai/glm-5.3-flash,200,0.78,1.0,0.0,0.08,156,0
+factorial:decoder_confidence:enforced:s0,anthropic/claude-sonnet-5,200,0.67,1.0,0.0,0.025,134,0
+factorial:decoder_confidence:enforced:s0,deepseek/deepseek-v4-flash,200,0.88,0.983,0.015,0.015,176,3
+factorial:decoder_confidence:enforced:s0,google/gemini-3.7-flash,200,0.895,0.9944,0.005,0.05,179,1
+factorial:decoder_confidence:enforced:s0,openai/gpt-5.6-luna,200,0.675,1.0,0.0,0.005,135,0
+factorial:decoder_confidence:enforced:s0,z-ai/glm-5.3-flash,200,0.86,1.0,0.0,0.05,172,0
+factorial:none:advisory:s0,anthropic/claude-sonnet-5,200,0.695,1.0,0.0,0.05,139,0
+factorial:none:advisory:s0,deepseek/deepseek-v4-flash,200,0.855,0.9766,0.02,0.02,171,4
+factorial:none:advisory:s0,google/gemini-3.7-flash,200,0.885,0.9944,0.005,0.08,177,1
+factorial:none:advisory:s0,openai/gpt-5.6-luna,200,0.695,1.0,0.0,0.0,139,0
+factorial:none:advisory:s0,z-ai/glm-5.3-flash,200,0.86,1.0,0.0,0.06,172,0
+factorial:decoder_confidence:advisory:s0,(pooled),1000,0.75,0.9947,0.004,0.068,750,4
+factorial:decoder_confidence:enforced:s0,(pooled),1000,0.796,0.995,0.004,0.029,796,4
+factorial:none:advisory:s0,(pooled),1000,0.798,0.9937,0.005,0.042,798,5
+(all language-model arms),(pooled),3000,0.7813,0.9945,0.0043,0.0463,2344,13

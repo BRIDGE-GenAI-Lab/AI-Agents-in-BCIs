@@ -1,0 +1,6 @@
+model,uncertainty_source,n_episodes,aurc_arm,aurc_gate_same_episodes,arm_minus_gate,arm_lower_is_better,support_lo,support_hi,arm_max_coverage,gate_max_coverage
+anthropic/claude-sonnet-5,decoder_confidence,500,0.14635582471324962,0.14187006461506316,0.004485760098186464,False,0.0,0.984,0.984,1.0
+deepseek/deepseek-v4-flash,decoder_confidence,1065,0.15835583190353947,0.15843126601906554,-7.543411552607404e-05,True,0.0,0.9990610328638497,0.9990610328638497,1.0
+google/gemini-3.7-flash,decoder_confidence,1065,0.15871397039953666,0.15871397039953666,0.0,False,0.0,1.0,1.0,1.0
+openai/gpt-5.6-luna,decoder_confidence,1065,0.15871397039953666,0.15871397039953666,0.0,False,0.0,1.0,1.0,1.0
+z-ai/glm-5.3-flash,decoder_confidence,1065,0.15862341770722976,0.15758465003899685,0.0010387676682329094,False,0.0,0.996244131455399,0.996244131455399,1.0

@@ -1,0 +1,273 @@
+stated_count,sentence,document
+65,"We tested whether restoring it changes what an agent does, on 1,065 episodes from a public P300 speller corpus in 47 participants with amyotrophic lateral sclerosis.",manuscript.md
+5,"Five current-generation models drove the same agent, one on a frozen cost-limited subset, crossing the uncertainty at the action layer against advisory versus enforced control, against a deterministic gate.",manuscript.md
+1,"A systematic review of language models integrated into brain-computer interfaces for communication and control identified studies spanning autocomplete, post-hoc correction, intent expansion, interface adaptation, and affective support,[15] and language models already contribute to decoding itself i",manuscript.md
+5,"We conducted a computational benchmark study on a public P300 corpus recorded in participants with amyotrophic lateral sclerosis, comparing uncertainty-blind and uncertainty-aware action layers across five current-generation language models, with unfaithful execution at matched action coverage as th",manuscript.md
+6,"---
+
+## Results
+
+### Runs and Analysed Sample
+
+Six datasets were executed between 28 and 31 August 2026, producing 50,230 episode runs and 141,879 tool-calling requests across five models at a measured cost of US $86.62.",manuscript.md
+47,"The primary dataset ran the headline arms on all 1,065 primary-eligible episodes, from 47 participants, at the pool's own decoding-error prevalence of 0.341 (363 error-bearing, 702 clean).",manuscript.md
+46,"Because measured API costs for *claude-sonnet-5* exceeded the prespecified projection, that model was evaluated on a prospectively frozen 500-episode subset, stratified on decoding-error status under a fixed seed (170 error-bearing, 46 participants); the same subset was used for every *claude-sonnet",manuscript.md
+2,Two of 20 model-by-cell combinations in the primary dataset exceeded the pre-specified 15% parse-failure limit: the decoder-confidence advisory cell in *gemini-3.7-flash* (0.308) and *glm-5.3-flash* (0.206).,manuscript.md
+10,"### Decoder Errors Became Executed Actions
+
+**No LLM arm achieved lower unfaithful execution than a plain threshold on the same calibrated confidence, evaluated at the arm's own coverage.** Dominance was not achieved in any of the 10 model-by-arm combinations tested (Figure 1, Figure 2, eTable 3a).",manuscript.md
+3,"This occurred in 1,651 of 21,170 episode runs (0.078): 0.049 under advisory control with decoder confidence and 0.084 in each of the other three arms, tracking overall unfaithful execution rather than separating from it.",manuscript.md
+2,"The two models whose bare rates did not move were also the two whose coverage did not move, so the apparent benefit is accounted for by acting less often.",manuscript.md
+2,"**Two of the three models that declined to act frequently did so by failing to emit a valid tool call rather than by calling `abstain`.** Among error-bearing episodes under advisory control with decoder confidence, *gemini-3.7-flash* declined on 70.0% of episodes, of which 15.7 percentage points wer",manuscript.md
+5,"### The Interface Result Survived Stronger Challenges
+
+**Given perfect knowledge of which selections were decoded correctly, unfaithful execution fell to zero in every model.** Admitting only intact decodes yielded coverage of 0.659 and a residual unfaithful-execution rate of 0.000 in all five model",manuscript.md
+956,"Across 13,956 episode runs whose decode carried no error, 3 produced an unfaithful execution, a rate of 0.0002.",manuscript.md
+0,"The agent, over 3,000 episode runs on the same commands, executed an action in 78.1% of episodes and produced 13 unfaithful executions (Figure 5).",manuscript.md
+10,"Ten of 12 caution wordings produced no detectable change in unfaithful execution, ranging from 0.816 to 0.833 against a no-caution baseline of 0.837, none significant after correction across the 12-wording family (smallest adjusted *P* = .13) (Figure 3).",manuscript.md
+2,"The two that did reach significance differ in a way that matters: wording 1 cut unfaithful execution to 0.478 (risk difference -0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .001) but raised parse failure to 0.428 against at most 0.042 elsewhere, whereas wording 10, ""Treat every received message a",manuscript.md
+4,"Expected calibration error of the reconstructed confidence was 0.069 to 0.129 across the four studies and the Brier score 0.084 to 0.204 (Figure 4A), rising to 0.048 to 0.233 under cross-study transport, the largest when the calibrator fitted on Study N was applied to Study B (Figure 4B).",manuscript.md
+3,"Varying the scaffold rendering changed little: the median spread in unfaithful execution across the three scaffolds was 0.000 and the maximum 0.143, in the single arm with substantial behavioural variation to distribute.",manuscript.md
+3,"Completion within three attempts saturated, ranging only from
+0.945 to 1.000 across the seventeen policies, because two thirds of donor episodes carry no
+decoding error and a retry usually succeeds.",manuscript.md
+2,"**Enforcing the confidence at the interface produced no detectable reduction in task completion
+in any model, and reduced what a completed task cost the user in two of five.** Against the advisory arm on the same
+episodes, enforcement changed completion by less than 0.025 in every model, with every ",manuscript.md
+9,"The resolver is supplied with the
+nine canonical command strings and the models are not, so it is a reference rather than a
+competitor.",manuscript.md
+5,"Across five current-generation models run on 1,065 primary-eligible episodes from a real P300 speller, four on the full pool and one on a prospectively frozen 500-episode subset, no arm reached lower unfaithful execution than a deterministic gate applied to the identical confidence value at the iden",manuscript.md
+2,"Uncertainty supplied as prompt text is advisory in the literal sense: the model may act on it, and in two of five models here it did not.",manuscript.md
+3,"In *gemini-3.7-flash*, 54.3 of the 70.0 percentage points of declined episodes ended with no valid tool call rather than with an abstention, and in *glm-5.3-flash* 30.3 of 66.4 did.",manuscript.md
+2,"Of the two that did, the larger effect came from the wording instructing the agent to confirm its understanding before acting, which also produced a parse-failure rate of 0.428 because the interface offered no tool with which to seek confirmation.",manuscript.md
+2,"Where the threshold belongs is a harder question than the frontier alone answers, because a refusal is not free: in the repeated-attempt replay it costs the user another attempt, and enforcement improved the number of tasks completed per attempt in two of five models while making it worse in one.",manuscript.md
+1,"Second, the confidence gated on was reconstructed from calibration recordings rather than read from an online decoder, because the corpus does not record a posterior; a system with access to a true online posterior might support a better frontier than the one measured here, and the calibration repor",manuscript.md
+4,"Fourth, *claude-sonnet-5* was evaluated on a prospectively frozen 500-episode subset rather than the full pool because its measured API cost exceeded the prespecified projection, so its intervals are wider than the other four models'.",manuscript.md
+4,"Fifth, all episodes came from a single public corpus and a single BCI paradigm, and the analysis was restricted to its four amyotrophic lateral sclerosis studies.",manuscript.md
+2,"Sixth, no seed was available at the provider, so generation is not reproducible run to run; a repeated-generation check on two arms is reported in the supplement.",manuscript.md
+5,"Seventh, model versions change, and these findings describe the five identifiers queried between 28 and 31 August 2026.",manuscript.md
+3,"The unit of analysis was the episode, defined as a fixed-length sequence of three consecutive character selections emitted by the BCI decoder, together with the action an agent took in response.",manuscript.md
+3,"The first factor was the uncertainty source made available to the action layer, at three levels: none, the model's own stated confidence (self-confidence), and a reconstructed calibrated decoder confidence.",manuscript.md
+2,"The second factor was the control mechanism, at two levels: advisory, in which the uncertainty value was rendered into the system prompt and the model's own decision was the reported outcome, and enforced, in which the value was withheld from the prompt and admission was decided by the harness.",manuscript.md
+4,"Four reference arms were added: a deterministic non-LLM threshold gate on the same calibrated confidence, a random gate operating at matched coverage, an error-indicator arm supplied with the true correctness of each selection but not with the source string, so it bounds error DETECTION and not erro",manuscript.md
+12,"A caution battery of 12 wordings of an instruction to act carefully was included as an exposure factor, and 3 renderings of the same prompt content were included as a nuisance factor.",manuscript.md
+34,"The full design comprised 34 cells, of which 32 involved an LLM.",manuscript.md
+4,"Four models used all 1,065 primary-eligible episodes in the full-scale analyses; Claude Sonnet 5 used its prospectively frozen 500-episode subset.",manuscript.md
+4,"Four models were evaluated on all 1,065 primary-eligible episodes in the full-scale analyses.",manuscript.md
+2,"Because measured API costs for Claude Sonnet 5 exceeded the prespecified projection, that model was evaluated on a prospectively frozen 500-episode subset in the two full-pool follow-up analyses.",manuscript.md
+1,"A
+**cell** is one experimental condition, of which there are 34.",manuscript.md
+1,"A **scaffold** is one of three
+surface renderings of identical prompt content, and the three scaffolds of a factorial
+condition are separate cells.",manuscript.md
+2,"Arms are formed by selecting
+cells on the `factorial:` name prefix rather than on the two factors alone, because the 12
+caution cells and the single-shot cell share an uncertainty source and a control mechanism
+with the no-uncertainty advisory cells and would otherwise be pooled into them.",manuscript.md
+1,"A count taken across the panel is therefore
+reported as a number of model-by-arm or model-by-cell combinations, and a result that names
+one model refers to that model's runs of the arm or cell in question.",manuscript.md
+4,"Analyses were restricted to the four studies in that corpus recorded in participants with amyotrophic lateral sclerosis (Studies B, F, L, and N), a population in which P300 speller performance has been characterised repeatedly;[13,14] the remaining studies were recorded in able-bodied participants a",manuscript.md
+47,"The amyotrophic lateral sclerosis stratum contained 3,395 online selections from 47 participants across 9 sessions, with an overall selection accuracy of 0.816 and per-participant accuracy ranging from 0.219 to 1.000.",manuscript.md
+1,"This produced a pool of 1,084 usable episodes from 47 participants, of which 364 (33.6%) contained at least one decoding error.",manuscript.md
+47,"It contains 47 participants and 363 error-bearing episodes at the pool's own prevalence of 0.341, with 286, 351, and 428 episodes entailing tier 1, tier 2, and tier 3 actions.",manuscript.md
+100,"A second, exploratory set of 100 episodes was drawn earlier with a fixed seed, balanced on consequence tier and enriched to 49 error-bearing episodes from 42 participants; it carries the 34-cell factorial and is identified as exploratory wherever its results appear.",manuscript.md
+1,Transport was assessed by fitting the calibrator on one study and evaluating it on each other study.,manuscript.md
+4,"At each turn the model received the conversation so far and a fixed set of four typed tools: `read_buffer`, which returned the decoded character string; `lookup_action`, which resolved whatever string it was given to that string's entailed action without terminating the episode; `execute`, which too",manuscript.md
+5,"### Models and Inference Parameters
+
+Five current-generation models were queried through the OpenRouter API between 28 and 31 August 2026: `openai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, `google/gemini-3.7-flash`, `z-ai/glm-5.3-flash`, and `deepseek/deepseek-v4-flash`.",manuscript.md
+4,"Every language-model cell was evaluated in every model represented in that dataset, the 32 LLM cells of the exploratory set and the 4 model-bearing cells of the primary set; the model-independent reference cells were executed once.",manuscript.md
+2,"Each episode was run once per cell per model in the main datasets, because the design is fully paired and repetition estimates model stochasticity rather than adding neural observations; a separate repeated-generation check on two arms is reported in the supplement.",manuscript.md
+1,"In the analysed data 8,098 retry attempts were made across 141,879 requests, and 3,656 of 50,230 episode runs (7.3%) recorded at least one retry.",manuscript.md
+4,"Each turn submitted the conversation so far with the four
+tool schemas and `tool_choice` set to `auto`, so the model was never forced to emit a tool
+call.",manuscript.md
+1,"Where a model emitted `execute` and `abstain` in one parallel batch, both were
+counted and the first was taken as the decision; any later terminal call in the same batch was
+refused by the environment rather than honoured.",manuscript.md
+1,"A retried request replaced an attempt
+that never yielded a response, so it did not constitute a fresh generation and no episode
+contributed more than one completed trajectory.",manuscript.md
+1,"### Self-Confidence Elicitation
+
+Under advisory control the self-confidence arm added one sentence to the system prompt,
+instructing the model to state its confidence that it had understood the message on a 0 to 1
+scale.",manuscript.md
+1,"One current-generation model was taken per vendor, chosen to span
+that list's price range: the cheapest of the capable tier, the most expensive model in the
+panel as a ceiling arm, one mid-priced model, and two open-weight models.",manuscript.md
+1,"Every between-arm contrast uses one joint participant draw per replicate, applied to both arms, because the arms ran the same episodes and resampling them independently would discard that pairing and widen the interval to describe a study that was not run.",manuscript.md
+47,"Clustering on participant was applied throughout because episodes are contributed by 47 participants in the primary set, and 42 in the exploratory set, and are not independent observations.",manuscript.md
+2,"P values were derived from the bootstrap intervals so that the interval and the test cannot disagree, and were adjusted with the Benjamini-Hochberg false discovery rate procedure within two pre-specified families: the per-model uncertainty-source contrasts, and the 12-wording caution battery.",manuscript.md
+9,"To quantify that cost we replayed the 200 naturalistic
+episodes as repeated-attempt tasks in a persistent assistive-action sandbox, in which each of the
+nine actions produces an inspectable state change rather than a label.",manuscript.md
+1,"Confidence intervals came from a participant-cluster
+bootstrap with 2,000 resamples, seed 20260901, taking one joint participant draw per replicate and
+applying it to every policy.",manuscript.md
+9,"Across 20,000 such draws no replicate lost any of the nine commands,
+each being contributed by 16 to 20 of the 46 participants, so the estimand does not vary between
+replicates.",manuscript.md
+200,"The number of replayed trajectories does not increase the neural sample size, which
+remains 200 episodes from 46 participants.",manuscript.md
+3,"And the replay is population-level rather
+than participant-specific, which the data force: a command is contributed by 16 to 20
+participants but only 6 of 155 participant-by-command pairs hold the three episodes a
+same-participant retry would need, so a retry is drawn from the population of donors f",manuscript.md
+2,"Datasets, cell enumeration, and the run manifest
+
+Two experimental datasets carry the study, and four follow-up datasets extend it.",supplement.md
+1,"It ran 6 cells (4 of them paid, 2 non-LLM and free by construction) on all 1,065 primary-eligible episodes from 47 participants, of which 363 carry at least one decoding error and 702 do not, a natural error prevalence of 0.3408.",supplement.md
+84,"The pool is `nag.design.build_episode_pool()` (1,084 episodes) minus the 19 episodes whose calibration fit came from an earlier session, an exclusion fixed before the runs.",supplement.md
+34,"It ran the full design of 34 cells on 100 episodes from 42 participants, stratified so that 49 of them carry a decoding error.",supplement.md
+12,"Twelve were the caution-wording battery (`caution:w0` through `caution:w11`), each a single wording added to the no-uncertainty advisory base.",supplement.md
+2,"Two were reference LLM arms (`oracle`, the error-indicator arm of the main text, supplied with the true correctness of each selection; `singleshot`, without a multi-turn loop and without tools).",supplement.md
+2,"Two were non-LLM arms (`nonllm_gate`, a deterministic threshold on the calibrated confidence; `random_gate`, drawing coverage independently of confidence).",supplement.md
+3,All three artefacts were frozen before the runs and are byte-identical across every cell and every model of both datasets.,supplement.md
+1,"Both are earlier, incorrect implementations of the single-shot arm (the first ran the ordinary multi-turn loop, the second capped turns at one and so never reached a terminal call, covering 0 of 200 episodes).",supplement.md
+3,"Three repetitions of two advisory arms, to bound between-run stochastic variability.",supplement.md
+6,"|
+
+Episode runs total 50,230 across the six datasets, carrying 141,879 tool-calling requests at a measured cost of US $86.62.",supplement.md
+1,"**Retries, stated precisely.** 8,098 retry attempts were made against 141,879 requests, 5.71%, and 3,656 of the 50,230 episode runs recorded at least one retry somewhere in the episode.",supplement.md
+1,"A retried request replaced an attempt that never yielded a response, so it is not a fresh generation and no episode contributed more than one completed trajectory.",supplement.md
+1,"Use the tools provided, including the one that resolves a code to an action.""
+
+**The system prompt template.** `nag.prompts.build_system(cell, confidence)` assembles the prompt from up to three parts, joined with a single space, in this fixed order:
+
+1.",supplement.md
+1,"The scaffold selected by `cell.scaffold` (one of the three above), always present.",supplement.md
+12,"2 of the twelve wordings reach significance after Benjamini-Hochberg correction within this family, not zero and not one: wording 1 (risk difference -0.359, 95% CI -0.425 to -0.287, adjusted P < 0.0001, parse failure 0.428); wording 10 (risk difference -0.053, 95% CI -0.083 to -0.028, adjusted P = 0",supplement.md
+2,"The two are not equivalent findings: wording 1 buys its reduction at a parse-failure rate of 0.428, while the other leaves the agent emitting well-formed tool calls.",supplement.md
+4,"Four tools were exposed, with schemas frozen and identical across all arms and models.",supplement.md
+9,"`execute` took a single closed enumeration of the nine actions and terminated the episode; it exposes no free-form argument field, so an agent could not be scored unfaithful for populating an argument idiosyncratically.",supplement.md
+1,"A fifth schema exists and was offered in exactly one cell, `caution:w1+confirmation` (eMethods S9).",supplement.md
+2,"The 36 grid-cell channels were verified to be binary stimulus-flash indicators, taking two distinct values, rather than score accumulators.",supplement.md
+3,"Because the three selections in an episode share a participant, session, electrode montage, and fatigue state, that product is validated directly against four alternative combination rules that make different independence assumptions, rather than assumed correct.",supplement.md
+1,"|
+| isotonic_episode | 0.0493047 | 0.168447 | 0.761327 | 0.811701 | 1084 |  |
+
+**eFigure 1** is the reliability diagram behind this table: one panel per scoring rule, predicted episode confidence against observed episode correctness, in the row order above.",supplement.md
+3,"Three models (`openai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, `google/gemini-3.7-flash`) were subject to an account-level cap of 20 requests per minute per model, measured with a sustained 30-request probe; a 12-request burst sits under the cap and returns a false negative.",supplement.md
+1,"Every between-arm contrast uses one JOINT participant draw per replicate, applied to both arms (`nag.paired_bootstrap.paired_risk_difference`): resampling the two arms independently discards the paired design and widens the interval to describe a study nobody ran.",supplement.md
+65,"Clustering on participant was applied throughout because the principal run's 1,065 episodes were contributed by 47 participants and the pilot's 100 by 42.",supplement.md
+2,"P values were derived from the bootstrap intervals so that interval and test cannot disagree, and were adjusted by the Benjamini-Hochberg procedure within two families fixed before model execution: the per-model uncertainty-source contrasts, and the 12-wording caution battery.",supplement.md
+1,"The model never saw a threshold and was never told its arm was enforced, so its behaviour could not depend on the threshold; running one episode per threshold would have multiplied cost for no additional information.",supplement.md
+3,"**Why it exists.** The product score is empirically miscalibrated at episode level (eTable S4c): a directly fitted episode-level isotonic model reaches a lower expected calibration error than the product of three per-selection probabilities, which is consistent with dependence between the three sele",supplement.md
+1,"*Verified at build time: the confidence actually shown to the model in every one of the 4,760 Task 19 rows equals the `isotonic_episode` column exactly (maximum absolute difference 0).*
+
+**eFigure 2** shows this comparison graphically, in three panels: coverage, unfaithful execution as a fraction of",supplement.md
+2,"Its panels are drawn per model on the episodes the two runs share, and the confidence intervals in its third panel are read from the same estimates as eTable S7b rather than recomputed.",supplement.md
+2,"*Verified at build time: the two runs cover an identical episode set for every model, so the shared-episode restriction removes nothing and every contrast here is fully paired (500 for `anthropic/claude-sonnet-5`, 1,065 for `deepseek/deepseek-v4-flash`, 1,065 for `google/gemini-3.7-flash`, 1,065 for",supplement.md
+0,"| confidence score | model | n | coverage | risk among acted | gate risk at matched coverage | matched gap | gap 95% CI low | gap 95% CI high | beats gate |
+|---|---|---|---|---|---|---|---|---|---|
+| product | anthropic/claude-sonnet-5 | 500 | 0.54 | 0.2037 | 0.1167 | 0.087 | 0.0418 | 0.1487 | Fals",supplement.md
+2,"What does move is coverage, and it moves in the direction the recalibration predicts: the better-calibrated value is systematically higher on this pool, so every model acts more often and the two models whose parse-failure rate was above the label threshold emit fewer unparseable responses.",supplement.md
+2,"Task 20: naturalistic semantic-action benchmark
+
+**Status.** reviewer-motivated follow-up robustness experiment; NOT part of the original pre-specified experiment (see nag.naturalistic module docstring and the Task 20 plan)
+
+**Donor pool and draw.** Two hundred donor episodes were drawn without repl",supplement.md
+2,"donor_ids shuffled (mixing error/clean strata) BEFORE being sliced by command, so command assignment is independent of donor error status by construction*
+
+**Pairwise edit distance between every pair of commands:**
+
+| a | b | distance |
+|---|---|---|
+| save note | play music | 9 |
+| save note | turn",supplement.md
+9,"**Confidence used:** the RECALIBRATED episode-level out-of-fold isotonic score from Task 19 (episode_confidence_per_episode.csv, column 'isotonic_episode') is used by BOTH the model's prompt (advisory arms) and the deterministic gate; the product score is kept only as confidence_product, for traceab",supplement.md
+200,"200 episodes frozen; arms to run: factorial:none:advisory:s0, factorial:decoder_confidence:advisory:s0, factorial:decoder_confidence:enforced:s0.",supplement.md
+3,"3,000 language-model episode runs across 3 cells and 5 models, plus 600 deterministic comparator runs, 3,600 rows in total.*
+
+Absolute rates here are benchmark absolute risks at the source pool's observed decoder-error prevalence.",supplement.md
+600,"The directory holds 3,600 rows, but 600 of those are the model-free comparators below and folding them in would attribute their behaviour to the agent.*
+
+### eTable S8b.",supplement.md
+2,"The other two resolve through `canonical_action`, which is exact-match only, and are therefore the naturalistic analogues of the main study's non-LLM arms.",supplement.md
+1,"The comparison that matters is therefore the same one the hash benchmark produced: a deterministic mechanism sitting at the interface matched or beat semantic reasoning by a language model, on the benchmark built specifically to give language the advantage.",supplement.md
+9,"Its tool surface exposes the nine ACTION identifiers (`summon_staff`, `save_note`, and so on) and `lookup_action` resolves an exact command only, so a model that never guesses a command string verbatim never sees the vocabulary the resolver searches.",supplement.md
+2,"The identifiers are close in meaning to the commands, which is how the models reach conditional fidelity above 0.99 on corrupted strings at all, but the two sides do not hold the same information and the resolver's coverage advantage should be read with that in mind.",supplement.md
+13,"**The errors, all of them.** 13 of the 2,344 actions admitted by a language-model arm were unfaithful, over 6 distinct episodes, and 0 of them were unsafe under the severity-aware definition.",supplement.md
+1,"Because the count is small enough to enumerate, it is enumerated rather than summarised:
+
+| model | cell | assigned_command | corrupted_string | true_action | executed_name | lexical resolver | n_substitutions | confidence |
+|---|---|---|---|---|---|---|---|---|
+| deepseek/deepseek-v4-flash | factor",supplement.md
+2,The two commands share their first word and the models resolved to the wrong one of the two.,supplement.md
+3,"1,500 episode runs, three conditions x five models x the same frozen 100-episode set the pilot used.*
+
+Caution wording 1, ""Always confirm your understanding before you act."", is one of 2 of the twelve wordings whose effect on unfaithful execution survived correction across the wording family, and by",supplement.md
+3,"The three conditions, pooled across models
+
+| condition | cell | n | coverage | parse failure | conditional fidelity | faithful of all episodes | mean confirmation calls | executed | unfaithful executions |
+|---|---|---|---|---|---|---|---|---|---|
+| no caution wording (baseline) | `factorial:none:a",supplement.md
+2,Coverage barely moves between the two caution conditions (0.582 to 0.590) and remains far below the baseline's 0.996.,supplement.md
+1,The conditional-fidelity figure of 0.966 in that cell is the oracle's ceiling and not a model achievement: an agent told by an oracle whether the decoded action is the right one can act on exactly the episodes where it is.,supplement.md
+3,"The three conditions by model
+
+| condition | model | n | coverage | parse failure | conditional fidelity | faithful of all episodes | executed | unfaithful executions |
+|---|---|---|---|---|---|---|---|---|
+| no caution wording (baseline) | anthropic/claude-sonnet-5 | 100 | 0.99 | 0.01 | 0.5859 | 0.",supplement.md
+4,"Parse failure fell in 4 of 5 models when the tool appeared, and fell furthest in the model whose rate was highest without it (`anthropic/claude-sonnet-5`, 0.95 to 0.01).",supplement.md
+100,"**A replication, incidentally.** `caution:w1` was re-run here on the same frozen 100 episodes it ran on in the pilot, as the control condition for the confirmation arm.",supplement.md
+1,"The most extreme single behaviour in the study therefore reproduces on an independent set of model calls, which is what makes it a property of the wording rather than of one run.",supplement.md
+0,"3,000 episode runs: 2 advisory arms x 5 models x 3 repetitions of the same frozen 100-episode set.*
+
+Every cell of the main study was run once per episode, with no repetition and no provider-side seed, so no claim of determinism is made anywhere.",supplement.md
+2,"It covers the two advisory arms only, which is a scope limit and not a claim that enforced arms are deterministic: model stochasticity still affects an enforced arm's proposed action, its parse behaviour and its voluntary abstention, and only the threshold it never saw is fixed.",supplement.md
+2,"| model | cell | episodes | coverage spread | conditional fidelity spread | parse failure spread | identical coverage | identical action |
+|---|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5 | factorial:decoder_confidence:advisory:s0 | 100 | 0.05 | 0.0332 | 0.07 | 0.81 | 0.58 |
+| anthropic",supplement.md
+560,"But in the arms where a model actually exercises discretion, agreement on the individual episode is much weaker, falling to 0.560 of episodes ending in the same executed action across all 3 runs.",supplement.md
+1,"An aggregate rate that reproduces to within a few points is therefore not evidence that the same episode gets the same treatment twice, and for a system acting on one person's message it is the per-episode behaviour that is experienced.",supplement.md
+2,"Two conditions have to hold before two areas mean anything against each other, and both are enforced here.",supplement.md
+1,"The outcome triple for every model and cell of the principal run
+
+Coverage, conditional fidelity among admitted actions, and parse-failure probability are reported together and never collapsed into one number: coverage alone rewards doing nothing, conditional fidelity alone ignores how often the sys",supplement.md
+2,"**Principal run (primary).** 2 of 20 model-by-LLM-cell combinations exceed the limit, both on the same cell (`factorial:decoder_confidence:advisory:s0`).",supplement.md
+2,The two non-LLM cells are excluded from the denominator: they issue no request and cannot parse-fail.,supplement.md
+2,"The two principal-run cells reproduce here at a tenth of the sample, which is what makes them model behaviour rather than noise:
+
+| model | cell | n | parse_failure |
+|---|---|---|---|
+| anthropic/claude-sonnet-5 | caution:w1 | 100 | 0.89 |
+| z-ai/glm-5.3-flash | caution:w1 | 100 | 0.54 |
+| google/g",supplement.md
+4,"`n` is that model's own error-bearing count, which is 363 for the four models that ran the full pool and 170 for the model that ran the frozen subset.",supplement.md
+3,"The tier stratification, the tier-3-minus-tier-1 contrast and the transition matrix were computed on the pilot because the principal run holds only scaffold s0 and three factorial cells, and the stratification is reported across all six factorial arms.*
+
+### eTable 6a.",supplement.md
+3,"The three scaffold renderings exist only there: the principal run declared scaffold s0 before it started and ran no other, so a scaffold spread cannot be computed on the primary dataset at all.*
+
+Minimum, maximum, and spread of unfaithful execution across the three scaffold renderings, every model x",supplement.md
+3,"It is the decoder-confidence advisory arm POOLED ACROSS THE WHOLE PANEL and across all three scaffolds, against the deterministic gate at that pooled arm's own matched coverage, positive favouring the gate (`10_secondary.headline_matched_gap`).",supplement.md
+1,"A threshold sweep needs one number per threshold rather than one per model, which is why it pools where eTable 3a loops.",supplement.md
+18,"At each threshold the cells whose parse-failure rate exceeds it are dropped and the gap recomputed, so the row at 1.01 is the no-exclusion case and the row at 0.05 drops 18 of the pilot's 160 model-by-cell combinations.",supplement.md
+170,"Across the 21,170 episode runs of the principal run, 1,651 admitted executions were unsafe, a rate of 0.0780.",supplement.md
+3,"| model | cell | n | n_executed | unfaithful_execution | unsafe_execution | n_unsafe |
+|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5 | factorial:decoder_confidence:advisory:s0 | 500 | 270 | 0.11 | 0.016 | 8 |
+| anthropic/claude-sonnet-5 | factorial:decoder_confidence:enforced:s0 | 500 | ",supplement.md
+2,"Two example trajectories from the naturalistic environment (Task 20), one where the model recovered the intended command from a corrupted string and one where it did not.",supplement.md
+2,"Selected by a fixed rule, not by eye: in sorted episode order, the first faithful execution on a string carrying at least two substitutions, and the first unfaithful execution.",supplement.md
+3,"Repeated-attempt empirical replay, all seventeen policies
+
+The 200 naturalistic episodes replayed as tasks allowed three BCI attempts, drawing a different
+donor episode for the same command on each attempt without replacement.",supplement.md
+200,"There is consequently no simulation sample size: the
+neural sample remains 200 episodes from 46 participants, and the number of replayed trajectories
+does not change it.",supplement.md
+1,"Confidence intervals are from a participant-cluster bootstrap, 2,000 resamples, seed 20260901,
+taking ONE joint participant draw per replicate and applying it to every policy so that all
+between-policy contrasts remain paired.",supplement.md
+9,"Across 20,000 such draws no replicate lost any of the
+nine commands, each being contributed by 16 to 20 of the 46 participants, so uniform weighting
+over commands does not vary between replicates.",supplement.md
+9,"Endpoints are averaged with uniform weight over
+the nine commands, which is the estimand: the outcome of a task drawn uniformly from the nine
+assistive commands, not from the pool of episodes.",supplement.md

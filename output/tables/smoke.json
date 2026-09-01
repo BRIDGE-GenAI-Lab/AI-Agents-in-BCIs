@@ -1,0 +1,1445 @@
+{
+  "episodes": [
+    {
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "true_string": "LAZ",
+      "decoded_string": "LND"
+    },
+    {
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "true_string": "ICE",
+      "decoded_string": "UCE"
+    }
+  ],
+  "A_endpoints": {
+    "openai/gpt-5.6-luna": {
+      "provider_name": "Azure",
+      "tag": "azure",
+      "quantization": "unknown",
+      "context_length": 1050000,
+      "supports_tools": true
+    },
+    "anthropic/claude-sonnet-5": {
+      "provider_name": "Anthropic",
+      "tag": "anthropic",
+      "quantization": "unknown",
+      "context_length": 1000000,
+      "supports_tools": true
+    },
+    "google/gemini-3.7-flash": {
+      "provider_name": "Google AI Studio",
+      "tag": "google-ai-studio",
+      "quantization": "unknown",
+      "context_length": 1048576,
+      "supports_tools": true
+    },
+    "z-ai/glm-5.3-flash": {
+      "provider_name": "Cloudflare",
+      "tag": "cloudflare",
+      "quantization": "unknown",
+      "context_length": 1310720,
+      "supports_tools": true
+    },
+    "deepseek/deepseek-v4-flash": {
+      "provider_name": "DigitalOcean",
+      "tag": "digitalocean",
+      "quantization": "unknown",
+      "context_length": 1048576,
+      "supports_tools": true
+    }
+  },
+  "A_failed": [],
+  "B_cells": [
+    {
+      "cell": "factorial:none:advisory:s0",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00013216
+    },
+    {
+      "cell": "factorial:none:advisory:s1",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011989000000000002
+    },
+    {
+      "cell": "factorial:none:advisory:s2",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010793
+    },
+    {
+      "cell": "factorial:none:enforced:s0",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011036,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:none:enforced:s1",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012583,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:none:enforced:s2",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00013239,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:self_confidence:advisory:s0",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00017446
+    },
+    {
+      "cell": "factorial:self_confidence:advisory:s1",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00015861
+    },
+    {
+      "cell": "factorial:self_confidence:advisory:s2",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010847999999999999
+    },
+    {
+      "cell": "factorial:self_confidence:enforced:s0",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011286,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:self_confidence:enforced:s1",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011331000000000001,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:self_confidence:enforced:s2",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011453,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:decoder_confidence:advisory:s0",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "decoder_confidence",
+      "covered": false,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": null,
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00028628
+    },
+    {
+      "cell": "factorial:decoder_confidence:advisory:s1",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "decoder_confidence",
+      "covered": false,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": null,
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00024796
+    },
+    {
+      "cell": "factorial:decoder_confidence:advisory:s2",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "decoder_confidence",
+      "covered": false,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": null,
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00063877
+    },
+    {
+      "cell": "factorial:decoder_confidence:enforced:s0",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010836,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:decoder_confidence:enforced:s1",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012243,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:decoder_confidence:enforced:s2",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011157999999999999,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "caution:w0",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010523000000000001
+    },
+    {
+      "cell": "caution:w1",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": false,
+      "faithful": false,
+      "parse_failed": true,
+      "n_turns": 3,
+      "executed": null,
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00017971
+    },
+    {
+      "cell": "caution:w2",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011133
+    },
+    {
+      "cell": "caution:w3",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011458
+    },
+    {
+      "cell": "caution:w4",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012836
+    },
+    {
+      "cell": "caution:w5",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010962999999999999
+    },
+    {
+      "cell": "caution:w6",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012756
+    },
+    {
+      "cell": "caution:w7",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012108
+    },
+    {
+      "cell": "caution:w8",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012123
+    },
+    {
+      "cell": "caution:w9",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00014395
+    },
+    {
+      "cell": "caution:w10",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011776
+    },
+    {
+      "cell": "caution:w11",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010473
+    },
+    {
+      "cell": "oracle",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "oracle",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012283,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "singleshot",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 9.768e-05
+    },
+    {
+      "cell": "nonllm_gate",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": false,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 0,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 0,
+      "served_provider": null,
+      "cost_usd": 0,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "random_gate",
+      "episode_id": "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000",
+      "confidence": 1.956360946745562e-07,
+      "uses_llm": false,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": false,
+      "parse_failed": false,
+      "n_turns": 0,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 0,
+      "served_provider": null,
+      "cost_usd": 0,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:none:advisory:s0",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012363
+    },
+    {
+      "cell": "factorial:none:advisory:s1",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00016457
+    },
+    {
+      "cell": "factorial:none:advisory:s2",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": false,
+      "faithful": false,
+      "parse_failed": true,
+      "n_turns": 3,
+      "executed": null,
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00014973999999999999
+    },
+    {
+      "cell": "factorial:none:enforced:s0",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012661,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:none:enforced:s1",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010817999999999998,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:none:enforced:s2",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00013461,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:self_confidence:advisory:s0",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011723000000000001
+    },
+    {
+      "cell": "factorial:self_confidence:advisory:s1",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00013046
+    },
+    {
+      "cell": "factorial:self_confidence:advisory:s2",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011737999999999999
+    },
+    {
+      "cell": "factorial:self_confidence:enforced:s0",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011566,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:self_confidence:enforced:s1",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012331,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:self_confidence:enforced:s2",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "self_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010723,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:decoder_confidence:advisory:s0",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011623
+    },
+    {
+      "cell": "factorial:decoder_confidence:advisory:s1",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00013113000000000003
+    },
+    {
+      "cell": "factorial:decoder_confidence:advisory:s2",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00018125999999999998
+    },
+    {
+      "cell": "factorial:decoder_confidence:enforced:s0",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012286,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:decoder_confidence:enforced:s1",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00013211,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "factorial:decoder_confidence:enforced:s2",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011382999999999999,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "caution:w0",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011303000000000001
+    },
+    {
+      "cell": "caution:w1",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00029027999999999997
+    },
+    {
+      "cell": "caution:w2",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011831
+    },
+    {
+      "cell": "caution:w3",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012433000000000002
+    },
+    {
+      "cell": "caution:w4",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012043
+    },
+    {
+      "cell": "caution:w5",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00020071
+    },
+    {
+      "cell": "caution:w6",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012146000000000002
+    },
+    {
+      "cell": "caution:w7",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011646
+    },
+    {
+      "cell": "caution:w8",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010683
+    },
+    {
+      "cell": "caution:w9",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00012801
+    },
+    {
+      "cell": "caution:w10",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010383000000000001
+    },
+    {
+      "cell": "caution:w11",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010443
+    },
+    {
+      "cell": "oracle",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "enforced",
+      "uncertainty_source": "oracle",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00010100999999999998,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "singleshot",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": true,
+      "mechanism": "advisory",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 3,
+      "served_provider": "Cloudflare",
+      "cost_usd": 0.00011111
+    },
+    {
+      "cell": "nonllm_gate",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": false,
+      "mechanism": "enforced",
+      "uncertainty_source": "decoder_confidence",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 0,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 0,
+      "served_provider": null,
+      "cost_usd": 0,
+      "gated_above_own_conf_covered": false
+    },
+    {
+      "cell": "random_gate",
+      "episode_id": "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001",
+      "confidence": 0.8870854388991519,
+      "uses_llm": false,
+      "mechanism": "enforced",
+      "uncertainty_source": "none",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 0,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "n_api_calls": 0,
+      "served_provider": null,
+      "cost_usd": 0,
+      "gated_above_own_conf_covered": false
+    }
+  ],
+  "B_errors": [],
+  "B_cost_usd": 0.008908109999999997,
+  "B_differential": {
+    "n_cells_run": 68,
+    "n_cells_errored": 0,
+    "non_llm_made_zero_api_calls": true,
+    "n_non_llm_cells": 4,
+    "llm_cells_all_made_calls": true,
+    "n_parse_failures": 2,
+    "distinct_llm_outcomes_overall": 3,
+    "distinct_llm_outcomes_within_episode": {
+      "bigP3BCI-data/StudyB/B_14/SE004/Test/CB/B_14_SE004_CB_Test08.edf#0000": 2,
+      "bigP3BCI-data/StudyF/F_08/SE003/Test/Dyn/F_08_SE003_Dyn_Test09.edf#0001": 2
+    },
+    "n_llm_cells_responsive_to_confidence": 32,
+    "n_llm_cells": 32,
+    "outcome_counts": {
+      "conf=0.0000,cov=True,faith=False,act=post_update": 28,
+      "conf=0.0000,cov=False,faith=False,act=None": 4,
+      "conf=0.8871,cov=True,faith=True,act=post_update": 31,
+      "conf=0.8871,cov=False,faith=False,act=None": 1
+    },
+    "enforced_gate_suppressed_above_threshold": true
+  },
+  "C_models": [
+    {
+      "model": "openai/gpt-5.6-luna",
+      "tag": "azure",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "served_provider": "Azure",
+      "n_api_calls": 3,
+      "cost_usd": 0.0002462
+    },
+    {
+      "model": "anthropic/claude-sonnet-5",
+      "tag": "anthropic",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "served_provider": "Anthropic",
+      "n_api_calls": 3,
+      "cost_usd": 0.007626
+    },
+    {
+      "model": "google/gemini-3.7-flash",
+      "tag": "google-ai-studio",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "served_provider": "Google AI Studio",
+      "n_api_calls": 3,
+      "cost_usd": 0.00117525
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash",
+      "tag": "digitalocean",
+      "covered": true,
+      "faithful": true,
+      "parse_failed": false,
+      "n_turns": 3,
+      "executed": {
+        "name": "post_update",
+        "args": {}
+      },
+      "served_provider": "DigitalOcean",
+      "n_api_calls": 3,
+      "cost_usd": 0.0001490181
+    }
+  ],
+  "C_cost_usd": 0.009196468099999999,
+  "total_cost_usd": 0.018104578099999998
+}

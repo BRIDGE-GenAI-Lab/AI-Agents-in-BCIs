@@ -1,0 +1,133 @@
+{
+  "system_prompt_chars": 189,
+  "n_tools": 4,
+  "max_tokens": 512,
+  "results": [
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "provider": "AkashML",
+      "quantization": "fp8",
+      "context_length": 131072,
+      "n_candidate_endpoints": 13,
+      "episodes": [
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test12.edf#0000",
+          "n_calls": 2,
+          "n_turns": 2,
+          "covered": false,
+          "faithful": false,
+          "parse_failed": false,
+          "cost_usd": 0.00027244,
+          "prompt_tokens": 1170,
+          "completion_tokens": 77,
+          "cached_tokens": 16
+        },
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test13.edf#0000",
+          "n_calls": 2,
+          "n_turns": 2,
+          "covered": false,
+          "faithful": false,
+          "parse_failed": false,
+          "cost_usd": 0.00016523999999999998,
+          "prompt_tokens": 1170,
+          "completion_tokens": 77,
+          "cached_tokens": 1088
+        },
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test14.edf#0000",
+          "n_calls": 2,
+          "n_turns": 2,
+          "covered": false,
+          "faithful": false,
+          "parse_failed": false,
+          "cost_usd": 0.00015571999999999998,
+          "prompt_tokens": 1170,
+          "completion_tokens": 71,
+          "cached_tokens": 1152
+        }
+      ],
+      "n_ok": 3,
+      "mean_cost_usd": 0.0001978,
+      "mean_calls": 2.0,
+      "mean_prompt_tokens": 1170.0,
+      "mean_completion_tokens": 75.0
+    },
+    {
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "provider": "DeepInfra",
+      "quantization": "fp8",
+      "context_length": 32768,
+      "n_candidate_endpoints": 2,
+      "episodes": [
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test12.edf#0000",
+          "n_calls": 3,
+          "n_turns": 3,
+          "covered": true,
+          "faithful": true,
+          "parse_failed": false,
+          "cost_usd": 0.000848,
+          "prompt_tokens": 2230,
+          "completion_tokens": 113,
+          "cached_tokens": 0
+        },
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test13.edf#0000",
+          "n_calls": 3,
+          "n_turns": 3,
+          "covered": true,
+          "faithful": true,
+          "parse_failed": false,
+          "cost_usd": 0.00083672,
+          "prompt_tokens": 2232,
+          "completion_tokens": 83,
+          "cached_tokens": 0
+        },
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test14.edf#0000",
+          "n_calls": 3,
+          "n_turns": 3,
+          "covered": true,
+          "faithful": true,
+          "parse_failed": false,
+          "cost_usd": 0.00084844,
+          "prompt_tokens": 2229,
+          "completion_tokens": 115,
+          "cached_tokens": 0
+        }
+      ],
+      "n_ok": 3,
+      "mean_cost_usd": 0.0008443866666666667,
+      "mean_calls": 3.0,
+      "mean_prompt_tokens": 2230.3333333333335,
+      "mean_completion_tokens": 103.66666666666667
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "context_length": 128000,
+      "n_candidate_endpoints": 3,
+      "episodes": [
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test12.edf#0000",
+          "error": "HTTPError: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test13.edf#0000",
+          "error": "HTTPError: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+          "episode_id": "bigP3BCI-data/StudyB/B_01/SE001/Test/CB/B_01_SE001_CB_Test14.edf#0000",
+          "error": "HTTPError: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+        }
+      ],
+      "n_ok": 0,
+      "mean_cost_usd": null,
+      "mean_calls": null,
+      "mean_prompt_tokens": null,
+      "mean_completion_tokens": null
+    }
+  ]
+}

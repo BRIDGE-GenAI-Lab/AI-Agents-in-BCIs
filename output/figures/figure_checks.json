@@ -1,0 +1,9 @@
+{
+  "figure1_worst_excursion_below_gate": -0.0011933174224343646,
+  "figure1_random_gate_risk": 0.30140845070422534,
+  "figure3_no_caution_baseline": 0.8367346938775511,
+  "figure5_lexical_coverage": 0.94,
+  "figure5_lexical_risk": 0.0,
+  "figure5_llm_mean_coverage": 0.7813333333333332,
+  "figure5_llm_total_unfaithful": 13
+}

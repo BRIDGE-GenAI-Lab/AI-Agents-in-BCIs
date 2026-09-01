@@ -1,0 +1,58 @@
+Episode inventory: real ALS bigP3BCI online decodes
+Source: ../study_bigp3_als_calibration/output/intermediate/online_trials_all20.csv (29,602 rows)
+ALS studies (als_only=True): StudyB, StudyF, StudyL, StudyN
+
+Grid-code range correction (team-lead Ruling 4, applied after first pass):
+_to_char now returns None (not "?") for any code outside 1..36, and
+build_episodes drops any episode containing an out-of-range code rather
+than rendering it with a placeholder character. Across the full dataset
+`target` reaches 54 and `selected` reaches 72 (bigP3BCI uses different
+speller matrix sizes across studies), but within the ALS stratum only ONE
+row is affected: a `selected`=38 in StudyB, condition CB. build_episodes
+logs a WARNING with the dropped-episode and dropped-code counts whenever
+this happens (see log lines below). Numbers in this file reflect the
+corrected implementation.
+
+=== Sweep (all lengths where episodes exist) ===
+length episodes participants error_bearing_frac error_bearing_n
+2      1632     47            0.273              446
+3      1088     47            0.336              366
+4      544      47            0.368              200
+5      432      32            0.461              199
+6      424      30            0.500              212
+7      0        0             n/a                0
+8      0        0             n/a                0
+
+Log output from the length=2 and length=3 runs (the only lengths where the
+out-of-range StudyB/CB row falls inside a full chunk; at length 4/5/6 it
+falls in a dropped trailing partial chunk, so no warning fires there):
+nag.episodes WARNING: build_episodes: dropped 1 episode(s) containing 1
+total out-of-range grid code(s) (codes outside 1..36) rather than
+rendering them as a placeholder character
+
+Diagnostic: eligible, non-null-target/selected ALS rows group into 665
+files (session/condition/test blocks), sizes min=3, 25%=4, median=6,
+75%=6, max=6, mean=5.11. No file has 7+ eligible ALS rows, so length>=7
+always yields 0 episodes -- there is a hard ceiling around length=6.
+
+=== GATE: >= 300 error-bearing ALS episodes ===
+length=4 (544 total): 200 error-bearing -- FAILS gate
+length=5 (432 total): 199 error-bearing -- FAILS gate
+length=6 (424 total): 212 error-bearing -- FAILS gate
+length=3 (1088 total): 366 error-bearing -- CLEARS gate
+length=2 (1632 total): 446 error-bearing -- CLEARS gate
+
+None of the brief's suggested default lengths (4, 5, 6, 8) clear 300
+error-bearing ALS episodes. Only length=3 and length=2 do.
+
+Recommendation: use length=3 for downstream tasks (Task 5 sampling, etc.).
+It clears the gate with margin (366 error-bearing, 1088 total, all 47 ALS
+participants retained) while still giving a 3-character decoded string --
+the shortest unit for which "the model got at least one selection wrong out
+of several" is a meaningful distinction to show a reviewer. length=2 clears
+with more margin (446) but a 2-character episode has only two possible error
+counts (0 or up to 2) and is close to a single-selection judgment, which
+weakens the oversight-review task this module feeds. length=5, the
+function's documented default, is kept as the function signature default
+per the brief's exact interface, but callers needing >=300 error-bearing
+episodes must pass length=3 explicitly.

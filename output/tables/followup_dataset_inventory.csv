@@ -1,0 +1,8 @@
+run directory,episode runs,cells,episodes,models,API requests,retry attempts,measured cost (US $),role,episode runs with at least one retry
+`runs_principal/`,21170,6.0,1065,5.0,57135,1091,26.13,"PRIMARY. The headline arms on every primary-eligible episode, at the pool's own decoder-error prevalence.",
+`runs/`,16200,34.0,100,5.0,47030,2716,33.88,"EXPLORATORY pilot. The full 34-cell design on a 100-episode sample stratified 50:50 on decoder error. Sole source of the 12 caution wordings, the 3 scaffolds, the self-confidence arms and the single-shot arm.",
+`runs_recal/`,4760,1.0,1065,5.0,14279,1767,7.7,Task 19. The decoder-confidence advisory arm re-run with the recalibrated episode-level confidence substituted for the product score.,
+`runs_natural/`,3600,3.0,200,5.0,9445,881,8.13,"Task 20. The naturalistic semantic-action benchmark, with its deterministic lexical comparator and two further free comparators.",
+`runs_repeat/`,3000,2.0,100,5.0,9003,1348,7.04,"Task 14. Three repetitions of two advisory arms, to bound between-run stochastic variability.",
+`runs_confirmation/`,1500,3.0,100,5.0,4987,295,3.73,"Task 13. Caution wording 1 with and without an executable confirmation tool, against the no-caution baseline.",
+(all six),50230,,,,141879,8098,86.61,,3656.0

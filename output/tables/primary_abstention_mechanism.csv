@@ -1,0 +1,6 @@
+model,n,coverage,declined_total,declined_by_calling_abstain,declined_by_parse_failure
+anthropic/claude-sonnet-5,170.0,0.359,0.641,0.547,0.094
+deepseek/deepseek-v4-flash,363.0,0.992,0.008,0.003,0.006
+google/gemini-3.7-flash,363.0,0.3,0.7,0.157,0.543
+openai/gpt-5.6-luna,363.0,0.997,0.003,0.003,0.0
+z-ai/glm-5.3-flash,363.0,0.336,0.664,0.361,0.303
