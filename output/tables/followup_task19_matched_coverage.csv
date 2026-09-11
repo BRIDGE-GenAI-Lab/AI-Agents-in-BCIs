@@ -1,0 +1,11 @@
+confidence score,model,n,coverage,risk among acted,gate risk at matched coverage,matched gap,gap 95% CI low,gap 95% CI high,beats gate
+product,anthropic/claude-sonnet-5,500,0.54,0.2037,0.1167,0.087,0.0418,0.1487,False
+product,deepseek/deepseek-v4-flash,1065,0.9962,0.3007,0.2997,0.0009,-0.0018,0.0036,False
+product,google/gemini-3.7-flash,1065,0.6235,0.137,0.131,0.006,-0.0,0.0161,False
+product,openai/gpt-5.6-luna,1065,0.9981,0.301,0.301,0.0,-0.001,0.0022,False
+product,z-ai/glm-5.3-flash,1065,0.6131,0.1639,0.124,0.0398,0.0168,0.063,False
+recalibrated,anthropic/claude-sonnet-5,500,0.646,0.2229,0.154,0.0689,0.041,0.1027,False
+recalibrated,deepseek/deepseek-v4-flash,1065,0.9972,0.3023,0.3008,0.0014,0.0,0.0035,False
+recalibrated,google/gemini-3.7-flash,1065,0.7061,0.1862,0.1763,0.0099,0.0009,0.0194,False
+recalibrated,openai/gpt-5.6-luna,1065,1.0,0.3014,0.3014,0.0,0.0,0.0,False
+recalibrated,z-ai/glm-5.3-flash,1065,0.6939,0.1989,0.1732,0.0257,0.0103,0.0434,False

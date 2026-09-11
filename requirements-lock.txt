@@ -1,0 +1,54 @@
+# Complete transitive freeze of the environment the pipeline is run in.
+# Python 3.11.14 on macOS (darwin, arm64).
+# Produced with importlib.metadata over that interpreter, not from a
+# lockfile: uv.lock resolves several different version sets across the
+# Python range it supports, and only one of them is what actually ran.
+#
+# packaging is pinned to 25.0 and NOT to the 26.3 this file recorded
+# until 2026-09-02. packaging 26.3 removes the `packaging.version`
+# module, and matplotlib 3.11.1 imports it at line 157 of its
+# __init__.py, so the pair pinned here could not import matplotlib at
+# all: anyone installing this file to reproduce the figures got an
+# ImportError instead. importlib.metadata reads metadata without
+# importing anything, which is why a freeze taken that way recorded an
+# incoherent pair and looked fine. Whoever regenerates this file should
+# import every package afterwards, not just enumerate it.
+# The two editable local packages are omitted; see README for how the
+# sibling calibration package is installed.
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+Pygments==2.21.0
+certifi==2026.7.22
+charset-normalizer==3.5.1
+contourpy==1.3.3
+cycler==0.12.1
+decorator==5.3.1
+fonttools==4.63.0
+idna==3.19
+iniconfig==2.3.0
+joblib==1.5.3
+kiwisolver==1.5.1
+lazy-loader==0.5
+matplotlib==3.11.1
+mne==1.12.1
+narwhals==2.25.0
+numpy==2.4.6
+packaging==25.0
+pandas==3.0.5
+patsy==1.0.2
+pillow==12.3.0
+platformdirs==4.11.5
+pluggy==1.6.0
+pooch==1.9.0
+pyarrow==25.0.1
+pyparsing==3.3.2
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+requests==2.34.2
+scikit-learn==1.9.0
+scipy==1.17.1
+six==1.17.0
+statsmodels==0.14.6
+threadpoolctl==3.6.0
+tqdm==4.70.0
+urllib3==2.7.0

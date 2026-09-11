@@ -1,0 +1,49 @@
+[project]
+name = "nag"
+version = "0.1.0"
+description = "Neural Action Gateway: agent-oversight evaluation on real ALS P300-BCI decodes"
+# 3.11, not 3.9. scikit-learn 1.9.0 requires it, and that version is part of
+# the result rather than an implementation detail (see the dependency note
+# below). With ">=3.9" uv resolved a SECOND, 3.9-compatible version set --
+# scikit-learn 1.6.1, matplotlib 3.9.4, numpy 2.0.2 -- and wrote that into
+# uv.lock, so the committed lockfile described an environment that was not
+# the one the study ran in and would not reproduce its calibration numbers.
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    # EXACT, not a floor. GroupKFold's fold assignment changed between 1.6 and
+    # 1.9, which moves the out-of-fold isotonic calibration and with it the
+    # product rule's expected calibration error, 0.080 against 0.076. That
+    # number is reported in the manuscript, so the version is part of the
+    # result rather than an implementation detail.
+    "scikit-learn==1.9.0",
+    "requests>=2.31",
+    "mne>=1.8",
+    "scipy>=1.13",
+    "pyarrow>=14",
+    # Declared because every figure script imports it. It was previously
+    # undeclared and reached the environment only as somebody else's transitive
+    # dependency, which is how it ended up paired with a packaging that cannot
+    # satisfy it.
+    "matplotlib>=3.8",
+    # packaging 26.3 REMOVED the `packaging.version` module that matplotlib
+    # imports at import time. Nothing in the dependency graph forbids it, so a
+    # resolver picks it and the environment fails on `import matplotlib`.
+    "packaging<26",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["code"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatchling.build.targets.wheel]
+packages = ["code/nag"]

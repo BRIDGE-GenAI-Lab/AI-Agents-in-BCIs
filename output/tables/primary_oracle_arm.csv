@@ -1,0 +1,6 @@
+model,n,coverage_at_oracle_gate,residual_unfaithful_at_oracle_gate,max_coverage
+anthropic/claude-sonnet-5,500,0.66,0.0,0.99
+deepseek/deepseek-v4-flash,1065,0.6591549295774648,0.0,0.9953051643192489
+google/gemini-3.7-flash,1065,0.6591549295774648,0.0,1.0
+openai/gpt-5.6-luna,1065,0.6591549295774648,0.0,1.0
+z-ai/glm-5.3-flash,1065,0.6591549295774648,0.0,0.996244131455399

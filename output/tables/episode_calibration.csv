@@ -1,0 +1,6 @@
+rule,ece,brier,auroc,auprc,n,note
+product,0.08021288322048904,0.16966920066735383,0.784632554945055,0.8286578986662984,1084,
+min,0.09512701816276686,0.17773388576593369,0.7848920177045178,0.8391588428186049,1084,
+mean,0.15272605120059707,0.19569946166045052,0.7849721459096459,0.828795561240424,1084,
+logsum,,,0.7846764346764348,0.8287723395790784,1084,"logsum is a summed log-probability, not a probability on [0, 1]; ece and brier are not meaningful on that scale and are reported as NaN rather than computed on a clipped log score. auroc and auprc are rank-based and mathematically monotonic with the product rule (see test_logsum_is_monotone_with_product), so they match to within floating-point tie-breaking: many episodes share identical per-selection score triples (597 unique product values over 1084 episodes here), and log(a)+log(b)+log(c) vs a*b*c can break an exact tie in either direction without any real change in ranking."
+isotonic_episode,0.04930474524648493,0.16844709409693584,0.7613266941391943,0.8117012650078398,1084,

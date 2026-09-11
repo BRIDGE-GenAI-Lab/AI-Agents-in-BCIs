@@ -1,0 +1,26 @@
+# Direct dependencies, pinned to the versions the pipeline is run with.
+# Verified by importing each one in that interpreter, not read off a lockfile.
+# Python 3.11.14.
+#
+# For a byte-exact environment including every transitive package, use
+# requirements-lock.txt instead.
+
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0
+pyarrow==25.0.1
+matplotlib==3.11.1
+requests==2.34.2
+
+# mne reads the BigP3BCI EDF recordings. Needed only for step 03b, the stage
+# that derives per-selection decoder confidence from raw EEG.
+mne==1.12.1
+
+# statsmodels is not imported by this package. It is a hard requirement of the
+# sibling calibration package that code/nag/eeg_scoring.py imports, so step 03b
+# fails without it. See the README section on the sibling repository.
+statsmodels==0.14.6
+
+# test suite
+pytest==9.1.1

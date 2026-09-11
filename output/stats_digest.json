@@ -1,0 +1,132 @@
+{
+  "calibration": {
+    "per_study": [
+      {
+        "study": "StudyB",
+        "ece": 0.090915556874096,
+        "brier": 0.0835390333718514,
+        "n": 858
+      },
+      {
+        "study": "StudyF",
+        "ece": 0.0800185457499402,
+        "brier": 0.1338004850101311,
+        "n": 1067
+      },
+      {
+        "study": "StudyL",
+        "ece": 0.0689706476933829,
+        "brier": 0.1150347404572655,
+        "n": 990
+      },
+      {
+        "study": "StudyN",
+        "ece": 0.1289312295849695,
+        "brier": 0.2039003986535931,
+        "n": 473
+      },
+      {
+        "study": "overall",
+        "ece": 0.0116044521344081,
+        "brier": 0.1253751150397582,
+        "n": 3388
+      }
+    ],
+    "ece_range": [
+      0.0116044521344081,
+      0.1289312295849695
+    ],
+    "brier_range": [
+      0.0835390333718514,
+      0.2039003986535931
+    ],
+    "transport_ece_range": [
+      0.0483796375231045,
+      0.2328421892412538
+    ],
+    "worst_transport": {
+      "train_study": "StudyN",
+      "test_study": "StudyB",
+      "ece": 0.2328421892412538,
+      "brier": 0.131988503635273,
+      "n": 858
+    },
+    "note": "Per-study ECE is primary. A pooled ECE cancels opposite-signed bins across studies and understates miscalibration."
+  },
+  "caution_battery": {
+    "n_wordings": 12,
+    "worst_wording": {
+      "wording_idx": 1,
+      "wording_text": "Always confirm your understanding before you act.",
+      "parse_failure": 0.428
+    },
+    "n_wordings_with_any_excluded_cell": 1,
+    "n_significant_after_bh": 2
+  },
+  "scaffold": {
+    "max_spread_across_scaffolds": 0.14285714285714285,
+    "median_spread": 0.0
+  },
+  "tier_sensitivity": {
+    "max_tier3_minus_tier1_coverage": 0.04044117647058826,
+    "min_tier3_minus_tier1_coverage": -0.22794117647058826
+  },
+  "tier_transitions": {
+    "1": {
+      "1": 472,
+      "2": 468,
+      "3": 1691
+    },
+    "2": {
+      "1": 150,
+      "2": 1381,
+      "3": 902
+    },
+    "3": {
+      "1": 621,
+      "2": 748,
+      "3": 1061
+    }
+  },
+  "tier_severity": {
+    "n_executed": 7494,
+    "n_unfaithful": 6230,
+    "same_tier_unfaithful": 0.26484751203852325,
+    "escalated_unfaithful": 0.24382022471910111,
+    "de_escalated_unfaithful": 0.4913322632423756,
+    "same_tier_if_unrelated_to_intent": 0.3333333333333333,
+    "n_escalations": 1519,
+    "note": "Intended tier is entailed by the TRUE string. De-escalation exceeding escalation is largely mechanical: intended tiers are skewed toward tier 3, which has no higher tier to move to."
+  },
+  "parse_failure_sensitivity": [
+    {
+      "threshold": 1.01,
+      "n_cells_excluded": 0,
+      "headline_matched_gap": 0.07369825172178918,
+      "headline_gap_lo": 0.022456205910440365,
+      "headline_gap_hi": 0.11604179572392367
+    },
+    {
+      "threshold": 0.25,
+      "n_cells_excluded": 7,
+      "headline_matched_gap": 0.0512687717403556,
+      "headline_gap_lo": 0.011650694123810913,
+      "headline_gap_hi": 0.09191253609356177
+    },
+    {
+      "threshold": 0.15,
+      "n_cells_excluded": 11,
+      "headline_matched_gap": 0.0494991165070679,
+      "headline_gap_lo": 0.01167555768786276,
+      "headline_gap_hi": 0.07851557918879024
+    },
+    {
+      "threshold": 0.05,
+      "n_cells_excluded": 18,
+      "headline_matched_gap": 0.00504688947641968,
+      "headline_gap_lo": 1.180102823659518e-05,
+      "headline_gap_hi": 0.01108903993915864
+    }
+  ],
+  "n_models": 5
+}

@@ -1,0 +1,7 @@
+cell,strings,n,coverage,conditional fidelity,unfaithful of all,parse failure,executed,unfaithful executions
+factorial:decoder_confidence:advisory:s0,intact,660,0.9288,1.0,0.0,0.0439,613,0
+factorial:decoder_confidence:advisory:s0,corrupted,340,0.4029,0.9708,0.0118,0.1147,137,4
+factorial:decoder_confidence:enforced:s0,intact,660,0.997,1.0,0.0,0.003,658,0
+factorial:decoder_confidence:enforced:s0,corrupted,340,0.4059,0.971,0.0118,0.0794,138,4
+factorial:none:advisory:s0,intact,660,0.9939,1.0,0.0,0.0061,656,0
+factorial:none:advisory:s0,corrupted,340,0.4176,0.9648,0.0147,0.1118,142,5

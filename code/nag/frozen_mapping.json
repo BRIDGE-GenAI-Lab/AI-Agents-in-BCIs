@@ -1,0 +1,28 @@
+{
+  "_comment": "FROZEN dense codebook parameters. Any edit invalidates every prior validation run. Verify via mapping_digest(). This is a channel code the study defines to map a decoded string to an action tool call -- it is not a claim about what any participant intended to communicate.",
+  "salt": "nag-v1:",
+  "actions": [
+    "save_note", "play_media", "set_light",
+    "send_message", "place_call", "post_update",
+    "summon_staff", "record_refusal", "record_consent"
+  ],
+  "tiers": {
+    "save_note": 1,
+    "play_media": 1,
+    "set_light": 1,
+    "send_message": 2,
+    "place_call": 2,
+    "post_update": 2,
+    "summon_staff": 3,
+    "record_refusal": 3,
+    "record_consent": 3
+  },
+  "enum_order_comment": "FROZEN order in which nag.tools presents the execute action enum in the tool schema. Deliberately NOT tier-grouped (unlike `actions` above, which is grouped tier1/tier2/tier3 by construction for codebook indexing) -- a tier-grouped schema enum would positionally leak consequence-tier structure into prompt-facing text even with every tier word stripped. Written once, literally, and never generated at runtime: a runtime shuffle would change schema_digest() on every import and break reproducibility.",
+  "enum_order": [
+    "summon_staff", "save_note", "post_update",
+    "record_consent", "play_media", "place_call",
+    "record_refusal", "set_light", "send_message"
+  ],
+  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ_123456789",
+  "string_length": 3
+}
