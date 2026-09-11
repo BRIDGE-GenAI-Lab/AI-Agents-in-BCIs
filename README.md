@@ -1,4 +1,4 @@
-# AI agents in brain-computer interfaces: preserving decoder uncertainty at the action boundary
+# AI agents at the brain-computer interface: separating inference from control
 
 Analysis code, the frozen experimental instruments, the run manifest, and the derived
 result tables for a computational benchmark study of what happens when a language-model
@@ -447,7 +447,7 @@ Repository: <https://github.com/BRIDGE-GenAI-Lab/AI-Agents-in-BCIs>
 > deposited. Until then, cite the repository URL and the commit.
 
 Gorenshtein A, Omar M, Jia E, Adiniaev Y, Daniel O, Kruskal J, Ahmed M, Brook O, Klang E,
-Barash Y. *AI agents in brain-computer interfaces: preserving decoder uncertainty at the action boundary.* Manuscript under review.
+Barash Y. *AI agents at the brain-computer interface: separating inference from control.* Manuscript under review.
 
 ## Licence
 
