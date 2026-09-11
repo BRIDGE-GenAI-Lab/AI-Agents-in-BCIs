@@ -1,0 +1,248 @@
+{
+  "task": "Task 6: semantic fair-comparison experiment",
+  "status": "reviewer-motivated follow-up experiment (fair-comparison plan, 2026-09-09); NOT part of the original pre-specified experiment, and not part of the already-reported Task 20 naturalistic benchmark either -- see this script's module docstring",
+  "frozen_before_run_note": "this file must be committed to git BEFORE any model request is issued -- the run step refuses to start unless it is tracked, has no uncommitted diff against HEAD, and its declaration hashes to fair_manifest_digest below",
+  "episode_source": {
+    "file": "output/tables/naturalistic_manifest.json",
+    "n_episodes": 200,
+    "natural_manifest_digest": "da1526132bddaef088368b512165cd0347192adbc4b75e8c2e29e5924ba895a1",
+    "realized_error_prevalence": {
+      "n_error_bearing": 68,
+      "n_total": 200,
+      "frac": 0.34
+    },
+    "reuse_note": "the SAME 200 episodes as Task 20, reused verbatim (identical corrupted_string, true_action, and recalibrated confidence per episode) and referenced rather than copied, so there is exactly one source of truth for them. This experiment is a new set of ARMS over a frozen episode set, never a new draw",
+    "confidence_used": "the RECALIBRATED episode-level out-of-fold isotonic score from Task 19 (episode_confidence_per_episode.csv, column 'isotonic_episode') is used by BOTH the model's prompt (advisory arms) and the deterministic gate; the product score is kept only as confidence_product, for traceability, and is never rendered or gated on here"
+  },
+  "threshold_grid": {
+    "method": "np.linspace(0.0, 1.0, 101)",
+    "n": 101,
+    "min": 0.0,
+    "max": 1.0,
+    "note": "matches nag.naturalistic.resolver_gate_curve's own default, so the hybrid arm and both resolver arms are swept over an identical grid and their AURCs are comparable without interpolation",
+    "values": [
+      0.0,
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.08,
+      0.09,
+      0.1,
+      0.11,
+      0.12,
+      0.13,
+      0.14,
+      0.15,
+      0.16,
+      0.17,
+      0.18,
+      0.19,
+      0.2,
+      0.21,
+      0.22,
+      0.23,
+      0.24,
+      0.25,
+      0.26,
+      0.27,
+      0.28,
+      0.29,
+      0.3,
+      0.31,
+      0.32,
+      0.33,
+      0.34,
+      0.35000000000000003,
+      0.36,
+      0.37,
+      0.38,
+      0.39,
+      0.4,
+      0.41000000000000003,
+      0.42,
+      0.43,
+      0.44,
+      0.45,
+      0.46,
+      0.47000000000000003,
+      0.48,
+      0.49,
+      0.5,
+      0.51,
+      0.52,
+      0.53,
+      0.54,
+      0.55,
+      0.56,
+      0.5700000000000001,
+      0.58,
+      0.59,
+      0.6,
+      0.61,
+      0.62,
+      0.63,
+      0.64,
+      0.65,
+      0.66,
+      0.67,
+      0.68,
+      0.6900000000000001,
+      0.7000000000000001,
+      0.71,
+      0.72,
+      0.73,
+      0.74,
+      0.75,
+      0.76,
+      0.77,
+      0.78,
+      0.79,
+      0.8,
+      0.81,
+      0.8200000000000001,
+      0.8300000000000001,
+      0.84,
+      0.85,
+      0.86,
+      0.87,
+      0.88,
+      0.89,
+      0.9,
+      0.91,
+      0.92,
+      0.93,
+      0.9400000000000001,
+      0.9500000000000001,
+      0.96,
+      0.97,
+      0.98,
+      0.99,
+      1.0
+    ]
+  },
+  "cells": {
+    "fair:llm_vocab:advisory": {
+      "uses_llm": true,
+      "harness": "nag.naturalistic.run_naturalistic_episode (4-tool agent loop, unchanged)",
+      "system_prompt": "nag.naturalistic.build_naturalistic_system(cell, confidence) -- nine commands disclosed verbatim",
+      "uncertainty_source": "decoder_confidence",
+      "control_mechanism": "advisory",
+      "renders_confidence_to_the_model": true,
+      "reported_as": "FIXED POINT -- an advisory arm's own decision is its final outcome, never swept",
+      "why": "the information-symmetric counterpart of Task 20's factorial:decoder_confidence:advisory:s0 cell: identical harness, identical recalibrated confidence, the nine-command vocabulary added to the prompt"
+    },
+    "fair:llm_vocab:enforced": {
+      "uses_llm": true,
+      "harness": "nag.naturalistic.run_naturalistic_episode (4-tool agent loop, unchanged)",
+      "system_prompt": "nag.naturalistic.build_naturalistic_system(cell, confidence) -- vocabulary disclosed; build_system withholds the numeric confidence for an enforced cell",
+      "uncertainty_source": "decoder_confidence",
+      "control_mechanism": "enforced",
+      "renders_confidence_to_the_model": false,
+      "reported_as": "PROPOSAL -- run once, swept over threshold_grid downstream (covered & confidence >= t)",
+      "why": "the information-symmetric counterpart of Task 20's factorial:decoder_confidence:enforced:s0 cell; one run serves every threshold because the model never sees one (nag.agent.run_episode_for_cell, same argument)"
+    },
+    "fair:hybrid_semantic_gate": {
+      "uses_llm": true,
+      "harness": "nag.naturalistic.run_hybrid_semantic_episode -- ONE call, no tools, no loop",
+      "system_prompt": "\"\" (empty) -- the whole prompt is build_hybrid_user, which already carries SINGLESHOT_SCAFFOLD and the nine-command vocabulary; mirrors nag.agent._run_singleshot, which likewise sends no system message",
+      "uncertainty_source": "decoder_confidence",
+      "control_mechanism": "enforced",
+      "renders_confidence_to_the_model": false,
+      "reported_as": "PROPOSAL -- called once at threshold=-inf, swept over threshold_grid downstream",
+      "why": "the reviewer's own proposed architecture: semantic correction from the model, admission from a deterministic threshold outside it. Confidence is deliberately withheld from this arm's prompt -- an architecture defined by keeping decoder uncertainty outside the model must not leak it back in through the prompt"
+    },
+    "fair:exact_resolver_gate": {
+      "uses_llm": false,
+      "harness": "nag.naturalistic.canonical_action + a deterministic confidence gate",
+      "uncertainty_source": "decoder_confidence",
+      "control_mechanism": "enforced",
+      "reported_as": "PROPOSAL + swept curve via nag.naturalistic.resolver_gate_curve",
+      "cost": "zero API calls by construction; computed ONCE, not per model",
+      "why": "the swept version of Task 20's frozen natural_confidence_gate_canonical fixed point; exact match only, never repairs (canonical_action's own docstring)"
+    },
+    "fair:lexical_resolver_gate": {
+      "uses_llm": false,
+      "harness": "nag.naturalistic.lexical_resolve(max_distance=2) + a deterministic confidence gate",
+      "uncertainty_source": "decoder_confidence",
+      "control_mechanism": "enforced",
+      "reported_as": "PROPOSAL + swept curve via nag.naturalistic.resolver_gate_curve",
+      "cost": "zero API calls by construction; computed ONCE, not per model",
+      "why": "the PRIMARY COMPARATOR, now swept: the system the language models have to beat, and the one that motivated the information-symmetry fix (it is handed NATURAL_COMMANDS as a literal, so the models must be too)"
+    }
+  },
+  "arms_to_run": [
+    "fair:llm_vocab:advisory",
+    "fair:llm_vocab:enforced",
+    "fair:hybrid_semantic_gate"
+  ],
+  "free_arms": [
+    "fair:exact_resolver_gate",
+    "fair:lexical_resolver_gate"
+  ],
+  "lexical_max_distance": 2,
+  "commands": {
+    "save note": true,
+    "play music": true,
+    "turn light on": true,
+    "send message": true,
+    "call family": true,
+    "post update": true,
+    "call nurse": true,
+    "record refusal": true,
+    "record consent": true
+  },
+  "proposal_threshold": "-inf: the enforced and hybrid arms are called once per (model, episode) at a threshold that admits every parseable proposal, because the model never sees a threshold and cannot condition on one. Their rows record the PROPOSAL; coverage at threshold t is (covered & confidence >= t), swept downstream over threshold_grid",
+  "model_panel_at_declaration": [
+    {
+      "slug": "openai/gpt-5.6-luna",
+      "projected_usd_per_episode": 0.00024
+    },
+    {
+      "slug": "anthropic/claude-sonnet-5",
+      "projected_usd_per_episode": 0.00876
+    },
+    {
+      "slug": "google/gemini-3.7-flash",
+      "projected_usd_per_episode": 0.00158
+    },
+    {
+      "slug": "z-ai/glm-5.3-flash",
+      "projected_usd_per_episode": 0.00016
+    },
+    {
+      "slug": "deepseek/deepseek-v4-flash",
+      "projected_usd_per_episode": 0.0001
+    },
+    {
+      "slug": "x-ai/grok-4.6",
+      "projected_usd_per_episode": 0.005084
+    },
+    {
+      "slug": "qwen/qwen3.8-max-0902",
+      "projected_usd_per_episode": 0.005084
+    },
+    {
+      "slug": "moonshotai/kimi-k3",
+      "projected_usd_per_episode": 0.00825
+    },
+    {
+      "slug": "nvidia/nemotron-3.5-lightning",
+      "projected_usd_per_episode": 0.000199
+    },
+    {
+      "slug": "mistralai/mistral-medium-3-5",
+      "projected_usd_per_episode": 0.004125
+    }
+  ],
+  "analysis_endpoints": [
+    "the vocabulary-disclosed LLM arms against the SWEPT lexical resolver+gate curve, under symmetric information -- the comparison Task 20 could not make",
+    "the hybrid semantic-correction + deterministic-admission architecture against both the pure-LLM arms and the pure-resolver arms, on one risk-coverage frontier",
+    "whether the study's headline (no LLM arm beats a deterministic gate at matched coverage) survives once the models hold the same vocabulary the resolver does"
+  ],
+  "reporting_note": "absolute rates here are BENCHMARK ABSOLUTE RISKS AT THE SOURCE POOL'S OBSERVED decoder-error prevalence, never deployment estimates -- inherited unchanged from Task 20, whose episodes these are",
+  "fair_manifest_digest": "3efeace11fc2ec799711acb20a139843f6e7ebd8f1d26ae9fa9fe7e8e6a1a51c"
+}

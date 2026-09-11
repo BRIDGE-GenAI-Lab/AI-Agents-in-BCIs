@@ -4,10 +4,10 @@ Analysis code, the frozen experimental instruments, the run manifest, and the de
 result tables for a computational benchmark study of what happens when a language-model
 agent is placed downstream of a P300 speller decoder.
 
-**Status: submitted, not yet published.** Repository: <https://github.com/BRIDGE-GenAI-Lab/AI-Agents-in-BCIs>. The archive DOI is
+**Status: not yet submitted.** Repository: <https://github.com/BRIDGE-GenAI-Lab/AI-Agents-in-BCIs>. The archive DOI is
 filled in below once it exists.
 
-Target journal: *Nature Biomedical Engineering*.
+Target journal: *Nature Machine Intelligence*.
 
 ## The question
 
@@ -318,6 +318,26 @@ reported as an achievable deployment result. It is absent from the default tool 
 reachable only through `tool_schemas(confirmation=True)`, so the main study's frozen-schema
 digest is unaffected.
 
+- **`25_semantic_fair_comparison.py`** closes a third objection, raised only after the first
+  two follow-ups and the naturalistic benchmark were already reported: the naturalistic
+  benchmark's own deterministic comparator, an edit-distance lexical resolver, is handed the
+  nine-command vocabulary as a literal, while the model reading only the system prompt is
+  not. "Language models cannot beat a lexical resolver" is not a claim that comparison can
+  support when only one side holds the answer key. This script reuses the same 200 frozen
+  naturalistic episodes and disclosed vocabulary to run five new arms, information-symmetric
+  with the resolver, across a panel widened to ten models: two direct arms (the model given
+  the vocabulary, advisory and enforced), two swept resolver-plus-gate frontiers (exact-match
+  and lexical), and a **hybrid architecture**, in which the model proposes a semantic
+  correction by text while a deterministic gate alone retains admission authority: the
+  architecture the objection actually named, rather than either side of the original
+  contrast. `26_semantic_primary_table.py` builds the one table that makes the comparison
+  fair (every enforced arm is threshold-swept before being reported, so a proposal rate is
+  never compared against an operating point), `27_figure_semantic_comparison.py` draws the
+  frontier and matched-coverage figure, and `28_semantic_fair_inventory.py` tabulates this
+  run's own totals, since it falls outside the six pre-specified datasets'
+  inventory. `25b_smoke_semantic_fair_comparison.py` is the live-arm-divergence smoke gate
+  this study runs before any paid execution, in the same spirit as `07_smoke.py`.
+
 ## Scale of the study
 
 Read from `output/tables/run_manifest.json`, which is frozen and committed:
@@ -336,6 +356,13 @@ The nineteen excluded episodes are removed by a rule fixed before the runs: thei
 calibration was fitted on a different session, and their score is anti-predictive of
 correctness. They are retained for a sensitivity analysis and excluded from the primary
 one.
+
+The five-model panel above is the **primary study's** panel. The post-hoc fair-information
+comparison (`25_semantic_fair_comparison.py`, below) widened the panel to ten models over
+the same 200 naturalistic episodes: 6,400 episode runs, 14,336 tool-calling requests (400 of
+them model-free, from the two resolver-plus-gate arms), measured cost US $19.46, tabulated
+separately in `output/tables/semantic_fair_dataset_inventory.csv` because it falls outside
+the six pre-specified datasets' inventory.
 
 ## Results
 
@@ -357,13 +384,29 @@ tool-free lexical resolver paired with the gate completed every task in 1.06 att
 point. Enforcement produced no detectable reduction in three-attempt completion in any
 model, improved efficiency in two, and worsened it in one.
 
+**A later, post-hoc fair-information comparison (`25_semantic_fair_comparison.py`) gave a
+ten-model panel the same nine-command vocabulary the naturalistic benchmark's own
+deterministic comparator already uses.** Disclosing it did not lower any arm's risk at
+matched coverage relative to a resolver-plus-gate architecture: of the 20 (arm, model)
+cells the two direct (non-hybrid) vocabulary-disclosed arms contribute, the 12 with an
+evaluable matched comparison improved on none. But the **hybrid architecture**, in which the
+model proposes a semantic correction by text while a deterministic gate alone retains
+admission authority, extended coverage past the lexical resolver's 0.940 ceiling at zero
+observed risk in 5 of the 10 models, and past it at some risk cost in 3 more. Across all
+three vocabulary-disclosed arms, 16 of the 30 (arm, model) cells reached episodes the
+resolver structurally cannot reach; 10 of those 16 carried no unfaithful execution anywhere,
+including the episodes gained. **Restoring the discarded confidence signal did widen what
+the agent could safely do, but only when a deterministic gate, not the model, kept
+admission authority.**
+
 Figures and tables under `output/` are derived from the principal full-pool run except
 where a file or legend states that it comes from the exploratory hundred-episode set,
 which is enriched 50:50 on decoding error and whose absolute rates are therefore not
 benchmark risks at the observed prevalence.
 
-Six datasets, 50,230 episode runs, 141,879 tool-calling requests, no failed rows, and a
-measured API spend of US $88.55 against a human-set $100 ceiling.
+Six pre-specified datasets, 50,230 episode runs, 141,879 tool-calling requests, no failed
+rows, measured API spend US $86.62. The seventh, the fair-information comparison above,
+added 6,400 runs, 14,336 requests and US $19.46.
 
 ## Reporting and ethics
 
@@ -389,7 +432,11 @@ Stated plainly, because a reviewer will find them anyway.
 - **The intermediate run records are not shipped**, so `09_analysis.py`,
   `10_secondary.py` and `11_figures.py` cannot be re-run from a fresh clone. Their outputs
   are shipped instead. Request the checkpoints from the corresponding author to re-run
-  them.
+  them. `tests/test_semantic_primary_table.py` reads those same checkpoints (the
+  `runs_semantic_fair/`, `runs_natural/` and `runs_recal/` directories) to verify
+  `26_semantic_primary_table.py` against real rows, so a fresh clone's `pytest tests -q`
+  reports failures and collection errors in that one file for the same reason, not a code
+  defect: every test in it passes once the checkpoints are present.
 - **The numeric prefixes on the scripts are not a run order.** See the inventory.
 
 ## Citation

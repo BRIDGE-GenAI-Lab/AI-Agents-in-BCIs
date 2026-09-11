@@ -24,7 +24,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT = REPO_ROOT / "manuscript" / "manuscript.md"
 
-LIMITS = {"abstract": 175, "main text": 3500}  # Nature Biomedical Engineering
+LIMITS = {"abstract": 150, "main text": 3500}  # Nature Machine Intelligence
 
 
 def _words(segment: str) -> int:
@@ -89,7 +89,7 @@ def check_claims(actual: dict) -> list[str]:
     problems = []
     # Any "<n> words" or "Abstract <n>" style figure in these files must be one
     # of the current counts, or a journal LIMIT (which is not a claim about us).
-    limits = {175, 3500}
+    limits = {150, 3500}
     current = set(actual.values()) | limits
     for f in CLAIM_FILES:
         if not f.is_file():

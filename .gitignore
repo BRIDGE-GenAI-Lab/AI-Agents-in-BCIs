@@ -4,3 +4,16 @@ __pycache__/
 *.pyc
 .DS_Store
 ._*
+# Word owner files, written while a .docx is open and deleted on close.
+~$*
+# Subagent-driven-development scratch workspace (ledgers, briefs, review packages).
+.superpowers/
+# Intermediate build_pub.sh output under manuscript/. The shipped copies live in
+# _submission_ready/; manuscript_with_figures.* stays tracked because the
+# packet's reading copy is built from it.
+manuscript/cover_letter.docx
+manuscript/cover_letter.pdf
+manuscript/manuscript.docx
+manuscript/manuscript.pdf
+manuscript/supplement.docx
+manuscript/supplement.pdf

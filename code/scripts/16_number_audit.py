@@ -317,6 +317,17 @@ def build_haystack() -> list[tuple[float, str]]:
 
 TOLERANCE_TIERS = ("exact", "display-rounding", "2x-display-rounding", "1pct-relative")
 
+# KNOWN LIMITATION, measured 2026-09-11, not yet fixed: "1pct-relative" against a
+# haystack this dense (the 101-point threshold grids and swept curves put values
+# almost everywhere in [0, 1]) has almost no power to reject a wrong value. Probed
+# directly: a randomly invented 2-decimal value in [0, 1) matched something in the
+# haystack 2000/2000 times; a real manuscript value corrupted by a plausible typo
+# (0.940 -> 0.973, 0.058 -> 0.071, 0.825 -> 0.815) still matched every time tried.
+# Only 4-5 digit integers retain real discrimination. This script passing (exit 0)
+# is evidence the literals it checked are SOMEWHERE in the released tables, not
+# evidence any specific number is correct -- load-bearing claims still need a
+# direct check against their source table, the way the SDD review process did.
+
 
 def tolerance_for(tier: str, decimals: int, target: float) -> float:
     if tier == "exact":
@@ -416,7 +427,47 @@ def enumeration_claims(text: str) -> list[dict]:
     return out
 
 
-def main() -> None:
+# Literals that reach no results table and are still not errors. Each was
+# traced to its source individually; the reason is recorded so a later reader
+# does not have to re-derive it, and so that a NEW unmatched literal fails the
+# run instead of hiding inside a list of fifteen everyone has learned to skip.
+# Keyed on (document, literal as written); the count is not fixed, because a
+# benign literal stays benign wherever it appears in that document.
+KNOWN_BENIGN = {
+    ("manuscript.md", "224"):
+        "participants in the able-bodied stratum of bigP3BCI. A property of the "
+        "source corpus, named as future work; this study analysed none of them, "
+        "so no table holds it.",
+    ("manuscript.md", "408"):
+        "an HTTP status code in the retried-class list, not a measurement.",
+    ("manuscript.md", "20,000"):
+        "bootstrap draws in the replay, a procedure parameter rather than a result.",
+    ("supplement.md", "20,000"):
+        "the same bootstrap draw count.",
+    ("supplement.md", "10,000"):
+        "bootstrap replicate count, a procedure parameter.",
+    ("supplement.md", "5.3"):
+        "the version fragment of the model name 'GLM 5.3 Flash'. Written with a "
+        "space rather than a hyphen, so VERSION_SLUG does not catch it as it does "
+        "in 'glm-5.3-flash'.",
+    ("supplement.md", "3.54"): "eTable 10 cell: see the note below.",
+    ("supplement.md", "3.23"): "eTable 10 cell: see the note below.",
+    ("supplement.md", "2.81"): "eTable 10 cell: see the note below.",
+    ("supplement.md", "2.60"): "eTable 10 cell: see the note below.",
+    ("supplement.md", "2.46"): "eTable 10 cell: see the note below.",
+    ("supplement.md", "2.23"): "eTable 10 cell: see the note below.",
+    ("supplement.md", "1.85"): "eTable 10 cell: see the note below.",
+}
+
+# The eTable 10 note, kept out of the dict so it is written once. Those cells
+# are `p_wrong` and `p_unresolved` from repeated_attempt_replay.csv multiplied
+# by 100 and rendered without a '%' sign, because the column header carries the
+# unit instead. The percent detector keys on a '%' or a nearby "percentage
+# point", so it never fires and 3.54 is never compared against 0.035435.
+# Verified: gate:confidence has p_unresolved 0.035435, which is the 3.54 cell.
+
+
+def main() -> int:
     haystack = build_haystack()
 
     rows = []
@@ -452,6 +503,7 @@ def main() -> None:
                 row = {"value": entry["raw"], "context": label,
                        "found_in": "", "status": "UNMATCHED"}
                 rows.append(row)
+                row["document"] = path.name
                 unmatched_rows.append(row)
 
     TABLES_DIR.mkdir(parents=True, exist_ok=True)
@@ -475,12 +527,28 @@ def main() -> None:
         print(f"  [{row['reason']}] {row['value']!r} -- {row['context']}")
 
     print()
-    if unmatched_rows:
-        print(f"UNMATCHED ({len(unmatched_rows)}) -- each is a submission blocker until resolved:")
-        for row in unmatched_rows:
+    blocking = [r for r in unmatched_rows
+                if (r["document"], r["value"]) not in KNOWN_BENIGN]
+    allowed = [r for r in unmatched_rows if r not in blocking]
+    if blocking:
+        print(f"UNMATCHED ({len(blocking)}) -- each is a submission blocker until resolved:")
+        for row in blocking:
             print(f"  {row['value']!r} -- {row['context']}")
     else:
-        print("UNMATCHED: none.")
+        print("UNMATCHED: none that is not a known-benign literal.")
+    if allowed:
+        print()
+        print(f"UNMATCHED but allowed by KNOWN_BENIGN ({len(allowed)}), with the reason each was cleared:")
+        for row in allowed:
+            print(f"  {row['value']!r} ({row['document']}): "
+                  f"{KNOWN_BENIGN[(row['document'], row['value'])]}")
+    stale = sorted(set(KNOWN_BENIGN) - {(r["document"], r["value"]) for r in unmatched_rows})
+    if stale:
+        print()
+        print("KNOWN_BENIGN entries that no longer match anything (the literal was "
+              "removed, or now reconciles). Not a failure; delete them when convenient:")
+        for doc, value in stale:
+            print(f"  {value!r} ({doc})")
 
     # The class this tool cannot verify. Printed last so it is the final thing
     # a reader sees, because a clean UNMATCHED list invites exactly the false
@@ -507,6 +575,12 @@ def main() -> None:
         pd.DataFrame(claims).to_csv(TABLES_DIR / "number_audit_enumeration_claims.csv", index=False)
         print(f"\nwrote {TABLES_DIR / 'number_audit_enumeration_claims.csv'}")
 
+    # This script called its own UNMATCHED rows "a submission blocker until
+    # resolved" and then exited 0 on every one of them, so nothing that ran it
+    # could fail on them. It now exits 1 on any unmatched literal that is not
+    # in KNOWN_BENIGN.
+    return 1 if blocking else 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

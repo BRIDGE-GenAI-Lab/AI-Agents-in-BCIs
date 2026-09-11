@@ -67,8 +67,12 @@ SUPERSEDED = [
     # started failing three documents for containing a string they are supposed
     # to contain. A superseded-string rule is only correct until the string is
     # reused; check that before adding a bare figure or table label here.
-    ("Figure 6", "the replay figure is Figure 5; there is no Figure 6 after the "
-                 "2026-09-01 renumbering"),
+    #
+    # "Figure 6" WAS on this list too, for the same reason: the 2026-09-01
+    # redesign had retired it (replay demoted from Figure 6 to Figure 5). A
+    # later figure (semantic fair-comparison) took the Figure 5 slot instead,
+    # which pushed replay back out to Figure 6, so "Figure 6" is a real,
+    # current label again. Removed rather than left to fail every rebuild.
 ]
 # The archived plan legitimately records what was planned, under the old numbers.
 CONTENT_EXEMPT = {"NMI_Review_Response_Plan.docx"}
@@ -138,6 +142,30 @@ def _normalise(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+_CURRENCY_MASK = "\x00"
+
+
+def _strip_math(text: str) -> str:
+    """Drop LaTeX math spans from a markdown paragraph.
+
+    Pandoc renders `$...$` and `$$...$$` as OMML, which lives in `<m:t>` elements
+    that `docx_text` deliberately does not read, so a math-bearing paragraph can
+    never match its own .docx and reports as missing content. Cutting the math
+    from the source instead compares the prose around it, which is what staleness
+    would change; the equations themselves are checked by reading the rendered
+    file. Without this every equation added to this manuscript made the coverage
+    check fail on text that was present and correct.
+
+    `$` has exactly one non-math use in these sources, the currency in `US $86.62`,
+    and an unmasked currency `$` pairs with the next one and eats the prose
+    between them. It is masked before the spans are cut and restored after.
+    """
+    text = text.replace("US $", "US " + _CURRENCY_MASK)
+    text = re.sub(r"\$\$.*?\$\$", " ", text, flags=re.S)
+    text = re.sub(r"\$[^$]*\$", " ", text)
+    return text.replace(_CURRENCY_MASK, "$")
+
+
 def md_paragraphs(md: Path) -> list[str]:
     """Substantial prose paragraphs of a markdown file, as plain text."""
     body = md.read_text()
@@ -150,7 +178,8 @@ def md_paragraphs(md: Path) -> list[str]:
         # A bullet list is one markdown block but N docx paragraphs, so an
         # unsplit list can never match and reports as missing content.
         for item in re.split(r"\n(?=\s*(?:[-*+]|\d+\.)\s)", block):
-            plain = re.sub(r"^\s*(?:[-*+]|\d+\.)\s+", "", item.strip())
+            plain = _strip_math(item.strip())
+            plain = re.sub(r"^\s*(?:[-*+]|\d+\.)\s+", "", plain)
             plain = re.sub(r"\[[\d,\s]+\]", "", plain)       # citation markers
             plain = re.sub(r"\^[^\s^]*\^", "", plain)          # ^superscript^
             plain = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", plain)  # links

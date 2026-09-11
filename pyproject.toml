@@ -31,6 +31,12 @@ dependencies = [
     # imports at import time. Nothing in the dependency graph forbids it, so a
     # resolver picks it and the environment fails on `import matplotlib`.
     "packaging<26",
+    # `nag/eeg_scoring.py` needs it transitively via the sibling bigp3_als
+    # calibration package. Previously undeclared here -- a bare `uv sync`
+    # produced a venv that could not even collect the test suite
+    # (ModuleNotFoundError at collection time). Pin matches the sibling
+    # study's own `github_study_bci_agent_oversight/requirements.txt`.
+    "statsmodels==0.14.6",
 ]
 
 [dependency-groups]

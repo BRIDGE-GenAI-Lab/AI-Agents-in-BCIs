@@ -291,8 +291,8 @@ def section_cells(manifest: dict, digest: dict, loaded: dict[str, pd.DataFrame])
         f"`nag.design.build_episode_pool()` ({eps['n_pool_total']:,} episodes) minus the "
         f"{eps['excluded_earlier_session']} episodes whose calibration fit came from "
         f"an earlier session, an exclusion fixed before the runs. Absolute risks are "
-        f"reported on this dataset and on no other, because it alone observes the "
-        f"error prevalence a deployed system would meet."
+        f"reported on this dataset and on no other, because it preserves the source "
+        f"pool's observed decoder-error prevalence."
     )
     out.append("")
     out.append(
@@ -404,6 +404,13 @@ def section_cells(manifest: dict, digest: dict, loaded: dict[str, pd.DataFrame])
     )
     out.append("")
     out.append(
+        "This inventory is the six pre-specified datasets, and the totals above are "
+        "theirs alone. The post-hoc semantic fair-information comparison is a seventh "
+        "dataset, declared and run after these six; its own inventory, arms and totals "
+        "are given separately in eMethods S11 and are not folded in here."
+    )
+    out.append("")
+    out.append(
         f"**Retries, stated precisely.** {n_retries:,} retry attempts were made "
         f"against {n_calls:,} requests, {n_retries / n_calls:.2%}, and {n_rows_retried:,} "
         f"of the {n_runs:,} episode runs recorded at least one retry somewhere in the "
@@ -484,6 +491,13 @@ def section_prompts(prompts: dict, caution_battery: pd.DataFrame, caution_tests:
         "`parse_failure` is computed on the full pilot population, matching the "
         "population the exclusion rule is applied to; `coverage` and `unsafe` are "
         "error-conditional.*"
+    )
+    out.append("")
+    out.append(
+        "**eFigure 3** plots this table: unfaithful execution, coverage and parse "
+        "failure per wording, with the no-caution baseline and the pre-specified 15% "
+        "parse-failure limit marked. It is cited from the main text, where the result "
+        "is reported."
     )
     out.append("")
     merged = caution_battery.merge(
@@ -628,6 +642,15 @@ def section_calibration(reliability: pd.DataFrame, transport: pd.DataFrame,
     if note:
         out.append(f"*{note}*")
         out.append("")
+    out.append(
+        "**eFigure 4** plots eTables S4a and S4b: per-study expected calibration "
+        "error and Brier score, and the cross-study transport matrix. Its diagonal is "
+        "greyed rather than left unpainted, because a calibrator is never transported "
+        "to the study it was fitted on and an unpainted cell on a ramp beginning at "
+        "white would read as a transport error of zero. It is cited from the main "
+        "text, where the result is reported."
+    )
+    out.append("")
     out.append(
         "### eTable S4c. Episode-level calibration across the five scoring rules\n\n"
         "The gate thresholds the product of three calibrated per-selection "
@@ -909,6 +932,14 @@ def section_matched_coverage(matched: pd.DataFrame, aurc: pd.DataFrame,
     return "\n".join(out)
 
 
+# The three models eTable 6a excerpts inline: the three whose coverage under the
+# decoder-confidence advisory sits furthest below the ceiling every other arm
+# reaches, so the excerpt shows the cells where the stratification has any
+# spread to read at all.
+EXCERPT_MODELS = ["google/gemini-3.7-flash", "z-ai/glm-5.3-flash",
+                  "anthropic/claude-sonnet-5"]
+
+
 def section_tiers(by_tier: pd.DataFrame, tier_sens: pd.DataFrame,
                    transitions: pd.DataFrame, decoder_check: pd.DataFrame,
                    stats_digest: dict) -> str:
@@ -920,7 +951,38 @@ def section_tiers(by_tier: pd.DataFrame, tier_sens: pd.DataFrame,
     out.append("")
     out.append("### eTable 6a. Consequence-tier stratification, every arm")
     out.append("")
-    out.append(df_table(by_tier))
+    # Shipped as Supplementary Data 3 rather than as a 90-row inline dump. The
+    # excerpt's selection rule is stated in the prose below, so the displayed
+    # rows read as a declared slice rather than as an unexplained sample.
+    excerpt = by_tier[(by_tier["uncertainty_source"] == "decoder_confidence")
+                      & (by_tier["control_mechanism"] == "advisory")
+                      & (by_tier["model"].isin(EXCERPT_MODELS))]
+    # A renamed model would silently select nothing and ship an empty table into
+    # the submission, the omitted rows being unrecoverable from the document.
+    if len(excerpt) != 3 * len(EXCERPT_MODELS):
+        raise SystemExit(f"eTable 6a excerpt selected {len(excerpt)} rows for "
+                         f"{len(EXCERPT_MODELS)} models across 3 tiers; "
+                         f"EXCERPT_MODELS no longer matches the panel")
+    out.append(
+        f"Coverage and unsafe execution within each consequence tier, for every "
+        f"model, uncertainty source and control mechanism in the pilot's "
+        f"factorial design. The full table, {len(by_tier)} rows, is "
+        f"Supplementary Data 3, submitted with this manuscript as a "
+        f"machine-readable file. Excerpted below are the decoder-confidence "
+        f"advisory cells for *gemini-3.7-flash*, *glm-5.3-flash*, and "
+        f"*claude-sonnet-5*, the three models whose coverage responded most "
+        f"strongly to that advisory and so "
+        f"the cells furthest from the ceiling at which the remaining arms sit. "
+        f"The tier 3 minus tier 1 contrast for every arm, including the arms "
+        f"not shown here, is eTable 6b."
+    )
+    out.append("")
+    out.append(df_table(excerpt))
+    out.append("")
+    out.append(
+        f"*The other {len(by_tier) - len(excerpt)} rows are not reproduced here "
+        f"and are in Supplementary Data 3.*"
+    )
     out.append("")
     out.append("### eTable 6b. Tier 3 minus tier 1 coverage, every arm")
     out.append("")
@@ -1122,8 +1184,8 @@ def section_task19(recal: pd.DataFrame, principal: pd.DataFrame,
     out.append("")
     out.append(
         "The recalibrated value is the participant-grouped OUT-OF-FOLD prediction in "
-        "`output/tables/episode_confidence_per_episode.csv`, column "
-        "`isotonic_episode`, never an in-sample fit. Every consumer reads the same "
+        "`output/tables/episode_confidence_per_episode.csv` (Supplementary Data 1), "
+        "column `isotonic_episode`, never an in-sample fit. Every consumer reads the same "
         "vector rather than refitting, so the arm and the gate threshold identical "
         "numbers. The arm's own product score is retained on every output row as "
         "`confidence_product` for traceability and is never rendered into a prompt."
@@ -1935,6 +1997,492 @@ def section_trajectories(natural: pd.DataFrame) -> str:
 
 
 # --------------------------------------------------------------------------
+# eTable 10: the repeated-attempt empirical replay.
+
+REPLAY_MODEL_LABEL = {
+    "claude-sonnet-5": "Claude Sonnet 5",
+    "gemini-3.7-flash": "Gemini 3.7 Flash",
+    "gpt-5.6-luna": "GPT-5.6 Luna",
+    "glm-5.3-flash": "GLM 5.3 Flash",
+    "deepseek-v4-flash": "DeepSeek v4 Flash",
+}
+REPLAY_ARM_LABEL = {
+    "none": "no uncertainty",
+    "advisory": "confidence, advisory",
+    "enforced": "confidence, enforced",
+}
+REPLAY_GATE_LABEL = {
+    "gate:confidence": "Exact matcher + gate",
+    "gate:lexical": "Lexical resolver + gate",
+}
+
+
+def replay_policy_label(policy: str) -> str:
+    if policy in REPLAY_GATE_LABEL:
+        return REPLAY_GATE_LABEL[policy]
+    model, arm = policy.split(":")
+    return f"{REPLAY_MODEL_LABEL[model]}, {REPLAY_ARM_LABEL[arm]}"
+
+
+def section_replay(replay: pd.DataFrame) -> str:
+    """eTable 10. Read from `21_repeated_attempt_replay.py`'s own output; the
+    bootstrap is not re-run here."""
+    wo = replay[replay["draw"] == "without_replacement"]
+    wr = replay[replay["draw"] == "with_replacement"].set_index("policy")
+    parts = [
+        "The 200 naturalistic episodes replayed as tasks allowed three BCI attempts, drawing a different",
+        "donor episode for the same command on each attempt without replacement. Success and unfaithful",
+        "execution are terminal; a decline consumes the attempt and triggers a retry. Because every",
+        "policy's decision for every donor episode was already recorded, a trajectory is fully determined",
+        "by the sequence of donors drawn, so the outcome distribution is computed exactly by enumerating",
+        "the draw tree rather than by Monte Carlo. There is consequently no simulation sample size: the",
+        "neural sample remains 200 episodes from 46 participants, and the number of replayed trajectories",
+        "does not change it.",
+        "",
+        "Confidence intervals are from a participant-cluster bootstrap, 2,000 resamples, seed 20260901,",
+        "taking ONE joint participant draw per replicate and applying it to every policy so that all",
+        "between-policy contrasts remain paired. Across 20,000 such draws no replicate lost any of the",
+        "nine commands, each being contributed by 16 to 20 of the 46 participants, so uniform weighting",
+        "over commands does not vary between replicates. Endpoints are averaged with uniform weight over",
+        "the nine commands, which is the estimand: the outcome of a task drawn uniformly from the nine",
+        "assistive commands, not from the pool of episodes.",
+        "",
+        "Unintended tier-3 state changes were 0.00 for every policy and the column is therefore omitted",
+        "rather than printed as a column of zeros; the value is stated here so that it is on the record.",
+        "",
+    ]
+    rows = []
+    for r in wo.itertuples():
+        rows.append({
+            "Policy": replay_policy_label(r.policy),
+            "Completed": f"{r.p_success:.3f}",
+            "Unintended per 100": f"{r.p_wrong * 100:.2f}",
+            "Unresolved (%)": f"{r.p_unresolved * 100:.2f}",
+            "Attempts": f"{r.e_attempts:.3f}",
+            "Successes per 100 attempts (95% CI)": (
+                f"{r.success_per_100_attempts:.1f} "
+                f"({r.success_per_100_attempts_lo:.1f} to "
+                f"{r.success_per_100_attempts_hi:.1f})"),
+            "Abstention retries": f"{r.e_retries_abstain:.3f}",
+            "Parse-failure retries": f"{r.e_retries_parse:.3f}",
+            "Per 100, with replacement": (
+                f"{wr.loc[r.policy, 'success_per_100_attempts']:.1f}"),
+        })
+    parts.append(md_table(rows))
+    parts.append("")
+    wri = wr.reindex(wo["policy"].tolist())
+    d_complete = (wo.set_index("policy")["p_success"] - wri["p_success"])
+    d_eff = (wo.set_index("policy")["success_per_100_attempts"]
+             - wri["success_per_100_attempts"])
+    parts.append(
+        f"**Sampling with replacement.** The primary analysis draws a different donor episode for each\n"
+        f"attempt, because a real retry produces a new decode rather than a byte-identical repetition of\n"
+        f"the previous one. Drawing with replacement instead is reported in the final column. It lowers\n"
+        f"completion by {d_complete.min():.4f} to {d_complete.max():.4f} and efficiency by "
+        f"{d_eff.min():.1f} to {d_eff.max():.1f} successes per 100 attempts, and\n"
+        f"changes the rank of none of the seventeen policies. The lexical resolver leads under both."
+    )
+    parts.append("")
+    return "\n".join(parts)
+
+
+# --------------------------------------------------------------------------
+# eMethods S11 / eTables S11a-S11d: the semantic fair-information comparison.
+#
+# This is the SEVENTH dataset and it is deliberately not routed through the
+# six-dataset machinery above (`dataset_inventory`, `eTable 1a`, the per-cell
+# loop). Those are built for structurally uniform factorial datasets, and this
+# experiment is a non-factorial five-arm set over a frozen 200-episode set that
+# was declared and run after the six. It is read from the tables
+# `25_semantic_fair_comparison.py`, `26_semantic_primary_table.py` and
+# `28_semantic_fair_inventory.py` already wrote; nothing here recomputes it.
+
+FAIR_LLM_ARMS = (
+    "fair:llm_vocab:advisory",
+    "fair:llm_vocab:enforced",
+    "fair:hybrid_semantic_gate",
+)
+FAIR_ARM_LABEL = {
+    "fair:llm_vocab:advisory": "advisory (vocabulary disclosed)",
+    "fair:llm_vocab:enforced": "enforced (vocabulary disclosed)",
+    "fair:hybrid_semantic_gate": "hybrid (model proposes, gate admits)",
+}
+FAIR_COMPARATOR = "fair:lexical_resolver_gate"
+FAIR_EXACT = "fair:exact_resolver_gate"
+
+
+def cov3(v) -> str:
+    """Coverage to three decimals. `fmt_cell` drops trailing zeros, which would
+    print the comparator's 0.940 ceiling as 0.94 and full coverage as 1, neither
+    of which matches how the main text writes them."""
+    return f"{float(v):.3f}"
+
+
+def risk4(v) -> str:
+    return f"{float(v):.4f}"
+
+
+def fair_llm_cells(primary: pd.DataFrame) -> pd.DataFrame:
+    """The 30 (arm, model) cells of the three language-model arms, in the
+    document's own arm order."""
+    d = primary[primary["arm_name"].isin(FAIR_LLM_ARMS)].copy()
+    d["_arm_order"] = d["arm_name"].map({a: i for i, a in enumerate(FAIR_LLM_ARMS)})
+    return d.sort_values(["_arm_order", "model"]).reset_index(drop=True)
+
+
+def fair_row(primary: pd.DataFrame, arm: str) -> pd.Series:
+    return primary[primary["arm_name"] == arm].iloc[0]
+
+
+def section_semantic_fair_methods(fm: dict, inventory: pd.DataFrame,
+                                  endpoints: dict, primary_panel: list[str]) -> str:
+    src = fm["episode_source"]
+    inv = inventory.iloc[0]
+    added = [m for m in endpoints if m not in primary_panel]
+    out = [
+        f"**Status.** {fm['status']} (that docstring is in `26_semantic_primary_table.py`).",
+        "",
+        "This is a seventh dataset. eMethods S1 and eTable 1a enumerate the six "
+        "pre-specified datasets and nothing else; the five arms below were declared "
+        "and executed afterwards, and are reported here rather than folded into that "
+        "inventory.",
+        "",
+        f"*Freeze rule:* {fm['frozen_before_run_note']}. The file the rule governs is the "
+        "declaration manifest `semantic_fair_comparison_manifest.json`, whose own wording is "
+        "quoted verbatim above.",
+        "",
+        "**Episode source and reuse.** The experiment drew no new episodes. It reused "
+        f"the {src['n_episodes']} naturalistic episodes of eMethods S8 verbatim, at "
+        f"their realized decoding-error prevalence of "
+        f"{src['realized_error_prevalence']['frac']} "
+        f"({src['realized_error_prevalence']['n_error_bearing']} of "
+        f"{src['realized_error_prevalence']['n_total']} error-bearing), referencing "
+        f"`{src['file']}` (digest `{src['natural_manifest_digest'][:16]}...`) rather "
+        f"than copying it.",
+        "",
+        f"*Reuse note:* {src['reuse_note']}.",
+        "",
+        "**Run totals.** The arms were executed on 9 and 10 September 2026. No episode "
+        "failed.",
+        "",
+        md_table([{
+            "run directory": inv["run directory"],
+            "episode runs": int(inv["episode runs"]),
+            "arms": int(inv["cells"]),
+            "episodes": int(inv["episodes"]),
+            "models": int(inv["models"]),
+            "API requests": int(inv["API requests"]),
+            "retry attempts": int(inv["retry attempts"]),
+            "measured cost (US $)": float(inv["measured cost (US $)"]),
+            "episode runs recording an error": int(inv["episode runs recording an error"]),
+        }]),
+        "",
+        f"*{int(inv['episode runs with at least one retry'])} of the "
+        f"{int(inv['episode runs'])} episode runs needed at least one retry; every "
+        f"retry eventually succeeded, which is why the error column is "
+        f"{int(inv['episode runs recording an error'])}.*",
+        "",
+        "**The ten-model panel and its pinned endpoints.** The panel was widened from "
+        "the primary benchmark's five models to ten, by adding one further "
+        "current-generation model per additional vendor, so that the comparison would "
+        "not rest on the five models the rest of this study uses. The five added for "
+        "this experiment are marked. Endpoints were pinned by the same procedure "
+        "eMethods S5 gives, with `allow_fallbacks` set to false, and the served "
+        "provider was verified against the pin.",
+        "",
+        md_table([{
+            "model": f"`{slug}`",
+            "pinned endpoint tag": f"`{e['tag']}`",
+            "provider served": e["provider_name"],
+            "quantization": e["quantization"],
+            "added for this experiment": "yes" if slug in added else "no",
+        } for slug, e in endpoints.items()]),
+        "",
+        "**The three language-model arms.**",
+        "",
+        md_table([{
+            "arm": f"`{a}`",
+            "harness": fm["cells"][a]["harness"],
+            "confidence rendered to the model":
+                "yes" if fm["cells"][a]["renders_confidence_to_the_model"] else "no",
+            "control mechanism": fm["cells"][a]["control_mechanism"],
+            "entered as": fm["cells"][a]["reported_as"],
+        } for a in FAIR_LLM_ARMS]),
+        "",
+        "The two direct arms are the information-symmetric counterparts of the primary "
+        "benchmark's decoder-confidence advisory and enforced cells: the same four-tool "
+        "agent loop, the same recalibrated confidence, with the nine commands disclosed "
+        "verbatim in the system prompt. The hybrid arm is not the agent loop at all. It "
+        "is a single call with no tools and no multi-turn history, in which the model "
+        "proposes a semantic correction as text and a deterministic threshold outside "
+        "the model alone decides admission. Confidence is withheld from the hybrid "
+        "arm's prompt, because an architecture defined by keeping decoder uncertainty "
+        "outside the model must not reintroduce it through the prompt.",
+        "",
+        "**The two deterministic comparators.** Neither carries a model and neither "
+        "issued an API request; both were computed once rather than once per model.",
+        "",
+        md_table([{
+            "comparator": f"`{a}`",
+            "harness": fm["cells"][a]["harness"],
+            "entered as": fm["cells"][a]["reported_as"],
+            "role": fm["cells"][a]["why"],
+        } for a in (FAIR_COMPARATOR, FAIR_EXACT)]),
+        "",
+        f"**Threshold grid.** {fm['threshold_grid']['n']} points, "
+        f"`{fm['threshold_grid']['method']}`, from {fm['threshold_grid']['min']} to "
+        f"{fm['threshold_grid']['max']}.",
+        "",
+        f"*Grid note:* {fm['threshold_grid']['note']}.",
+        "",
+        f"*Proposal threshold:* {fm['proposal_threshold']}.",
+        "",
+        f"**The confidence substitution.** One quantity differs from the primary "
+        f"benchmark, deliberately: {src['confidence_used']}. The two experiments "
+        f"therefore threshold different quantities, and the fair-information rows are "
+        f"not interchangeable with the primary benchmark's.",
+        "",
+        f"**Reporting note.** {fm['reporting_note']}.",
+        "",
+        f"Manifest digest: `{fm['fair_manifest_digest'][:16]}...`. Arms carrying a "
+        f"model: {', '.join(fm['arms_to_run'])}; free arms: "
+        f"{', '.join(fm['free_arms'])}.",
+    ]
+    return "\n".join(out)
+
+
+def section_semantic_fair_tables(primary: pd.DataFrame,
+                                 curves: pd.DataFrame) -> str:
+    cells = fair_llm_cells(primary)
+    lex = fair_row(primary, FAIR_COMPARATOR)
+    exact = fair_row(primary, FAIR_EXACT)
+    ceiling = float(lex["coverage"])
+    beyond = cells[cells["coverage"] > ceiling]
+    frontier = beyond[beyond["risk"] == 0.0]
+    costly = beyond[beyond["risk"] > 0.0]
+
+    parts = [
+        f"*Source: `output/tables/semantic_primary_comparison.csv`, restricted to its "
+        f"{len(cells)} `fair:*` language-model rows, and "
+        f"`output/tables/semantic_fair_resolver_curves.csv` (Supplementary Data 2) for "
+        f"the swept comparator. "
+        f"Absolute rates are benchmark risks at the source pool's observed "
+        f"decoder-error prevalence of 0.34, not deployment estimates.*",
+        "",
+        f"Throughout these four tables the comparator is `{FAIR_COMPARATOR}`, the "
+        f"swept lexical resolver, which admits {int(lex['n_covered'])} of 200 episodes "
+        f"at its coverage ceiling of {cov3(ceiling)} with {int(lex['n_unfaithful'])} "
+        f"unfaithful executions. `{FAIR_EXACT}`, the exact-match resolver on the same "
+        f"gate, reaches only {cov3(exact['coverage'])} at the same zero risk and is "
+        f"itself dominated.",
+        "",
+        "### eTable S11a. Ten-model arm-level results",
+        "",
+        "Every one of the 30 (arm, model) cells the three vocabulary-disclosed arms "
+        "contribute. `coverage` is the fraction of the 200 episodes the cell acted on; "
+        "`risk` is unfaithful executions as a fraction of those admitted actions.",
+        "",
+    ]
+    parts.append(md_table([{
+        "arm": FAIR_ARM_LABEL[r.arm_name],
+        "model": f"`{r.model}`",
+        "coverage": cov3(r.coverage),
+        "risk": risk4(r.risk),
+        "n_covered": int(r.n_covered),
+        "n_unfaithful": int(r.n_unfaithful),
+    } for r in cells.itertuples()]))
+    parts.append("")
+    parts.append(
+        f"No cell records a risk below the comparator's {risk4(lex['risk'])}, and none "
+        f"could: an arm cannot show a rate below zero observed failures. The finding "
+        f"this experiment carries is on the coverage axis, and eTables S11b and S11c "
+        f"are where it is read."
+    )
+    parts.append("")
+    parts.append("### eTable S11b. Matched-comparator and frontier classification")
+    parts.append("")
+    parts.append(
+        f"Two criteria classify these cells, and they are not the same criterion. The "
+        f"**coverage criterion** asks only whether a cell reaches coverage beyond the "
+        f"comparator's own {cov3(ceiling)} ceiling, using episodes the resolver structurally "
+        f"cannot reach; {len(beyond)} of the {len(cells)} cells meet it. The stricter "
+        f"**frontier criterion** additionally requires that the cell's risk lie within "
+        f"tolerance of the comparator's own zero risk at that ceiling; "
+        f"{len(frontier)} of those {len(beyond)} meet it as well, and are labelled "
+        f"\"exceeds the comparator's frontier\" below. Because the frontier criterion "
+        f"selects on zero risk, the zero observed risk of those {len(frontier)} cells "
+        f"is a consequence of the selection and not an independent finding. The same "
+        f"two terms are used in the legend of Figure 5, which plots this table.",
+    )
+    parts.append("")
+    parts.append(
+        "`beats_comparator` is blank, and reads \"not evaluable\", wherever the cell "
+        "operates above the comparator's coverage ceiling: no matched point exists "
+        "there, which is a finding rather than a missing value."
+    )
+    parts.append("")
+    parts.append(md_table([{
+        "arm": FAIR_ARM_LABEL[r.arm_name],
+        "model": f"`{r.model}`",
+        "coverage": cov3(r.coverage),
+        "risk": risk4(r.risk),
+        "beats_comparator": ("not evaluable" if pd.isna(r.beats_comparator)
+                             else str(bool(r.beats_comparator))),
+        "frontier_verdict": r.frontier_verdict,
+    } for r in cells.itertuples()]))
+    parts.append("")
+    direct = cells[cells["arm_name"] != "fair:hybrid_semantic_gate"]
+    n_eval = int(direct["beats_comparator"].notna().sum())
+    parts.append(
+        f"**The 12-evaluable split.** Of the {len(direct)} cells the two direct arms "
+        f"contribute, {n_eval} carry an evaluable matched comparison and improved on "
+        f"the comparator in none of them; the remaining {len(direct) - n_eval} operate "
+        f"above its coverage ceiling, where no matched comparison exists."
+    )
+    parts.append("")
+    parts.append("### eTable S11c. Episode-level gains beyond the lexical resolver")
+    parts.append("")
+    parts.append(
+        f"The {len(beyond)} cells meeting the coverage criterion, with the episodes "
+        f"each gains over the comparator counted directly rather than inferred from "
+        f"the coverage difference. `n_beyond_comparator` is the number of episodes the "
+        f"cell admits that the comparator does not reach; "
+        f"`n_unfaithful_beyond_comparator` is how many of those it got wrong. "
+        f"`n_comparator_episodes_missed` is the trade in the other direction, and it is "
+        f"why higher coverage is a count rather than a superset: a cell can outnumber "
+        f"the comparator while missing episodes the comparator resolves."
+    )
+    parts.append("")
+    parts.append(md_table([{
+        "arm": FAIR_ARM_LABEL[r.arm_name],
+        "model": f"`{r.model}`",
+        "coverage": cov3(r.coverage),
+        "risk": risk4(r.risk),
+        "n_beyond_comparator": int(r.n_beyond_comparator),
+        "n_unfaithful_beyond_comparator": int(r.n_unfaithful_beyond_comparator),
+        "n_comparator_episodes_missed": int(r.n_comparator_episodes_missed),
+        "meets the frontier criterion": "yes" if float(r.risk) == 0.0 else "no",
+    } for r in beyond.itertuples()]))
+    parts.append("")
+    dirty = beyond[beyond["n_unfaithful_beyond_comparator"] > 0]
+    named = "; ".join(
+        f"{FAIR_ARM_LABEL[r.arm_name].split(' (')[0]} in `{r.model}` "
+        f"({int(r.n_unfaithful_beyond_comparator)} of "
+        f"{int(r.n_beyond_comparator)})" for r in dirty.itertuples())
+    parts.append(
+        f"**Reading.** {len(frontier)} of these {len(beyond)} cells meet the frontier "
+        f"criterion and have no unfaithful execution anywhere, including the episodes "
+        f"gained. The other {len(costly)} carry risk somewhere in the actions they "
+        f"admit, and in {len(dirty)} of them the unfaithful executions fall inside the "
+        f"gained episodes themselves: {named}. The remaining "
+        f"{len(costly) - len(dirty)} carry their risk on episodes the comparator also "
+        f"reaches, not on the increment, which is a different failure and is separated "
+        f"here rather than pooled."
+    )
+    parts.append("")
+    hyb = cells[cells["arm_name"] == "fair:hybrid_semantic_gate"]
+    hyb_clean = hyb[(hyb["coverage"] > ceiling) & (hyb["risk"] == 0.0)]
+    parts.append(
+        f"**The hybrid architecture alone.** Of the {len(hyb)} models, "
+        f"{len(hyb_clean)} reach coverage above the comparator's {cov3(ceiling)} "
+        f"ceiling at zero observed risk under the hybrid split of labour, in which the "
+        f"model proposes a semantic correction and a deterministic threshold outside "
+        f"it alone admits: "
+        + ", ".join(f"`{m}`" for m in hyb_clean["model"]) + "."
+    )
+    parts.append("")
+    parts.append("### eTable S11d. Bootstrap uncertainty and zero-event bounds")
+    parts.append("")
+    parts.append(
+        "Every zero in the `risk` column of eTables S11a to S11c is an observed zero "
+        "on at most 200 episodes, not a guarantee. The one-sided 95% upper bound "
+        "beside it is the exact (Clopper-Pearson) bound, so no row can be read as a "
+        "claim that an arm is never unfaithful. The whole-arm bound and the "
+        "incremental bound are reported separately because they differ by more than an "
+        "order of magnitude: the whole-arm bound is computed over about 200 admitted "
+        "episodes, while the claim the frontier-criterion cells support is about the 8 "
+        "to 12 incremental episodes each of them reaches, where a zero-failure bound "
+        "is far wider. Quoting the whole-arm column beside an incremental claim would "
+        "understate its uncertainty by roughly 15 to 20 times."
+    )
+    parts.append("")
+    parts.append("**The comparators, at their own zero-risk ceilings:**")
+    parts.append("")
+    parts.append(md_table([{
+        "arm": f"`{r['arm_name']}`",
+        "coverage": cov3(r["coverage"]),
+        "n admitted": int(r["n_covered"]),
+        "n unfaithful": int(r["n_unfaithful"]),
+        "one-sided 95% upper bound on risk": risk4(r["risk_upper95_one_sided"]),
+    } for r in (lex, exact)]))
+    parts.append("")
+    parts.append(
+        f"**The {len(frontier)} frontier-criterion cells, on the episodes they gain:**")
+    parts.append("")
+    parts.append(md_table([{
+        "arm": FAIR_ARM_LABEL[r.arm_name],
+        "model": f"`{r.model}`",
+        "episodes gained": int(r.n_beyond_comparator),
+        "unfaithful among them": int(r.n_unfaithful_beyond_comparator),
+        "one-sided 95% upper bound on the increment": risk4(r.risk_upper95_beyond_comparator),
+    } for r in frontier.itertuples()]))
+    parts.append("")
+    lo = float(frontier["risk_upper95_beyond_comparator"].min())
+    hi = float(frontier["risk_upper95_beyond_comparator"].max())
+    gmin = int(frontier["n_beyond_comparator"].min())
+    gmax = int(frontier["n_beyond_comparator"].max())
+    parts.append(
+        f"Across those {len(frontier)} cells the incremental bound runs from {lo:.4f} "
+        f"to {hi:.4f} over the {gmin} to {gmax} episodes each gains, against a "
+        f"whole-arm bound near {float(lex['risk_upper95_one_sided']):.4f} at the "
+        f"comparator's own {int(lex['n_covered'])} admissions. The incremental bound is "
+        f"the one to quote whenever the sentence is about episodes the comparator "
+        f"cannot reach."
+    )
+    parts.append("")
+    swept = curves[curves["arm_name"] == FAIR_COMPARATOR]
+    parts.append(
+        f"*The comparator was swept across all {len(swept)} thresholds of the grid "
+        f"rather than run at a single operating point; its risk is 0.0 at every one of "
+        f"them, which is why a verdict built on matched-coverage risk alone would call "
+        f"every zero-risk cell a tie at any coverage, and why the frontier verdict in "
+        f"eTable S11b is a Pareto verdict over both axes instead.*"
+    )
+    return "\n".join(parts)
+
+
+def section_note_fidelity() -> str:
+    return "\n".join([
+        "Let $p_s = \\Pr(S' = S \\mid Z)$ be decoder correctness (the decoded string",
+        "matches the source string), and let $\\rho = \\Pr(g(S') = g(S) \\mid S' \\neq S)$",
+        "be the probability that an incorrectly decoded string nonetheless maps to the same",
+        "action under the codebook $g$. Then action fidelity is",
+        "",
+        "$$",
+        "p_F = p_s + (1-p_s)\\rho",
+        "$$",
+        "(S1)",
+        "",
+        "a monotonically increasing function of $p_s$ for any FIXED $\\rho \\in [0,1)$.",
+        "With a fixed deterministic hash and structured decoder errors, $\\rho$ could in",
+        "principle vary with the specific source and decoded strings rather than staying",
+        "constant across episodes, so equation (S1) is stated as an idealised relationship",
+        "under a constant collision probability, not an exactly-proven identity.",
+        "Under the fixed nine-action codebook, 88.5% of error-bearing episodes",
+        "change the entailed action after decoding error (main text, Agent, Tools, and",
+        "Ground Truth), so $\\rho \\approx 0.115$ empirically, close to the",
+        "$1/9 \\approx 0.111$ a uniform hash over nine actions would produce. Equation (1)",
+        "of the main text defines $p = p_F$, the fidelity probability the loss-minimising",
+        "rule in equation (3) is derived for; the reconstructed decoder confidence used",
+        "throughout this study instead estimates $p_s$, not $p_F$ directly. The primary",
+        "comparisons in this paper do not rely on equation (S1) holding exactly: every",
+        "matched-coverage comparison applies the same score to the same episodes, so",
+        "an order-preserving transform of that score, exact or approximate, does not",
+        "change which episodes are admitted relative to one another at a shared threshold.",
+    ])
+
+
+# --------------------------------------------------------------------------
 
 def main() -> None:
     manifest = load_json(TABLES / "run_manifest.json")
@@ -1943,6 +2491,9 @@ def main() -> None:
     results_digest = load_json(REPO_ROOT / "output" / "results_digest.json")
     stats_digest = load_json(REPO_ROOT / "output" / "stats_digest.json")
     naturalistic_manifest = load_json(TABLES / "naturalistic_manifest.json")
+    fair_manifest = load_json(TABLES / "semantic_fair_comparison_manifest.json")
+    fair_endpoints = load_json(TABLES / "smoke_semantic_fair.json")["A_endpoints"]
+    primary_panel = manifest["model_panel_at_principal_run"]["models"]
 
     # Every table produced by 09_analysis.py or 10_secondary.py is READ, never
     # recomputed, so this document cannot disagree with the main text.
@@ -1965,6 +2516,10 @@ def main() -> None:
     scaffold_spread = load_csv("secondary_scaffold_spread.csv")
     parse_sens = load_csv("secondary_parse_sensitivity.csv")
     per_episode = load_csv("episode_confidence_per_episode.csv")
+    replay = load_csv("repeated_attempt_replay.csv")
+    fair_primary = load_csv("semantic_primary_comparison.csv")
+    fair_curves = load_csv("semantic_fair_resolver_curves.csv")
+    fair_inventory = load_csv("semantic_fair_dataset_inventory.csv")
 
     # The four follow-up experiments have no analysis script of their own; their
     # tables are computed here, from the run records, using the same estimators.
@@ -1989,7 +2544,7 @@ def main() -> None:
     doc = []
     doc.append("# Supplementary Information")
     doc.append("")
-    doc.append("**Preserving decoder uncertainty across the brain-computer interface to agent boundary**")
+    doc.append("**AI agents in brain-computer interfaces: preserving decoder uncertainty at the action boundary**")
     doc.append("")
     doc.append("---")
     doc.append("")
@@ -1997,15 +2552,17 @@ def main() -> None:
     doc.append("")
     doc.append("\n".join([
         "- eMethods S1. Datasets, cell enumeration, and the run manifest (eTables 1a-1b)",
-        "- eMethods S2. Prompt bank: caution wordings, scaffolds, and the system prompt template (eTable 2)",
+        "- eMethods S2. Prompt bank: caution wordings, scaffolds, and the system prompt template (eTable 2, eFigure 3)",
         "- eMethods S3. Action codebook and tool schemas",
-        "- eMethods S4. Confidence reconstruction and calibration (eTables S4a-S4c, eFigure 1)",
+        "- eMethods S4. Confidence reconstruction and calibration (eTables S4a-S4c, eFigures 1 and 4)",
         "- eMethods S5. Provider pinning, rate limiting, and transient-failure handling",
         "- eMethods S6. Outcomes and statistical procedures",
         "- eMethods S7. Task 19: recalibrated confidence on the full pool (eTables S7a-S7b, eFigure 2)",
         "- eMethods S8. Task 20: naturalistic semantic-action benchmark (eTables S8a-S8c)",
         "- eMethods S9. Task 13: the confirmation tool (eTables S9a-S9b)",
         "- eMethods S10. Task 14: between-repetition variability (eTables S10a-S10b)",
+        "- eMethods S11. Semantic fair-information benchmark (eTables S11a-S11d)",
+        "- Supplementary Note 1. Decoder correctness and action fidelity under the fixed codebook",
         "- eTable 3. Matched-coverage results, AURC, reference arms, and the outcome triple",
         "- eTable 4. Cells labelled by the pre-specified parse-failure rule",
         "- eTable 5. Abstention mechanism by model",
@@ -2013,6 +2570,7 @@ def main() -> None:
         "- eTable 7. Scaffold nuisance-factor spread",
         "- eTable 8. Parse-failure sensitivity sweep",
         "- eTable 9. Unsafe execution, the severity-aware endpoint",
+        "- eTable 10. Repeated-attempt empirical replay, all seventeen policies",
         "- eAppendix 1. Example trajectories",
     ]))
     doc.append("")
@@ -2064,6 +2622,20 @@ def main() -> None:
     doc.append("")
     doc.append(section_task14(loaded[REPEAT_DIR]))
     doc.append("")
+    doc.append("## eMethods S11. Semantic fair-information benchmark")
+    doc.append("")
+    doc.append(section_semantic_fair_methods(fair_manifest, fair_inventory,
+                                             fair_endpoints, primary_panel))
+    doc.append("")
+    doc.append("### Semantic fair-information results")
+    doc.append("")
+    doc.append(section_semantic_fair_tables(fair_primary, fair_curves))
+    doc.append("")
+    doc.append("## Supplementary Note 1. Decoder correctness and action fidelity under "
+               "the fixed codebook")
+    doc.append("")
+    doc.append(section_note_fidelity())
+    doc.append("")
     doc.append("---")
     doc.append("")
     doc.append("## eTable 3. Matched-coverage results, AURC, reference arms, and the outcome triple")
@@ -2101,6 +2673,10 @@ def main() -> None:
     doc.append("## eAppendix 1. Example trajectories")
     doc.append("")
     doc.append(section_trajectories(natural))
+    doc.append("")
+    doc.append("## eTable 10. Repeated-attempt empirical replay, all seventeen policies")
+    doc.append("")
+    doc.append(section_replay(replay))
     doc.append("")
 
     # The follow-up experiments have no analysis script, so until now their
@@ -2151,6 +2727,15 @@ def main() -> None:
              for (c, m), g in loaded[CONFIRM_DIR].groupby(["cell", "model"])]
             + [triple_row(g, cell=c, model="(pooled)")
                for c, g in loaded[CONFIRM_DIR].groupby("cell")]),
+        # eTables S11a-S11d are views of an existing table rather than new
+        # computation, but the audit matches literals and the derived subsets
+        # (the coverage-criterion cells, the frontier-criterion cells) exist
+        # nowhere on disk otherwise.
+        "followup_semantic_fair_cells.csv": fair_llm_cells(fair_primary)[[
+            "arm_name", "model", "coverage", "risk", "n_covered", "n_unfaithful",
+            "beats_comparator", "frontier_verdict", "n_beyond_comparator",
+            "n_unfaithful_beyond_comparator", "n_comparator_episodes_missed",
+            "risk_upper95_one_sided", "risk_upper95_beyond_comparator"]],
         "followup_task14_repeats.csv": pd.DataFrame(
             [triple_row(g, model=m, cell=c, repetition=int(r))
              for (m, c, r), g in loaded[REPEAT_DIR].groupby(["model", "cell", "repetition"])]),
@@ -2159,6 +2744,14 @@ def main() -> None:
         df.to_csv(TABLES / name, index=False)
     print(f"Wrote {len(followups)} follow-up result tables to output/tables/"
           f"followup_*.csv, so the number audit has a source for them.")
+
+    # eTable 6a is delivered as Supplementary Data 3 and only excerpted inline,
+    # so the rows the reader is pointed at need a file under the name the
+    # Supplement names. Written here, to output/tables/, rather than into the
+    # packet: build_packet.py syncs it from there exactly as it syncs the other
+    # two Supplementary Data files, so all three have one provenance path.
+    by_tier.to_csv(TABLES / "etable6a_consequence_tier_stratification.csv",
+                   index=False)
 
     text = "\n".join(doc)
     # Two hard constraints on this document, checked here so a violation cannot

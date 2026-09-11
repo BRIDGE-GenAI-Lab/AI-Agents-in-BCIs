@@ -1,0 +1,2 @@
+run directory,episode runs,cells,episodes,models,API requests,retry attempts,measured cost (US $),episode runs with at least one retry,episode runs recording an error
+`runs_semantic_fair/`,6400,5,200,10,14336,720,19.46,307,0

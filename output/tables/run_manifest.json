@@ -741,7 +741,7 @@
     "schema_digest": "920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7",
     "prompts_digest": "d9cfc63edcc765d0933acdfb839bfde158bc98573c69daf8d24545bc6dc835cf"
   },
-  "budget_usd": 100.0,
+  "budget_usd": 120.0,
   "model_panel": {
     "models": [
       {
@@ -778,14 +778,59 @@
         "price_out_per_token": 1.736e-07,
         "projected_usd_per_episode": 0.0001,
         "projected_usd_per_episode_original": 0.000212
+      },
+      {
+        "slug": "x-ai/grok-4.6",
+        "price_in_per_token": 2e-06,
+        "price_out_per_token": 6e-06,
+        "projected_usd_per_episode": 0.005084
+      },
+      {
+        "slug": "qwen/qwen3.8-max-0902",
+        "price_in_per_token": 2e-06,
+        "price_out_per_token": 6e-06,
+        "projected_usd_per_episode": 0.005084
+      },
+      {
+        "slug": "moonshotai/kimi-k3",
+        "price_in_per_token": 3e-06,
+        "price_out_per_token": 1.5e-05,
+        "projected_usd_per_episode": 0.00825
+      },
+      {
+        "slug": "nvidia/nemotron-3.5-lightning",
+        "price_in_per_token": 8e-08,
+        "price_out_per_token": 2e-07,
+        "projected_usd_per_episode": 0.000199
+      },
+      {
+        "slug": "mistralai/mistral-medium-3-5",
+        "price_in_per_token": 1.5e-06,
+        "price_out_per_token": 7.5e-06,
+        "projected_usd_per_episode": 0.004125
       }
     ],
-    "n_models": 5,
-    "prices_pulled_from_live_openrouter_list": "2026-08-28",
+    "n_models": 10,
+    "prices_pulled_from_live_openrouter_list": "2026-09-09",
     "note": "One vendor each, all current-generation. Every model runs every LLM cell -- there is no core/panel split, so every between-arm contrast is within-model as well as within-episode.",
-    "projection_basis": "Measured per episode-cell from the completed pilot (400 rows per model across the four principal cells), retries included. The original shipped projections were wrong for every model and 1.59x low for anthropic/claude-sonnet-5, which is 81% of the remaining bill; they are retained per model as projected_usd_per_episode_original."
+    "projection_basis": "openai/gpt-5.6-luna, anthropic/claude-sonnet-5, google/gemini-3.7-flash, z-ai/glm-5.3-flash, deepseek/deepseek-v4-flash: projected_usd_per_episode is MEASURED cost from a completed pilot (see commit a66a649), carried forward automatically from the prior manifest rather than recomputed from OBSERVED_PROMPT/COMPLETION_TOKENS below -- that naive formula was wrong for every one of these models. projected_usd_per_episode_original keeps the naive value for reference. Every other model below has no pilot data yet and uses the naive formula."
+  },
+  "model_panel_at_principal_run": {
+    "models": [
+      "openai/gpt-5.6-luna",
+      "anthropic/claude-sonnet-5",
+      "google/gemini-3.7-flash",
+      "z-ai/glm-5.3-flash",
+      "deepseek/deepseek-v4-flash"
+    ],
+    "n_models": 5,
+    "note": "THE PANEL THAT PRODUCED THE PUBLISHED MANUSCRIPT'S NUMBERS. Every principal-run figure the manuscript reports came from these five models: 13_principal_run.py, 19_naturalistic_run.py, 14_confirmation_run.py, 15_repeat_run.py and 18_recalibrated_run.py all ran this panel and nothing else. `model_panel` above is the CURRENT panel and holds ten: it was expanded on 2026-09-09 (Task 5 of docs/superpowers/plans/2026-09-09-semantic-fair-comparison-experiment.md) by editing 05b_panel.py, and the five added models (x-ai/grok-4.6, qwen/qwen3.8-max-0902, moonshotai/kimi-k3, nvidia/nemotron-3.5-lightning, mistralai/mistral-medium-3-5) were used by ONE experiment only, 25_semantic_fair_comparison.py, whose own frozen manifest output/tables/semantic_fair_comparison_manifest.json records the ten-model panel it declared as `model_panel_at_declaration`.",
+    "reproduction_note": "Those five runners read `model_panel.models` LIVE at run time, so re-running any of them today would issue requests for all ten models and produce numbers the manuscript does not report. To reproduce the published runs, pass `--models openai/gpt-5.6-luna,anthropic/claude-sonnet-5,google/gemini-3.7-flash,z-ai/glm-5.3-flash,deepseek/deepseek-v4-flash` -- every one of the five scripts accepts that flag and validates it against the manifest panel. anthropic/claude-sonnet-5 additionally ran on the frozen 500-episode subset recorded in principal_run.model_episode_subsets, not on all 1065 episodes.",
+    "recorded_at": "2026-09-11",
+    "recorded_because": "The panel expansion left this manifest unable to say which models produced the published numbers: `model_panel.n_models` read 10 while `principal_run.budget.basis` still read 'over the 5-model panel', and nothing named the five. This block is that record. It is written by hand, not by 05b_panel.py, and no script overwrites it."
   },
   "main_run": {
+    "status": "HISTORICAL / SUPERSEDED -- NOT A RECORD OF ANYTHING THAT RAN. This block is 05b_panel.py's own projection of a full-factorial design (every panel model x every LLM cell x n_episodes_per_cell episodes) that was never executed. Its figures are recomputed from the CURRENT panel size on every run of that script, so `episode_runs.total` reads 32000 under today's 10-model panel and read 16000 under the five-model panel that produced the manuscript -- neither number counts an episode that was run, and neither appears in the paper. What actually ran, and what the manuscript reports, is in `principal_run`: 6 cells over 1065 episodes on the five models recorded in `model_panel_at_principal_run`, with anthropic/claude-sonnet-5 on a frozen 500-episode subset. `projected_cost_usd` here is stale for the same reason -- see `budget_note`.",
     "n_episodes_per_cell": 100,
     "episode_set_digest": "325a69ccb7b29f9ab40c085dbbc30141cafceabd5b4246e2ddb76d36c44f5a6c",
     "episode_ids": [
@@ -910,15 +955,15 @@
     ],
     "caution_cells_included_in_llm_cells": 12,
     "episode_runs": {
-      "total": 16000,
+      "total": 32000,
       "note": "every model runs every LLM cell, the 12 caution wordings included -- there is no separate battery"
     },
     "projected_cost_usd": {
-      "total": 27.32,
+      "total": 107.46,
       "basis": "measured 2230 prompt / 104 completion tokens per episode (output/tables/cost_probe.json), no cache discount assumed"
     }
   },
-  "budget_note": "HUMAN-SET hard ceiling $100.00. Projected spend $27.32 leaves $72.68 of headroom -- enough for one full re-run. The runner must abort when cumulative observed `usage.cost` reaches this ceiling.",
+  "budget_note": "HUMAN-SET hard ceiling $120.00 (raised from $115.00 2026-09-10, user-authorized, because Task 6's real paid run is measuring per-episode costs 1.16x-1.78x above this manifest's naive projections on several models -- kimi-k3 worst at 1.78x -- leaving too little margin to guarantee claude-sonnet-5, the most expensive and last-run model, completes before the ceiling bites; see docs/superpowers/plans/2026-09-09-semantic-fair-comparison-experiment.md Task 6). Prior raise: $100.00 -> $115.00 on 2026-09-09, to fund the semantic fair-comparison experiment plus an expanded model panel (Task 5/6). $99.1576 spent as of the 2026-09-10 flag that prompted this raise (recomputed via the same global meter 18_recalibrated_run.py:spent_so_far uses), leaving ~$20.84 of headroom against a revised ~$13.65 remaining-work estimate using OBSERVED cost multipliers, not the stale per-episode projections below. The $107.46 projected_cost_usd.total in main_run above is NOT Task 6's planned run -- it is this script's own stale, no-longer-executed 32-cell x 100-episode x 10-model full-factorial design (superseded first by the Option D 500-episode Sonnet subset, and now by the much smaller semantic fair-comparison design: 3 LLM arms x 10 models x 200 shared episodes). Task 6 must compute its own projection from its smoke test and observed run costs, not these figures, before spending. The runner must abort when cumulative observed `usage.cost` reaches this ceiling.",
   "principal_run": {
     "scaffold": "s0",
     "rationale": "s0 is the canonical frozen scaffold, declared before this run and chosen because it is the first-listed rendering in the frozen prompt bank, not because of its performance in the 100-episode exploratory factorial.",
@@ -2034,7 +2079,7 @@
       "spent_before_this_task_usd": 35.5829,
       "projected_usd_this_task": 36.38,
       "projected_usd_per_episode_all_five_models": 0.008539,
-      "basis": "sum of model_panel.models[].projected_usd_per_episode over the 5-model panel, times 4 paid cells (oracle + 3 factorial-base cells; nonllm_gate and random_gate issue zero requests by construction and are excluded), times 1065 primary-eligible episodes"
+      "basis": "sum of model_panel.models[].projected_usd_per_episode over the 5-model panel AS IT STOOD ON 2026-08-30 -- the five slugs are now recorded explicitly in `model_panel_at_principal_run`, because `model_panel` has since been expanded to ten and no longer describes this run, times 4 paid cells (oracle + 3 factorial-base cells; nonllm_gate and random_gate issue zero requests by construction and are excluded), times 1065 primary-eligible episodes `manifest_budget_usd` above is likewise the ceiling in force at the time of this run ($100.00); it was raised to $115.00 on 2026-09-09 and to $120.00 on 2026-09-10, and the top-level `budget_usd` carries the current one."
     },
     "model_episode_subsets": {
       "anthropic/claude-sonnet-5": {
