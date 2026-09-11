@@ -4,8 +4,9 @@ risk-coverage frontier (panel b).
 Panel a is new: a matplotlib-primitives schematic of the pipeline this paper is
 about, drawn once so the reader has the architecture before the first data
 panel. It has no data in it and computes nothing -- boxes, arrows and a single
-vertical rule marking the decoder-to-agent action boundary the manuscript's
-title names ("preserving decoder uncertainty at the action boundary").
+vertical rule marking the decoder-to-agent action boundary, the inference/
+control separation the manuscript's title describes ("AI agents at the
+brain-computer interface: separating inference from control").
 
 Panel b is NOT redrawn here. It is the paper's central claim, and
 `code/scripts/11_figures.py:draw_risk_coverage()` already owns it; this script
