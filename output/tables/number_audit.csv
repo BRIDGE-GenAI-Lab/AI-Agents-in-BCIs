@@ -1,9 +1,8 @@
 value,context,found_in,status
-"1,065","manuscript.md: iscards decoder confidence. Here we show, on 1,065 episodes from 47 participants with amyotroph",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
-47,"manuscript.md: idence. Here we show, on 1,065 episodes from 47 participants with amyotrophic lateral sclero",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
-300,"manuscript.md: h amyotrophic lateral sclerosis in a public P300 speller corpus, that prompt-supplied confide",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-22,"manuscript.md: worse. The prompt's apparent benefit, up to 22 points, came only from acting less often. A",followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
-300,"manuscript.md: enforced interface, not the prompt. --- P300 spellers restore a communication channel to",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+"1,065","manuscript.md: d this at the brain-computer interface using 1,065 episodes from 47 people with amyotrophic lat",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
+47,"manuscript.md: computer interface using 1,065 episodes from 47 people with amyotrophic lateral sclerosis an",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
+22,manuscript.md: cantly worse. Apparent safety gains of up to 22 percentage points reflected acting less ofte,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
+300,manuscript.md: control in agentic neurotechnology. --- P300 spellers restore a communication channel to,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 1,"manuscript.md: ain-computer interface (BCI) for text entry.[1,2] Implanted systems have carried the same g",IGNORED: CITATION_MARKER,IGNORED
 2,"manuscript.md: n-computer interface (BCI) for text entry.[1,2] Implanted systems have carried the same goa",IGNORED: CITATION_MARKER,IGNORED
 12,manuscript.md: phic lateral sclerosis in a locked-in state.[12] Accuracy is nonetheless bounded: in the lar,IGNORED: CITATION_MARKER,IGNORED
@@ -11,6 +10,8 @@ value,context,found_in,status
 0.816,"manuscript.md: pulation, online selection accuracy averages 0.816 and falls below 0.50 in a minority of partic",secondary_caution_battery.csv:unsafe (tol=display-rounding),MATCHED
 0.50,manuscript.md: tion accuracy averages 0.816 and falls below 0.50 in a minority of participants.[3] A decoding,cost_envelope.csv:price_in (tol=exact),MATCHED
 3,manuscript.md: ls below 0.50 in a minority of participants.[3] A decoding error has historically been loca,IGNORED: CITATION_MARKER,IGNORED
+17,"manuscript.md: nerating recommendations to executing tasks.[17,18] Assistive neurotechnology is an especial",IGNORED: CITATION_MARKER,IGNORED
+18,"manuscript.md: ating recommendations to executing tasks.[17,18] Assistive neurotechnology is an especially",IGNORED: CITATION_MARKER,IGNORED
 15,"manuscript.md: interface adaptation, and affective support,[15] and language models already contribute to d",IGNORED: CITATION_MARKER,IGNORED
 4,"manuscript.md: ibute to decoding in speech neuroprostheses.[4,5] Non-language copilots have separately bee",IGNORED: CITATION_MARKER,IGNORED
 5,"manuscript.md: ute to decoding in speech neuroprostheses.[4,5] Non-language copilots have separately been",IGNORED: CITATION_MARKER,IGNORED
@@ -21,6 +22,7 @@ value,context,found_in,status
 9,"manuscript.md: sm for declining to act under uncertainty.[8,9] Agent-safety evaluations have separately ch",IGNORED: CITATION_MARKER,IGNORED
 10,"manuscript.md: d harmful tool use by language-model agents.[10,11] These literatures have not been joined w",IGNORED: CITATION_MARKER,IGNORED
 11,"manuscript.md: armful tool use by language-model agents.[10,11] These literatures have not been joined wher",IGNORED: CITATION_MARKER,IGNORED
+19,manuscript.md: internal confidence to regulate abstention.[19] Whether an agent should similarly be delega,IGNORED: CITATION_MARKER,IGNORED
 300,manuscript.md: a computational benchmark study on a public P300 corpus recorded in participants with amyotro,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 1,manuscript.md: and uncertainty-aware action layers (Figure 1a) across five current-generation language mo,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 28,"manuscript.md: pre-specified datasets were executed between 28 and 31 August 2026, producing 50,230 episode",followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
@@ -41,12 +43,12 @@ $19.46,manuscript.md: sts (400 model-free) across ten models at US $19.46. Every
 5,"manuscript.md: n environment is constructed. *claude-sonnet-5* ran on a prospectively frozen, error-strati",IGNORED: VERSION_SLUG,IGNORED
 500,"manuscript.md: on a prospectively frozen, error-stratified 500-episode subset (170 error-bearing, 46 partic",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
 170,"manuscript.md: frozen, error-stratified 500-episode subset (170 error-bearing, 46 participants), used in eve",number_audit_enumeration_claims.csv:stated_count (tol=exact),MATCHED
-46,"manuscript.md: ified 500-episode subset (170 error-bearing, 46 participants), used in every one of its cond",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
+46,"manuscript.md: ified 500-episode subset (170 error-bearing, 46 participants), used in every condition, beca",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
 100,"manuscript.md: eded the prespecified projection. A separate 100-episode dataset, stratified 50:50 on decodin",followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
 50,"manuscript.md: . A separate 100-episode dataset, stratified 50:50 on decoding error, carries the full 34-ce",followup_task13_confirmation.csv:executed (tol=exact),MATCHED
 50,"manuscript.md: separate 100-episode dataset, stratified 50:50 on decoding error, carries the full 34-cell",followup_task13_confirmation.csv:executed (tol=exact),MATCHED
-34,"manuscript.md: ed 50:50 on decoding error, carries the full 34-cell factorial and is identified as explorat",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-20,manuscript.md: is identified as exploratory below. Two of 20 model-by-cell combinations exceeded the pre-,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
+34,"manuscript.md: ed 50:50 on decoding error, carries the full 34-cell factorial and is exploratory below. Tw",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+20,manuscript.md: factorial and is exploratory below. Two of 20 model-by-cell combinations exceeded the pre-,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
 15%,manuscript.md: cell combinations exceeded the pre-specified 15% parse-failure limit: the decoder-confidence,cost_envelope.csv:price_out (tol=exact),MATCHED
 3.7,manuscript.md: decoder-confidence advisory cell in *gemini-3.7-flash* (0.308) and *glm-5.3-flash* (0.206).,IGNORED: VERSION_SLUG,IGNORED
 0.308,manuscript.md: fidence advisory cell in *gemini-3.7-flash* (0.308) and *glm-5.3-flash* (0.206). Both were labe,followup_task19_recalibration.csv:parse failure (tol=exact),MATCHED
@@ -169,10 +171,11 @@ $19.46,manuscript.md: sts (400 model-free) across ten models at US $19.46. Every
 0.8%,manuscript.md: and *deepseek-v4-flash* declined on 0.3% and 0.8%. ### Deterministic BCI-to-Agent Control Sur,episode_confidence_per_episode.csv:min (tol=exact),MATCHED
 0.659,manuscript.md: ting only intact decodes yielded coverage of 0.659 and a residual unfaithful-execution rate of,episode_confidence_per_episode.csv:mean (tol=display-rounding),MATCHED
 0.000,manuscript.md: and a residual unfaithful-execution rate of 0.000 in all five models. This arm can refuse but,cost_envelope.csv:cached_frac (tol=exact),MATCHED
-"13,956","manuscript.md: nd is tight. Three exceptions exist: across 13,956 episode runs whose decode carried no error,",results_digest.json.clean_decode_residue.n_clean_rows (tol=exact),MATCHED
+"13,956","manuscript.md: correction. Three exceptions exist: across 13,956 episode runs whose decode carried no error,",results_digest.json.clean_decode_residue.n_clean_rows (tol=exact),MATCHED
 3,"manuscript.md: episode runs whose decode carried no error, 3 produced an unfaithful execution (0.0002). A",cost_envelope.csv:price_in (tol=exact),MATCHED
 0.0002,"manuscript.md: o error, 3 produced an unfaithful execution (0.0002). A correctly decoded episode can therefore",smoke.json.B_cells[57].cost_usd (tol=display-rounding),MATCHED
-200,"manuscript.md: fidelity, which the agent did not.** Across 200 naturalistic episodes the comparator resolve",figure5_naturalistic.csv:n (tol=exact),MATCHED
+100%,manuscript.md: ce matcher achieved both higher coverage and 100% observed fidelity.** Across 200 naturalistic,followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
+200,manuscript.md: overage and 100% observed fidelity.** Across 200 naturalistic episodes the comparator resolve,figure5_naturalistic.csv:n (tol=exact),MATCHED
 94.0%,"manuscript.md: aturalistic episodes the comparator resolved 94.0%, was correct in every case, and abstained on",naturalistic_manifest.json.natural_episodes[94].index (tol=exact),MATCHED
 "3,000","manuscript.md: , and abstained on the rest. The agent, over 3,000 episode runs on the same commands, executed",followup_dataset_inventory.csv:episode runs (tol=exact),MATCHED
 78.1%,"manuscript.md: on the same commands, executed an action in 78.1% and produced 13 unfaithful executions (Figur","episode_confidence_per_episode.csv:mean (tol=display-rounding, as-fraction-of-percent)",MATCHED
@@ -185,12 +188,12 @@ $19.46,manuscript.md: sts (400 model-free) across ten models at US $19.46. Every
 0.816,"manuscript.md: ectable change in unfaithful execution, from 0.816 to 0.833 against a no-caution baseline of 0.",secondary_caution_battery.csv:unsafe (tol=display-rounding),MATCHED
 0.833,"manuscript.md: hange in unfaithful execution, from 0.816 to 0.833 against a no-caution baseline of 0.837, none",episode_confidence_per_episode.csv:mean (tol=display-rounding),MATCHED
 0.837,"manuscript.md: 16 to 0.833 against a no-caution baseline of 0.837, none significant after correction (smallest",episode_confidence_per_episode.csv:mean (tol=display-rounding),MATCHED
-.13,manuscript.md: nt after correction (smallest adjusted *P* = .13) (eFigure 3). The two that did differ in a w,followup_task14_repeats.csv:unfaithful of all (tol=exact),MATCHED
-3,manuscript.md: ction (smallest adjusted *P* = .13) (eFigure 3). The two that did differ in a way that matt,IGNORED: SECTION_LABEL,IGNORED
-1,"manuscript.md: at did differ in a way that matters: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -",cost_envelope.csv:price_in (tol=exact),MATCHED
-0.478,"manuscript.md: r in a way that matters: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted",episode_confidence_per_episode.csv:min (tol=display-rounding),MATCHED
--0.359,"manuscript.md: way that matters: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .0",episode_confidence_per_episode.csv:logsum (tol=display-rounding),MATCHED
-95%,"manuscript.md: matters: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .001) b",semantic_fair_resolver_curves.csv:n_covered (tol=exact),MATCHED
+.13,manuscript.md: nt after correction (smallest adjusted *P* = .13) (eFigure 3). The two that mattered: wording,followup_task14_repeats.csv:unfaithful of all (tol=exact),MATCHED
+3,manuscript.md: ction (smallest adjusted *P* = .13) (eFigure 3). The two that mattered: wording 1 cut it to,IGNORED: SECTION_LABEL,IGNORED
+1,"manuscript.md: (eFigure 3). The two that mattered: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -",cost_envelope.csv:price_in (tol=exact),MATCHED
+0.478,"manuscript.md: . The two that mattered: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted",episode_confidence_per_episode.csv:min (tol=display-rounding),MATCHED
+-0.359,"manuscript.md: wo that mattered: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .0",episode_confidence_per_episode.csv:logsum (tol=display-rounding),MATCHED
+95%,"manuscript.md: mattered: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .001) b",semantic_fair_resolver_curves.csv:n_covered (tol=exact),MATCHED
 -0.425,"manuscript.md: : wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .001) but raised p",secondary_caution_tests.csv:ci_low (tol=display-rounding),MATCHED
 -0.287,"manuscript.md: 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .001) but raised parse failu",episode_confidence_per_episode.csv:logsum (tol=display-rounding),MATCHED
 .001,"manuscript.md: 59; 95% CI, -0.425 to -0.287; adjusted *P* < .001) but raised parse failure to 0.428 against a",IGNORED: PVALUE_OR_THRESHOLD,IGNORED
@@ -339,28 +342,30 @@ $19.46,manuscript.md: sts (400 model-free) across ten models at US $19.46. Every
 300,"manuscript.md: 1,065 primary-eligible episodes from a real P300 speller, no arm reached lower unfaithful exe",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 22,"manuscript.md: f supplying uncertainty in the prompt, up to 22 percentage points, came from acting less oft",followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
 6,"manuscript.md: ed threshold, the decomposition in equation (6). Half the panel's hybrid arms extended cove",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+19,manuscript.md: n internal confidence to regulate abstention[19]: the open question is not whether models ca,IGNORED: CITATION_MARKER,IGNORED
 3.7,"manuscript.md: viour only when it is a decision. In *gemini-3.7-flash*, 54.3 of the 70.0 percentage points o",IGNORED: VERSION_SLUG,IGNORED
 54.3,"manuscript.md: hen it is a decision. In *gemini-3.7-flash*, 54.3 of the 70.0 percentage points of declined ep","primary_abstention_mechanism.csv:declined_by_parse_failure (tol=exact, as-fraction-of-percent)",MATCHED
 70.0,"manuscript.md: decision. In *gemini-3.7-flash*, 54.3 of the 70.0 percentage points of declined episodes ended",naturalistic_manifest.json.natural_episodes[70].index (tol=exact),MATCHED
 5.3,"manuscript.md: call rather than an abstention, and in *glm-5.3-flash* 30.3 of 66.4 did. An evaluation scori",IGNORED: VERSION_SLUG,IGNORED
 30.3,"manuscript.md: r than an abstention, and in *glm-5.3-flash* 30.3 of 66.4 did. An evaluation scoring coverage",naturalistic_manifest.json.natural_episodes[30].index (tol=1pct-relative),MATCHED
 66.4,"manuscript.md: n abstention, and in *glm-5.3-flash* 30.3 of 66.4 did. An evaluation scoring coverage alone wo",repeated_attempt_contrasts.csv:a (tol=display-rounding),MATCHED
-94.0%,manuscript.md: deterministic edit-distance matcher resolved 94.0% of episodes with perfect fidelity on those i,naturalistic_manifest.json.natural_episodes[94].index (tol=exact),MATCHED
+94.0%,manuscript.md: deterministic edit-distance matcher resolved 94.0% of episodes with 100% observed fidelity on t,naturalistic_manifest.json.natural_episodes[94].index (tol=exact),MATCHED
+100%,"manuscript.md: ance matcher resolved 94.0% of episodes with 100% observed fidelity on those it resolved, whil",followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
 78.1%,"manuscript.md: those it resolved, while the agent acted on 78.1% and produced 13 unfaithful executions. That","episode_confidence_per_episode.csv:mean (tol=display-rounding, as-fraction-of-percent)",MATCHED
 13,manuscript.md: while the agent acted on 78.1% and produced 13 unfaithful executions. That comparison withh,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
 16,"manuscript.md: not undercut the resolver's zero risk, while 16 of 30 (arm, model) combinations extended cov",number_audit_enumeration_claims.csv:stated_count (tol=exact),MATCHED
 30,"manuscript.md: dercut the resolver's zero risk, while 16 of 30 (arm, model) combinations extended coverage",naturalistic_manifest.json.natural_episodes[30].index (tol=exact),MATCHED
 10,"manuscript.md: isodes the resolver cannot reach, cleanly in 10 and at some risk cost in the other 6 (Figure",cost_envelope.csv:price_out (tol=exact),MATCHED
-6,manuscript.md: nly in 10 and at some risk cost in the other 6 (Figure 5). Selective prediction holds that,followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-5,manuscript.md: and at some risk cost in the other 6 (Figure 5). Selective prediction holds that a classif,IGNORED: SECTION_LABEL,IGNORED
-8,"manuscript.md: ated score should decline below a threshold,[8,9] and shared-autonomy work in BCI has treat",IGNORED: CITATION_MARKER,IGNORED
-9,"manuscript.md: ed score should decline below a threshold,[8,9] and shared-autonomy work in BCI has treated",IGNORED: CITATION_MARKER,IGNORED
-6,"manuscript.md: rather than the competence of either party.[6,7] Agent-safety evaluations have characteris",IGNORED: CITATION_MARKER,IGNORED
-7,"manuscript.md: ather than the competence of either party.[6,7] Agent-safety evaluations have characterised",IGNORED: CITATION_MARKER,IGNORED
-10,"manuscript.md: th text rather than a decoder's uncertainty.[10,11] The agent inherits a selective-predictio",IGNORED: CITATION_MARKER,IGNORED
-11,"manuscript.md: text rather than a decoder's uncertainty.[10,11] The agent inherits a selective-prediction p",IGNORED: CITATION_MARKER,IGNORED
-5,"manuscript.md: s scored as faithful. Fourth, *claude-sonnet-5* ran on a frozen 500-episode subset because",IGNORED: VERSION_SLUG,IGNORED
-500,"manuscript.md: l. Fourth, *claude-sonnet-5* ran on a frozen 500-episode subset because its measured API cost",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
+6,"manuscript.md: nly in 10 and at some risk cost in the other 6 (Figure 5). Selective prediction,[8,9] shar",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+5,"manuscript.md: and at some risk cost in the other 6 (Figure 5). Selective prediction,[8,9] shared-autonom",IGNORED: SECTION_LABEL,IGNORED
+8,"manuscript.md: e other 6 (Figure 5). Selective prediction,[8,9] shared-autonomy work in BCI,[6,7] and age",IGNORED: CITATION_MARKER,IGNORED
+9,"manuscript.md: other 6 (Figure 5). Selective prediction,[8,9] shared-autonomy work in BCI,[6,7] and agent",IGNORED: CITATION_MARKER,IGNORED
+6,"manuscript.md: rediction,[8,9] shared-autonomy work in BCI,[6,7] and agent-safety evaluations of harmful t",IGNORED: CITATION_MARKER,IGNORED
+7,"manuscript.md: diction,[8,9] shared-autonomy work in BCI,[6,7] and agent-safety evaluations of harmful too",IGNORED: CITATION_MARKER,IGNORED
+10,"manuscript.md: agent-safety evaluations of harmful tool use[10,11] each address part of this problem withou",IGNORED: CITATION_MARKER,IGNORED
+11,"manuscript.md: nt-safety evaluations of harmful tool use[10,11] each address part of this problem without j",IGNORED: CITATION_MARKER,IGNORED
+5,"manuscript.md: s scored as faithful. Fourth, *claude-sonnet-5* ran on a smaller, cost-driven 500-episode s",IGNORED: VERSION_SLUG,IGNORED
+500,"manuscript.md: aude-sonnet-5* ran on a smaller, cost-driven 500-episode subset, so its intervals are wider.",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
 28,manuscript.md: ngs describe the identifiers queried between 28 and 31 August and on 9 and 10 September 2026,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
 31,manuscript.md: cribe the identifiers queried between 28 and 31 August and on 9 and 10 September 2026. Thre,IGNORED: DATE_TOKEN,IGNORED
 9,manuscript.md: iers queried between 28 and 31 August and on 9 and 10 September 2026. Three studies follow,followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
@@ -387,7 +392,7 @@ $19.46,manuscript.md: sts (400 model-free) across ten models at US $19.46. Every
 2,"manuscript.md: (1-p)c, \qquad L_{\mathrm{decline}} = r $$ (2) so the loss-minimising policy admits whene",cost_envelope.csv:price_in (tol=exact),MATCHED
 1,"manuscript.md: the loss-minimising policy admits whenever $(1-p)c \leq r$, equivalently $$ p \geq \tau^{\",cost_envelope.csv:price_in (tol=exact),MATCHED
 1,"manuscript.md: eq r$, equivalently $$ p \geq \tau^{\ast} = 1 - r/c $$ (3) a threshold rule on $p$ alone.",cost_envelope.csv:price_in (tol=exact),MATCHED
-3,manuscript.md: alently $$ p \geq \tau^{\ast} = 1 - r/c $$ (3) a threshold rule on $p$ alone. This is exa,IGNORED: DEFINED_THRESHOLD,IGNORED
+3,manuscript.md: alently $$ p \geq \tau^{\ast} = 1 - r/c $$ (3) a threshold rule on $p$ alone. The determi,IGNORED: DEFINED_THRESHOLD,IGNORED
 1,"manuscript.md: ts fidelity estimate becomes $$ p_H = \Pr(F=1 \mid Z, H) $$ (4) and, with the cost $c$ he",cost_envelope.csv:price_in (tol=exact),MATCHED
 4,"manuscript.md: ate becomes $$ p_H = \Pr(F=1 \mid Z, H) $$ (4) and, with the cost $c$ held fixed across a",cost_envelope.csv:price_out (tol=exact),MATCHED
 1,"manuscript.md: ty that $Z$ does not, that is when $$ \Pr(F=1 \mid Z,H) \neq \Pr(F=1 \mid Z), \quad \text{",cost_envelope.csv:price_in (tol=exact),MATCHED
@@ -722,14 +727,38 @@ $19.46,manuscript.md: ol-calling requests at a measured cost of US $19.46. Every
 16,"manuscript.md: 6;12(3):035077. doi:10.1088/2057-1976/ae737b 16. Lee JY, Lee S, Mishra A, et al. Brain-compu",IGNORED: REFERENCES_SECTION,IGNORED
 2025,manuscript.md: al intelligence copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090,IGNORED: REFERENCES_SECTION,IGNORED
 7,manuscript.md: telligence copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-9,manuscript.md: lligence copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-1510,manuscript.md: gence copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-1523,manuscript.md: copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-10.1038,manuscript.md: *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-42256,manuscript.md: h Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-025,manuscript.md: ll*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-01090,manuscript.md: 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y,IGNORED: REFERENCES_SECTION,IGNORED
-1,"supplement.md: on boundary** --- ## Contents - eMethods S1. Datasets, cell enumeration, and the run man",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+9,manuscript.md: lligence copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y 1,IGNORED: REFERENCES_SECTION,IGNORED
+1510,manuscript.md: gence copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y 17. Gor,IGNORED: REFERENCES_SECTION,IGNORED
+1523,manuscript.md: copilots. *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y 17. Gorensht,IGNORED: REFERENCES_SECTION,IGNORED
+10.1038,"manuscript.md: *Nat Mach Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y 17. Gorenshtein A, Omar M",IGNORED: REFERENCES_SECTION,IGNORED
+42256,"manuscript.md: h Intell*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y 17. Gorenshtein A, Omar M, Glick",IGNORED: REFERENCES_SECTION,IGNORED
+025,"manuscript.md: ll*. 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y 17. Gorenshtein A, Omar M, Glicksber",IGNORED: REFERENCES_SECTION,IGNORED
+01090,"manuscript.md: 2025;7(9):1510-1523. doi:10.1038/s42256-025-01090-y 17. Gorenshtein A, Omar M, Glicksberg BS,",IGNORED: REFERENCES_SECTION,IGNORED
+17,"manuscript.md: 9):1510-1523. doi:10.1038/s42256-025-01090-y 17. Gorenshtein A, Omar M, Glicksberg BS, Nadka",IGNORED: REFERENCES_SECTION,IGNORED
+2025,"manuscript.md: ical Medicine: A Systematic Review. medRxiv. 2025. doi:10.1101/2025.08.22.25334232 18. Qiu J,",IGNORED: REFERENCES_SECTION,IGNORED
+10.1101,"manuscript.md: ine: A Systematic Review. medRxiv. 2025. doi:10.1101/2025.08.22.25334232 18. Qiu J, Lam K, Li G,",IGNORED: REFERENCES_SECTION,IGNORED
+2025.08,"manuscript.md: ystematic Review. medRxiv. 2025. doi:10.1101/2025.08.22.25334232 18. Qiu J, Lam K, Li G, Acharya",IGNORED: REFERENCES_SECTION,IGNORED
+.22,"manuscript.md: ic Review. medRxiv. 2025. doi:10.1101/2025.08.22.25334232 18. Qiu J, Lam K, Li G, Acharya A,",IGNORED: REFERENCES_SECTION,IGNORED
+.25334232,"manuscript.md: Review. medRxiv. 2025. doi:10.1101/2025.08.22.25334232 18. Qiu J, Lam K, Li G, Acharya A, Wong TY,",IGNORED: REFERENCES_SECTION,IGNORED
+18,"manuscript.md: dRxiv. 2025. doi:10.1101/2025.08.22.25334232 18. Qiu J, Lam K, Li G, Acharya A, Wong TY, Dar",IGNORED: REFERENCES_SECTION,IGNORED
+2024,manuscript.md: medicine and healthcare. *Nat Mach Intell*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-0094,IGNORED: REFERENCES_SECTION,IGNORED
+6,manuscript.md: cine and healthcare. *Nat Mach Intell*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-,IGNORED: REFERENCES_SECTION,IGNORED
+12,manuscript.md: ne and healthcare. *Nat Mach Intell*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-1 1,IGNORED: REFERENCES_SECTION,IGNORED
+1418,manuscript.md: nd healthcare. *Nat Mach Intell*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kum,IGNORED: REFERENCES_SECTION,IGNORED
+1420,manuscript.md: althcare. *Nat Mach Intell*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kumaran,IGNORED: REFERENCES_SECTION,IGNORED
+10.1038,"manuscript.md: *Nat Mach Intell*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kumaran D, Daw N, Osi",IGNORED: REFERENCES_SECTION,IGNORED
+42256,"manuscript.md: Intell*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kumaran D, Daw N, Osindero S",IGNORED: REFERENCES_SECTION,IGNORED
+024,"manuscript.md: l*. 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kumaran D, Daw N, Osindero S, Ve",IGNORED: REFERENCES_SECTION,IGNORED
+00944,"manuscript.md: 2024;6(12):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kumaran D, Daw N, Osindero S, Velickov",IGNORED: REFERENCES_SECTION,IGNORED
+1,"manuscript.md: (12):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kumaran D, Daw N, Osindero S, Velickovic",IGNORED: REFERENCES_SECTION,IGNORED
+19,"manuscript.md: 2):1418-1420. doi:10.1038/s42256-024-00944-1 19. Kumaran D, Daw N, Osindero S, Velickovic P,",IGNORED: REFERENCES_SECTION,IGNORED
+2026,manuscript.md: dence to drive behaviour. *Nat Mach Intell*. 2026;8. doi:10.1038/s42256-026-01293-x,IGNORED: REFERENCES_SECTION,IGNORED
+8,manuscript.md: to drive behaviour. *Nat Mach Intell*. 2026;8. doi:10.1038/s42256-026-01293-x,IGNORED: REFERENCES_SECTION,IGNORED
+10.1038,manuscript.md: ve behaviour. *Nat Mach Intell*. 2026;8. doi:10.1038/s42256-026-01293-x,IGNORED: REFERENCES_SECTION,IGNORED
+42256,manuscript.md: our. *Nat Mach Intell*. 2026;8. doi:10.1038/s42256-026-01293-x,IGNORED: REFERENCES_SECTION,IGNORED
+026,manuscript.md: Nat Mach Intell*. 2026;8. doi:10.1038/s42256-026-01293-x,IGNORED: REFERENCES_SECTION,IGNORED
+01293,manuscript.md: Mach Intell*. 2026;8. doi:10.1038/s42256-026-01293-x,IGNORED: REFERENCES_SECTION,IGNORED
+1,"supplement.md: rom control** --- ## Contents - eMethods S1. Datasets, cell enumeration, and the run man",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 1,"supplement.md: l enumeration, and the run manifest (eTables 1a-1b) - eMethods S2. Prompt bank: caution wor",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 1,"supplement.md: numeration, and the run manifest (eTables 1a-1b) - eMethods S2. Prompt bank: caution wordin",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 2,"supplement.md: the run manifest (eTables 1a-1b) - eMethods S2. Prompt bank: caution wordings, scaffolds, a",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED

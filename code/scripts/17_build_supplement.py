@@ -2544,7 +2544,7 @@ def main() -> None:
     doc = []
     doc.append("# Supplementary Information")
     doc.append("")
-    doc.append("**AI agents in brain-computer interfaces: preserving decoder uncertainty at the action boundary**")
+    doc.append("**AI agents at the brain-computer interface: separating inference from control**")
     doc.append("")
     doc.append("---")
     doc.append("")

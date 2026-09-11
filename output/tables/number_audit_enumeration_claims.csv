@@ -1,6 +1,6 @@
 stated_count,sentence,document
-5,"Here we show, on 1,065 episodes from 47 participants with amyotrophic lateral sclerosis in a public P300 speller corpus, that prompt-supplied confidence never lowered unfaithful execution below a deterministic gate on the same value at matched coverage, in five current-generation models; two were si",manuscript.md
-10,"A post-hoc comparison gave ten models a lexical resolver's nine commands: none reduced risk below the resolver's zero, but a hybrid architecture, in which a gate alone admits the model's proposed semantic correction, extended coverage past the resolver's ceiling at zero observed risk in half the pan",manuscript.md
+5,"We studied this at the brain-computer interface using 1,065 episodes from 47 people with amyotrophic lateral sclerosis and five language models.",manuscript.md
+5,"No direct agent arm improved on the resolver's risk-coverage frontier, but a hybrid architecture in which models proposed semantic corrections and an external gate retained admission authority extended coverage beyond the resolver in five of ten models without observed unfaithful executions.",manuscript.md
 5,"We conducted a computational benchmark study on a public P300 corpus recorded in participants with amyotrophic lateral sclerosis, comparing uncertainty-blind and uncertainty-aware action layers (Figure 1a) across five current-generation language models, with unfaithful execution at matched action co",manuscript.md
 6,"---
 
@@ -10,13 +10,13 @@ stated_count,sentence,document
 
 Six pre-specified datasets were executed between 28 and 31 August 2026, producing 50,230 episode runs and 141,879 tool-calling requests across five models at a measured cost of US $86.62; a seventh, the post-hoc fair-information comparison below, added ",manuscript.md
 47,"The primary dataset ran the headline arms on all 1,065 primary-eligible episodes from 47 participants, at the pool's own decoding-error prevalence of 0.341 (363 error-bearing, 702 clean).",manuscript.md
-1,"*claude-sonnet-5* ran on a prospectively frozen, error-stratified 500-episode subset (170 error-bearing, 46 participants), used in every one of its conditions, because its measured API cost exceeded the prespecified projection.",manuscript.md
+46,"*claude-sonnet-5* ran on a prospectively frozen, error-stratified 500-episode subset (170 error-bearing, 46 participants), used in every condition, because its measured API cost exceeded the prespecified projection.",manuscript.md
 2,Two of 20 model-by-cell combinations exceeded the pre-specified 15% parse-failure limit: the decoder-confidence advisory cell in *gemini-3.7-flash* (0.308) and *glm-5.3-flash* (0.206).,manuscript.md
 10,"### AI Agents Turned BCI Decoder Errors into Executed Actions
 
 **No LLM arm achieved lower unfaithful execution than a plain threshold on the same calibrated confidence, evaluated at the arm's own coverage.** Dominance failed in all 10 model-by-arm combinations tested (Figure 1b, Figure 2, eTable 3a",manuscript.md
 3,"The severity-aware endpoint, an admitted tier 3 action the true string does not entail, occurred in 1,651 of 21,170 episode runs (0.078): 0.049 under advisory control with decoder confidence and 0.084 in each of the other three arms, tracking overall unfaithful execution rather than separating from ",manuscript.md
-2,"The two models whose bare rates did not move were also the two whose coverage did not move, so the apparent benefit is accounted for by acting less often.",manuscript.md
+2,"The two models whose bare rates did not move also had unchanged coverage, so the apparent benefit is accounted for by acting less often.",manuscript.md
 2,"**Two of the three models that declined to act frequently did so by failing to emit a valid tool call rather than by calling `abstain` (Figure 3).** Among error-bearing episodes under advisory control with decoder confidence, *gemini-3.7-flash* declined on 70.0%, 15.7 percentage points of them expli",manuscript.md
 5,"### Deterministic BCI-to-Agent Control Survived Stronger Challenges
 
@@ -24,7 +24,7 @@ Six pre-specified datasets were executed between 28 and 31 August 2026, producin
 3,"Three exceptions exist: across 13,956 episode runs whose decode carried no error, 3 produced an unfaithful execution (0.0002).",manuscript.md
 0,"The agent, over 3,000 episode runs on the same commands, executed an action in 78.1% and produced 13 unfaithful executions (Figure 4).",manuscript.md
 10,"Ten of 12 caution wordings produced no detectable change in unfaithful execution, from 0.816 to 0.833 against a no-caution baseline of 0.837, none significant after correction (smallest adjusted *P* = .13) (eFigure 3).",manuscript.md
-2,"The two that did differ in a way that matters: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .001) but raised parse failure to 0.428 against at most 0.042 elsewhere, whereas wording 10 cut it to 0.784 (-0.053; 95% CI, -0.083 to -0.028) at a parse-failure rate of 0.042.",manuscript.md
+2,"The two that mattered: wording 1 cut it to 0.478 (-0.359; 95% CI, -0.425 to -0.287; adjusted *P* < .001) but raised parse failure to 0.428 against at most 0.042 elsewhere, whereas wording 10 cut it to 0.784 (-0.053; 95% CI, -0.083 to -0.028) at a parse-failure rate of 0.042.",manuscript.md
 4,"Expected calibration error of the reconstructed confidence was 0.069 to 0.129 across the four studies, the Brier score 0.084 to 0.204, and the calibration error under cross-study transport 0.048 to 0.233 (eFigure 4).",manuscript.md
 2,"Neither of the two direct arms, advisory or enforced, reduced unfaithful execution below either resolver-plus-gate architecture at matched coverage in any of the 10 models: of the 20 (arm, model) cells those two arms contribute, the 12 with an evaluable matched comparison improved on none, and the o",manuscript.md
 188,"The bound is structural: the lexical resolver admitted 188 of 200 episodes at its 0.940 ceiling with zero unfaithful executions (one-sided 95% upper bound 0.0158), so no arm could register a lower risk; the exact resolver, itself dominated, reached only 0.660 coverage at the same zero risk.",manuscript.md
@@ -48,9 +48,9 @@ command strings and the models do not, and the fair-information comparison above
 
 ## Discussion
 
-Across five current-generation models run on 1,065 primary-eligible episodes from a real P300 speller, no arm reached lower unfaithful execution than a deterministic gate applied to the identical value at the identical willingness to act, and two were significantly worse; the res",manuscript.md
+Across five current-generation models run on 1,065 primary-eligible episodes from a real P300 speller, no arm reached lower unfaithful execution than a deterministic gate on the same value at matched coverage, and two were significantly worse; the result was unchanged under a cor",manuscript.md
 3,"In *gemini-3.7-flash*, 54.3 of the 70.0 percentage points of declined episodes ended with no valid tool call rather than an abstention, and in *glm-5.3-flash* 30.3 of 66.4 did.",manuscript.md
-10,"Ten of twelve wordings of an instruction to act carefully produced no detectable change against a no-caution baseline, and the larger of the two that did came from the wording the interface could not support, which is an argument for affording a safety behaviour rather than requesting it.",manuscript.md
+10,"Ten of twelve caution wordings produced no detectable change against a no-caution baseline, and the larger of the two that did came from the wording the interface could not support, which is an argument for affording a safety behaviour rather than requesting it.",manuscript.md
 9,"That comparison withheld the canonical vocabulary from the agent; a post-hoc version supplying the same nine commands could not undercut the resolver's zero risk, while 16 of 30 (arm, model) combinations extended coverage into episodes the resolver cannot reach, cleanly in 10 and at some risk cost i",manuscript.md
 2,"Where the threshold belongs is harder, because a refusal is not free: in the repeated-attempt replay it costs the user another attempt, and enforcement improved tasks completed per attempt in two of five models while making it worse in one.",manuscript.md
 1,"Fifth, all episodes came from one public corpus and one BCI paradigm, restricted to its four amyotrophic lateral sclerosis studies.",manuscript.md
