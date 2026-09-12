@@ -1,4 +1,25 @@
 value,context,found_in,status
+1,"manuscript.md: m control **Authors:** Alon Gorenshtein, MD^1,2,\*^; Mahmud Omar, MD^2,3^; Eric Jia^4^; Yo",cost_envelope.csv:price_in (tol=exact),MATCHED
+2,"manuscript.md: control **Authors:** Alon Gorenshtein, MD^1,2,\*^; Mahmud Omar, MD^2,3^; Eric Jia^4^; Yose",cost_envelope.csv:price_in (tol=exact),MATCHED
+2,"manuscript.md: lon Gorenshtein, MD^1,2,\*^; Mahmud Omar, MD^2,3^; Eric Jia^4^; Yosef Adiniaev^2^; Oved Dan",cost_envelope.csv:price_in (tol=exact),MATCHED
+3,"manuscript.md: n Gorenshtein, MD^1,2,\*^; Mahmud Omar, MD^2,3^; Eric Jia^4^; Yosef Adiniaev^2^; Oved Danie",cost_envelope.csv:price_in (tol=exact),MATCHED
+4,"manuscript.md: , MD^1,2,\*^; Mahmud Omar, MD^2,3^; Eric Jia^4^; Yosef Adiniaev^2^; Oved Daniel, MD^5^; Jon",cost_envelope.csv:price_out (tol=exact),MATCHED
+2,"manuscript.md: d Omar, MD^2,3^; Eric Jia^4^; Yosef Adiniaev^2^; Oved Daniel, MD^5^; Jonathan Kruskal^6^; M",cost_envelope.csv:price_in (tol=exact),MATCHED
+5,"manuscript.md: c Jia^4^; Yosef Adiniaev^2^; Oved Daniel, MD^5^; Jonathan Kruskal^6^; Muneeb Ahmed^6^; Olga",followup_dataset_inventory.csv:models (tol=exact),MATCHED
+6,"manuscript.md: aev^2^; Oved Daniel, MD^5^; Jonathan Kruskal^6^; Muneeb Ahmed^6^; Olga Brook^6^; Eyal Klang",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+6,"manuscript.md: el, MD^5^; Jonathan Kruskal^6^; Muneeb Ahmed^6^; Olga Brook^6^; Eyal Klang, MD^2,6^; Yiftac",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+6,"manuscript.md: than Kruskal^6^; Muneeb Ahmed^6^; Olga Brook^6^; Eyal Klang, MD^2,6^; Yiftach Barash^6^ **",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+2,"manuscript.md: neeb Ahmed^6^; Olga Brook^6^; Eyal Klang, MD^2,6^; Yiftach Barash^6^ **Affiliations:** 1.",cost_envelope.csv:price_in (tol=exact),MATCHED
+6,"manuscript.md: eb Ahmed^6^; Olga Brook^6^; Eyal Klang, MD^2,6^; Yiftach Barash^6^ **Affiliations:** 1. D",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+6,"manuscript.md: rook^6^; Eyal Klang, MD^2,6^; Yiftach Barash^6^ **Affiliations:** 1. Department of Neurol",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+1,"manuscript.md: ^2,6^; Yiftach Barash^6^ **Affiliations:** 1. Department of Neurology, Beth Israel Deacon",cost_envelope.csv:price_in (tol=exact),MATCHED
+2,"manuscript.md: ter, Harvard Medical School, Boston, MA, USA 2. BRIDGE GenAI Lab, Beth Israel Deaconess Med",cost_envelope.csv:price_in (tol=exact),MATCHED
+3,"manuscript.md: el Deaconess Medical Center, Boston, MA, USA 3. The Windreich Department of Artificial Inte",cost_envelope.csv:price_in (tol=exact),MATCHED
+4,"manuscript.md: Health, Mount Sinai Medical Center, NY, USA 4. Northwestern University Feinberg School of",cost_envelope.csv:price_out (tol=exact),MATCHED
+5,"manuscript.md: einberg School of Medicine, Chicago, IL, USA 5. Neurology Division, Tel Aviv Sourasky Unive",followup_dataset_inventory.csv:models (tol=exact),MATCHED
+6,"manuscript.md: University Medical Center, Tel Aviv, Israel 6. Department of Radiology, Beth Israel Deacon",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+330,"manuscript.md: ness Medical Center, Harvard Medical School, 330 Brookline Avenue, Boston, MA 02215, USA. Ema",run_manifest.json.principal_run.model_episode_subsets.anthropic/claude-sonnet-5.n_clean (tol=exact),MATCHED
+02215,"manuscript.md: cal School, 330 Brookline Avenue, Boston, MA 02215, USA. Email: agorensh@bidmc.harvard.edu ##",cost_probe.json.results[1].episodes[2].prompt_tokens (tol=1pct-relative),MATCHED
 "1,065","manuscript.md: d this at the brain-computer interface using 1,065 episodes from 47 people with amyotrophic lat",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
 47,"manuscript.md: computer interface using 1,065 episodes from 47 people with amyotrophic lateral sclerosis an",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
 22,manuscript.md: cantly worse. Apparent safety gains of up to 22 percentage points reflected acting less ofte,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
@@ -372,230 +393,125 @@ $19.46,manuscript.md: sts (400 model-free) across ten models at US $19.46. Every
 10,manuscript.md: ueried between 28 and 31 August and on 9 and 10 September 2026. Three studies follow. A pro,IGNORED: DATE_TOKEN,IGNORED
 2026,manuscript.md: n 28 and 31 August and on 9 and 10 September 2026. Three studies follow. A prospective evalua,IGNORED: DATE_TOKEN,IGNORED
 224,"manuscript.md: died stratum of the same corpus, which holds 224 further participants, would show whether the",,UNMATCHED
-300,manuscript.md: model (LLM) acting on the output of a real P300 brain-computer interface (BCI) speller. No h,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-2,manuscript.md: an agent took in response. The design was a 2 x 3 factorial crossed with a set of referenc,cost_envelope.csv:price_in (tol=exact),MATCHED
-3,manuscript.md: gent took in response. The design was a 2 x 3 factorial crossed with a set of reference ar,cost_envelope.csv:price_in (tol=exact),MATCHED
-12,manuscript.md: hout a multi-turn loop. A caution battery of 12 wordings of an instruction to act carefully,followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
-3,"manuscript.md: ully was included as an exposure factor, and 3 renderings of the same prompt content were i",cost_envelope.csv:price_in (tol=exact),MATCHED
-34,"manuscript.md: a nuisance factor. The full design comprised 34 cells, of which 32 involved an LLM. That enu",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-32,"manuscript.md: The full design comprised 34 cells, of which 32 involved an LLM. That enumeration describes",naturalistic_manifest.json.natural_episodes[32].index (tol=exact),MATCHED
-200,"manuscript.md: non-factorial set of five arms over the same 200 naturalistic episodes, specified under Seman",figure5_naturalistic.csv:n (tol=exact),MATCHED
+300,manuscript.md: model (LLM) acting on the output of a real P300 brain-computer interface (BCI) speller; no h,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+2,"manuscript.md: gent's action in response. The design was a 2 x 3 factorial (uncertainty source: none, sel",cost_envelope.csv:price_in (tol=exact),MATCHED
+3,"manuscript.md: 's action in response. The design was a 2 x 3 factorial (uncertainty source: none, self-co",cost_envelope.csv:price_in (tol=exact),MATCHED
+12,"manuscript.md: e-shot arm without a multi-turn loop, plus a 12-wording caution battery and 3 prompt renderi",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
+3,"manuscript.md: loop, plus a 12-wording caution battery and 3 prompt renderings as an exposure and a nuisa",cost_envelope.csv:price_in (tol=exact),MATCHED
+34,"manuscript.md: a nuisance factor. The full design comprised 34 cells, 32 involving an LLM (eMethods S1, eTa",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+32,"manuscript.md: factor. The full design comprised 34 cells, 32 involving an LLM (eMethods S1, eTable 1b); t",naturalistic_manifest.json.natural_episodes[32].index (tol=exact),MATCHED
+1,"manuscript.md: sed 34 cells, 32 involving an LLM (eMethods S1, eTable 1b); the fair-information comparison",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+1,"manuscript.md: ls, 32 involving an LLM (eMethods S1, eTable 1b); the fair-information comparison below is",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+200,manuscript.md: non-factorial set of five arms over the same 200 naturalistic episodes. ### When a Downstrea,figure5_naturalistic.csv:n (tol=exact),MATCHED
 0,"manuscript.md: ent Can Improve on a Threshold Let $F \in \{0,1\}$ denote whether a candidate action is fa",IGNORED: DEFINED_THRESHOLD,IGNORED
 1,"manuscript.md: t Can Improve on a Threshold Let $F \in \{0,1\}$ denote whether a candidate action is fait",IGNORED: DEFINED_THRESHOLD,IGNORED
-1,"manuscript.md: to the source command, and let $$ p = \Pr(F=1 \mid Z) $$ (1) where $Z$ is the information",cost_envelope.csv:price_in (tol=exact),MATCHED
-1,"manuscript.md: command, and let $$ p = \Pr(F=1 \mid Z) $$ (1) where $Z$ is the information available fro",cost_envelope.csv:price_in (tol=exact),MATCHED
-88.5%,"manuscript.md: same action as the correct one (empirically, 88.5% of error-bearing episodes change the entaile","figure5_naturalistic.csv:coverage (tol=exact, as-fraction-of-percent)",MATCHED
-1,manuscript.md: ange the entailed action; Supplementary Note 1 derives the relationship under a fixed per-e,cost_envelope.csv:price_in (tol=exact),MATCHED
+1,"manuscript.md: to the source command, and let $$ p = \Pr(F=1 \mid Z) $$ (1) where $Z$ is the reconstruct",cost_envelope.csv:price_in (tol=exact),MATCHED
+1,"manuscript.md: command, and let $$ p = \Pr(F=1 \mid Z) $$ (1) where $Z$ is the reconstructed calibrated",cost_envelope.csv:price_in (tol=exact),MATCHED
+88.5%,manuscript.md: ashes to the same action as the correct one (88.5% of error-bearing episodes change the entaile,"figure5_naturalistic.csv:coverage (tol=exact, as-fraction-of-percent)",MATCHED
+1,manuscript.md: nge the entailed action). Supplementary Note 1 shows the reconstructed confidence is a mono,cost_envelope.csv:price_in (tol=exact),MATCHED
 0,"manuscript.md: xecuting an unfaithful action incurs cost $c>0$; declining incurs retry cost $r \geq 0$, qu",IGNORED: PVALUE_OR_THRESHOLD,IGNORED
-0,"manuscript.md: t $c>0$; declining incurs retry cost $r \geq 0$, quantified empirically in the repeated-att",cost_envelope.csv:cached_frac (tol=exact),MATCHED
+0,"manuscript.md: t $c>0$; declining incurs retry cost $r \geq 0$, quantified below. The expected losses are",cost_envelope.csv:cached_frac (tol=exact),MATCHED
 1,"manuscript.md: pected losses are $$ L_{\mathrm{act}}(p) = (1-p)c, \qquad L_{\mathrm{decline}} = r $$ (2)",cost_envelope.csv:price_in (tol=exact),MATCHED
 2,"manuscript.md: (1-p)c, \qquad L_{\mathrm{decline}} = r $$ (2) so the loss-minimising policy admits whene",cost_envelope.csv:price_in (tol=exact),MATCHED
 1,"manuscript.md: the loss-minimising policy admits whenever $(1-p)c \leq r$, equivalently $$ p \geq \tau^{\",cost_envelope.csv:price_in (tol=exact),MATCHED
-1,"manuscript.md: eq r$, equivalently $$ p \geq \tau^{\ast} = 1 - r/c $$ (3) a threshold rule on $p$ alone.",cost_envelope.csv:price_in (tol=exact),MATCHED
-3,manuscript.md: alently $$ p \geq \tau^{\ast} = 1 - r/c $$ (3) a threshold rule on $p$ alone. The determi,IGNORED: DEFINED_THRESHOLD,IGNORED
-1,"manuscript.md: ts fidelity estimate becomes $$ p_H = \Pr(F=1 \mid Z, H) $$ (4) and, with the cost $c$ he",cost_envelope.csv:price_in (tol=exact),MATCHED
-4,"manuscript.md: ate becomes $$ p_H = \Pr(F=1 \mid Z, H) $$ (4) and, with the cost $c$ held fixed across a",cost_envelope.csv:price_out (tol=exact),MATCHED
-1,"manuscript.md: ty that $Z$ does not, that is when $$ \Pr(F=1 \mid Z,H) \neq \Pr(F=1 \mid Z), \quad \text{",cost_envelope.csv:price_in (tol=exact),MATCHED
-1,"manuscript.md: hat is when $$ \Pr(F=1 \mid Z,H) \neq \Pr(F=1 \mid Z), \quad \text{equivalently } I(F;H \m",cost_envelope.csv:price_in (tol=exact),MATCHED
+1,"manuscript.md: eq r$, equivalently $$ p \geq \tau^{\ast} = 1 - r/c $$ (3) a threshold rule on $p$ alone;",cost_envelope.csv:price_in (tol=exact),MATCHED
+3,manuscript.md: alently $$ p \geq \tau^{\ast} = 1 - r/c $$ (3) a threshold rule on $p$ alone; the determi,IGNORED: DEFINED_THRESHOLD,IGNORED
+1,"manuscript.md: information $H$ beyond $Z$, $$ p_H = \Pr(F=1 \mid Z, H) $$ (4) and, with $c$ held fixed,",cost_envelope.csv:price_in (tol=exact),MATCHED
+4,"manuscript.md: beyond $Z$, $$ p_H = \Pr(F=1 \mid Z, H) $$ (4) and, with $c$ held fixed, the agent improv",cost_envelope.csv:price_out (tol=exact),MATCHED
+1,"manuscript.md: fidelity information $Z$ does not: $$ \Pr(F=1 \mid Z,H) \neq \Pr(F=1 \mid Z), \quad \text{",cost_envelope.csv:price_in (tol=exact),MATCHED
+1,"manuscript.md: $ does not: $$ \Pr(F=1 \mid Z,H) \neq \Pr(F=1 \mid Z), \quad \text{equivalently } I(F;H \m",cost_envelope.csv:price_in (tol=exact),MATCHED
 0,"manuscript.md: , \quad \text{equivalently } I(F;H \mid Z) > 0 $$ (5) Holding $c$ fixed is what the primar",IGNORED: PVALUE_OR_THRESHOLD,IGNORED
 5,manuscript.md: d \text{equivalently } I(F;H \mid Z) > 0 $$ (5) Holding $c$ fixed is what the primary outc,followup_dataset_inventory.csv:models (tol=exact),MATCHED
-0,manuscript.md: he threshold policy even when $I(F;H \mid Z)=0$. The severity-aware endpoint reported along,cost_envelope.csv:cached_frac (tol=exact),MATCHED
-5,"manuscript.md: which that route would matter, and equation (5) is the operative condition everywhere else",followup_dataset_inventory.csv:models (tol=exact),MATCHED
-5,"manuscript.md: sult addresses. In the notation of equation (5), the frozen codebook removes the semantic c",followup_dataset_inventory.csv:models (tol=exact),MATCHED
-0,manuscript.md: he manipulation that can make $I(F;H \mid Z)>0$. Whether an agent exploits that channel is,IGNORED: PVALUE_OR_THRESHOLD,IGNORED
-"1,065","manuscript.md: d the same episode set. Four models used all 1,065 primary-eligible episodes in the full-scale",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
-5,manuscript.md: es in the full-scale analyses; Claude Sonnet 5 used its prospectively frozen 500-episode su,followup_dataset_inventory.csv:models (tol=exact),MATCHED
-500,manuscript.md: laude Sonnet 5 used its prospectively frozen 500-episode subset. Where estimates were pooled,efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
-5,manuscript.md: because measured API costs for Claude Sonnet 5 exceeded the prespecified projection; it was,followup_dataset_inventory.csv:models (tol=exact),MATCHED
-1,"manuscript.md: d the run manifest are reported in eMethods S1, where the error-indicator arm appears under",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-34,"manuscript.md: condition, of which the factorial design has 34. A **scaffold** is one of three surface rend",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-12,"manuscript.md: r than on the two factors alone, because the 12 caution cells and the single-shot cell share",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
-3,"manuscript.md: d Cohort Episodes were constructed from bigP3BCI, a public P300 speller corpus. Analyses w",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-300,"manuscript.md: es were constructed from bigP3BCI, a public P300 speller corpus. Analyses were restricted to",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-300,"manuscript.md: dies B, F, L, and N), a population in which P300 speller performance has been characterised r",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-13,"manuscript.md: rformance has been characterised repeatedly;[13,14] the remaining studies were recorded in a",IGNORED: CITATION_MARKER,IGNORED
-14,"manuscript.md: rmance has been characterised repeatedly;[13,14] the remaining studies were recorded in able",IGNORED: CITATION_MARKER,IGNORED
-"3,395","manuscript.md: otrophic lateral sclerosis stratum contained 3,395 online selections from 47 participants acros",calibration_reliability.csv:n (tol=1pct-relative),MATCHED
-47,"manuscript.md: ratum contained 3,395 online selections from 47 participants across 9 sessions, with an over",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
-9,"manuscript.md: nline selections from 47 participants across 9 sessions, with an overall selection accuracy",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
-0.816,"manuscript.md: sions, with an overall selection accuracy of 0.816 and per-participant accuracy ranging from 0.",secondary_caution_battery.csv:unsafe (tol=display-rounding),MATCHED
-0.219,manuscript.md: 16 and per-participant accuracy ranging from 0.219 to 1.000. Episodes were formed by partition,repeated_attempt_replay.csv:e_retries_abstain_hi (tol=display-rounding),MATCHED
-1.000,manuscript.md: r-participant accuracy ranging from 0.219 to 1.000. Episodes were formed by partitioning each,cost_envelope.csv:price_in (tol=exact),MATCHED
-36,manuscript.md: Episodes containing a grid code outside the 36-character alphabet were dropped and counted,followup_task13_confirmation.csv:unfaithful executions (tol=exact),MATCHED
-"1,084","manuscript.md: aceholder character. This produced a pool of 1,084 usable episodes from 47 participants, of whi",episode_calibration.csv:n (tol=exact),MATCHED
-47,"manuscript.md: roduced a pool of 1,084 usable episodes from 47 participants, of which 364 (33.6%) contained",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
-364,"manuscript.md: able episodes from 47 participants, of which 364 (33.6%) contained at least one decoding erro",run_manifest.json.episode_pool.n_error_bearing (tol=exact),MATCHED
-33.6%,"manuscript.md: episodes from 47 participants, of which 364 (33.6%) contained at least one decoding error. Two","primary_abstention_mechanism.csv:coverage (tol=exact, as-fraction-of-percent)",MATCHED
-"1,065","manuscript.md: isode sets were used. The primary set is all 1,065 primary-eligible episodes, meaning the full",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
-19,"manuscript.md: odes, meaning the full usable pool minus the 19 whose calibration fit came from an earlier s",followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
-47,manuscript.md: the pre-specified rule excludes. It contains 47 participants and 363 error-bearing episodes,efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
-363,manuscript.md: le excludes. It contains 47 participants and 363 error-bearing episodes at the pool's own pre,primary_abstention_mechanism.csv:n (tol=exact),MATCHED
-0.341,"manuscript.md: ing episodes at the pool's own prevalence of 0.341, with 286, 351, and 428 episodes entailing t",episode_confidence_per_episode.csv:product (tol=display-rounding),MATCHED
-286,"manuscript.md: at the pool's own prevalence of 0.341, with 286, 351, and 428 episodes entailing tier 1, tie",run_manifest.json.principal_run.episode_set.tier_counts.1 (tol=exact),MATCHED
-351,"manuscript.md: he pool's own prevalence of 0.341, with 286, 351, and 428 episodes entailing tier 1, tier 2,",run_manifest.json.principal_run.episode_set.tier_counts.2 (tol=exact),MATCHED
-428,"manuscript.md: own prevalence of 0.341, with 286, 351, and 428 episodes entailing tier 1, tier 2, and tier",run_manifest.json.principal_run.episode_set.tier_counts.3 (tol=exact),MATCHED
-1,"manuscript.md: th 286, 351, and 428 episodes entailing tier 1, tier 2, and tier 3 actions. A second, explo",IGNORED: TIER_LABEL,IGNORED
-2,"manuscript.md: 351, and 428 episodes entailing tier 1, tier 2, and tier 3 actions. A second, exploratory s",IGNORED: TIER_LABEL,IGNORED
-3,"manuscript.md: episodes entailing tier 1, tier 2, and tier 3 actions. A second, exploratory set of 100 ep",IGNORED: TIER_LABEL,IGNORED
-100,"manuscript.md: tier 3 actions. A second, exploratory set of 100 episodes was drawn earlier with a fixed seed",followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
+0,"manuscript.md: ic cost can improve even when $I(F;H \mid Z)=0$, the setting the severity-aware endpoint ad",cost_envelope.csv:cached_frac (tol=exact),MATCHED
+5,"manuscript.md: ty-aware endpoint addresses, while equation (5) is operative everywhere else. The primary",followup_dataset_inventory.csv:models (tol=exact),MATCHED
+0,"manuscript.md: he manipulation that can make $I(F;H \mid Z)>0$, which the semantic benchmark below tests.",IGNORED: PVALUE_OR_THRESHOLD,IGNORED
+34,manuscript.md: s; a **cell** is one experimental condition (34 in the factorial design); a **scaffold** is,followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+1,"manuscript.md: into the advisory baseline, are in eMethods S1. ### Data Source and Cohort Episodes were",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+3,"manuscript.md: d Cohort Episodes were constructed from bigP3BCI, a public P300 speller corpus, restricted",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+300,"manuscript.md: es were constructed from bigP3BCI, a public P300 speller corpus, restricted to the four studi",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+13,"manuscript.md: lateral sclerosis (Studies B, F, L, and N);[13,14] the remaining studies, in able-bodied pa",IGNORED: CITATION_MARKER,IGNORED
+14,"manuscript.md: teral sclerosis (Studies B, F, L, and N);[13,14] the remaining studies, in able-bodied parti",IGNORED: CITATION_MARKER,IGNORED
+"3,395","manuscript.md: ts, were not analysed. The stratum contained 3,395 online selections from 47 participants acros",calibration_reliability.csv:n (tol=1pct-relative),MATCHED
+47,"manuscript.md: ratum contained 3,395 online selections from 47 participants across 9 sessions, accuracy 0.8",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
+9,"manuscript.md: nline selections from 47 participants across 9 sessions, accuracy 0.816 (per-participant ra",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
+0.816,"manuscript.md: 47 participants across 9 sessions, accuracy 0.816 (per-participant range 0.219-1.000). Episod",secondary_caution_battery.csv:unsafe (tol=display-rounding),MATCHED
+0.219,"manuscript.md: sions, accuracy 0.816 (per-participant range 0.219-1.000). Episodes were formed by partitionin",repeated_attempt_replay.csv:e_retries_abstain_hi (tol=display-rounding),MATCHED
+1.000,manuscript.md: accuracy 0.816 (per-participant range 0.219-1.000). Episodes were formed by partitioning each,cost_envelope.csv:price_in (tol=exact),MATCHED
+"1,084","manuscript.md: odes were dropped and counted. This produced 1,084 usable episodes, 364 (33.6%) with at least o",episode_calibration.csv:n (tol=exact),MATCHED
+364,"manuscript.md: ounted. This produced 1,084 usable episodes, 364 (33.6%) with at least one decoding error. T",run_manifest.json.episode_pool.n_error_bearing (tol=exact),MATCHED
+33.6%,"manuscript.md: d. This produced 1,084 usable episodes, 364 (33.6%) with at least one decoding error. The prim","primary_abstention_mechanism.csv:coverage (tol=exact, as-fraction-of-percent)",MATCHED
+"1,065","manuscript.md: east one decoding error. The primary set is 1,065 primary-eligible episodes (usable pool minus",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
+19,manuscript.md: primary-eligible episodes (usable pool minus 19 whose calibration fit came from an earlier s,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
+0.341,"manuscript.md: a pre-specified exclusion), error prevalence 0.341. A second, exploratory set of 100 episodes w",episode_confidence_per_episode.csv:product (tol=display-rounding),MATCHED
+100,"manuscript.md: evalence 0.341. A second, exploratory set of 100 episodes was drawn earlier, balanced on cons",followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
 49,manuscript.md: balanced on consequence tier and enriched to 49 error-bearing episodes from 42 participants;,followup_task14_repeats.csv:executed (tol=exact),MATCHED
 42,manuscript.md: d enriched to 49 error-bearing episodes from 42 participants; it carries the 34-cell factori,semantic_primary_comparison.csv:n_comparator_episodes_missed (tol=exact),MATCHED
-34,manuscript.md: pisodes from 42 participants; it carries the 34-cell factorial and is identified as explorat,followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-3,manuscript.md: . ### Reconstructed Decoder Confidence bigP3BCI does not record an online posterior. Insp,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-36,manuscript.md: ecord an online posterior. Inspection of the 36 grid-cell channels confirmed that they are b,followup_task13_confirmation.csv:unfaithful executions (tol=exact),MATCHED
-5,manuscript.md: fold predictions were generated with grouped 5-fold cross-validation using participant as t,followup_dataset_inventory.csv:models (tol=exact),MATCHED
-256,"manuscript.md: al across all arms and models, and their SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f1",IGNORED: VERSION_SLUG,IGNORED
-920,"manuscript.md: arms and models, and their SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777e",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-31,"manuscript.md: s and models, and their SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-8355,"manuscript.md: d models, and their SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-38,"manuscript.md: s, and their SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fb",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-0,"manuscript.md: nd their SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-0,"manuscript.md: their SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, i",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-9369,"manuscript.md: eir SHA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is rec",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-7839,"manuscript.md: HA-256 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-10,"manuscript.md: 6 digest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-13,"manuscript.md: igest, `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in th",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-7,"manuscript.md: , `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in the ru",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-777,"manuscript.md: `920e31ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in the run ma",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-415,"manuscript.md: ef8355ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in the run manifest.",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-0,"manuscript.md: 55ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in the run manifest.",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-667,"manuscript.md: ddc38de0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in the run manifest. Each",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-7,"manuscript.md: e0da0e9369d7839f10f13ccd7c777efbd415d0e667fbf7`, is recorded in the run manifest. Each dec",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-256,"manuscript.md: ecified frozen codebook, computed as the SHA-256 of a salted string modulo nine over a dense",IGNORED: VERSION_SLUG,IGNORED
-36,manuscript.md: of a salted string modulo nine over a dense 36-character alphabet. The nine actions spanned,followup_task13_confirmation.csv:unfaithful executions (tol=exact),MATCHED
-1,"manuscript.md: ctions spanned three consequence tiers: tier 1 comprised `save_note`, `play_media`, and `se",IGNORED: TIER_LABEL,IGNORED
-2,"manuscript.md: e_note`, `play_media`, and `set_light`; tier 2 comprised `send_message`, `place_call`, and",IGNORED: TIER_LABEL,IGNORED
-3,"manuscript.md: sage`, `place_call`, and `post_update`; tier 3 comprised `summon_staff`, `record_refusal`,",IGNORED: TIER_LABEL,IGNORED
-88.5%,"manuscript.md: and `record_consent`. On the analysed pool, 88.5% of error-bearing episodes entailed a differe","figure5_naturalistic.csv:coverage (tol=exact, as-fraction-of-percent)",MATCHED
-94,"manuscript.md: ree episode changed its entailed action, and 94 error-bearing episodes entailed an unrequest",naturalistic_manifest.json.natural_episodes[94].index (tol=exact),MATCHED
-3,manuscript.md: earing episodes entailed an unrequested tier 3 action. Ground truth was transmission fidel,IGNORED: TIER_LABEL,IGNORED
-28,manuscript.md: e queried through the OpenRouter API between 28 and 31 August 2026 for the six pre-specified,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
-31,manuscript.md: ed through the OpenRouter API between 28 and 31 August 2026 for the six pre-specified datase,IGNORED: DATE_TOKEN,IGNORED
-2026,manuscript.md: the OpenRouter API between 28 and 31 August 2026 for the six pre-specified datasets: `openai/,IGNORED: DATE_TOKEN,IGNORED
-5.6,"manuscript.md: the six pre-specified datasets: `openai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, `google/",IGNORED: VERSION_SLUG,IGNORED
+34,manuscript.md: pisodes from 42 participants; it carries the 34-cell factorial and is labelled exploratory t,followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+1,manuscript.md: throughout. Full accounting is in eMethods S1 and eTable 1a. ### Reconstructed Decoder Co,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+1,manuscript.md: Full accounting is in eMethods S1 and eTable 1a. ### Reconstructed Decoder Confidence big,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+3,manuscript.md: . ### Reconstructed Decoder Confidence bigP3BCI does not record an online posterior; the,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+36,manuscript.md: BCI does not record an online posterior; the 36 grid-cell channels are binary stimulus-flash,followup_task13_confirmation.csv:unfaithful executions (tol=exact),MATCHED
+5,manuscript.md: n using out-of-fold predictions from grouped 5-fold cross-validation (participant as the gr,followup_dataset_inventory.csv:models (tol=exact),MATCHED
+4,"manuscript.md: ull calibration diagnostics are in eMethods S4. ### Agent, Tools, and Ground Truth The ac",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+256,manuscript.md: ll arms and models; full schemas and the SHA-256-derived codebook are in eMethods S3. Ground,IGNORED: VERSION_SLUG,IGNORED
+3,"manuscript.md: he SHA-256-derived codebook are in eMethods S3. Ground truth was transmission fidelity, no",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+28,"manuscript.md: dels were queried through OpenRouter between 28 and 31 August 2026, one per vendor: `openai/",followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
+31,"manuscript.md: re queried through OpenRouter between 28 and 31 August 2026, one per vendor: `openai/gpt-5.6",IGNORED: DATE_TOKEN,IGNORED
+2026,"manuscript.md: through OpenRouter between 28 and 31 August 2026, one per vendor: `openai/gpt-5.6-luna`, `ant",IGNORED: DATE_TOKEN,IGNORED
+5.6,"manuscript.md: 31 August 2026, one per vendor: `openai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, `google/",IGNORED: VERSION_SLUG,IGNORED
 5,"manuscript.md: enai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, `google/gemini-3.7-flash`, `z-ai/glm-5.3-f",IGNORED: VERSION_SLUG,IGNORED
 3.7,"manuscript.md: `anthropic/claude-sonnet-5`, `google/gemini-3.7-flash`, `z-ai/glm-5.3-flash`, and `deepseek/",IGNORED: VERSION_SLUG,IGNORED
-5.3,"manuscript.md: net-5`, `google/gemini-3.7-flash`, `z-ai/glm-5.3-flash`, and `deepseek/deepseek-v4-flash`. On",IGNORED: VERSION_SLUG,IGNORED
-4,"manuscript.md: z-ai/glm-5.3-flash`, and `deepseek/deepseek-v4-flash`. One model was selected per vendor. T",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-32,"manuscript.md: every model represented in that dataset, the 32 LLM cells of the exploratory set and the 4 m",naturalistic_manifest.json.natural_episodes[32].index (tol=exact),MATCHED
-4,manuscript.md: 32 LLM cells of the exploratory set and the 4 model-bearing cells of the primary set; the,cost_envelope.csv:price_out (tol=exact),MATCHED
-5.6,manuscript.md: `digitalocean` respectively. For `openai/gpt-5.6-luna` the pin was set explicitly to `openai`,IGNORED: VERSION_SLUG,IGNORED
-"141,879","manuscript.md: ccount too severely to complete the run. All 141,879 requests across those six datasets were serv",followup_dataset_inventory.csv:API requests (tol=exact),MATCHED
-0.7,"manuscript.md: transmitted explicitly on every request, at 0.7, 1.0, and 512 respectively. Each request car",episode_confidence_per_episode.csv:min (tol=exact),MATCHED
-1.0,"manuscript.md: smitted explicitly on every request, at 0.7, 1.0, and 512 respectively. Each request carried",cost_envelope.csv:price_in (tol=exact),MATCHED
-512,"manuscript.md: xplicitly on every request, at 0.7, 1.0, and 512 respectively. Each request carried a 120-sec",cost_probe.json.max_tokens (tol=exact),MATCHED
-120,"manuscript.md: and 512 respectively. Each request carried a 120-second timeout, and requests to `openai/gpt-",semantic_fair_resolver_curves.csv:n_covered (tol=exact),MATCHED
-5.6,"manuscript.md: -second timeout, and requests to `openai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, and `goo",IGNORED: VERSION_SLUG,IGNORED
-5,"manuscript.md: enai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, and `google/gemini-3.7-flash` were paced b",IGNORED: VERSION_SLUG,IGNORED
-3.7,"manuscript.md: thropic/claude-sonnet-5`, and `google/gemini-3.7-flash` were paced by a shared token bucket a",IGNORED: VERSION_SLUG,IGNORED
-18,manuscript.md: lash` were paced by a shared token bucket at 18 requests per minute to stay inside an accoun,followup_task13_confirmation.csv:unfaithful executions (tol=exact),MATCHED
-12,manuscript.md: ism is made. Verbatim system prompts for all 12 caution wordings and all 3 scaffolds are rep,followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
-3,"manuscript.md: prompts for all 12 caution wordings and all 3 scaffolds are reproduced in eMethods S2, and",cost_envelope.csv:price_in (tol=exact),MATCHED
-2,"manuscript.md: all 3 scaffolds are reproduced in eMethods S2, and their SHA-256 digest is recorded in the",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-256,"manuscript.md: are reproduced in eMethods S2, and their SHA-256 digest is recorded in the manifest. Transie",IGNORED: VERSION_SLUG,IGNORED
-30,"manuscript.md: with jittered exponential backoff, capped at 30 seconds and honouring any server-supplied `R",naturalistic_manifest.json.natural_episodes[30].index (tol=exact),MATCHED
-8,"manuscript.md: server-supplied `Retry-After` header, up to 8 retries. The retried classes were HTTP 408,",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
-408,"manuscript.md: to 8 retries. The retried classes were HTTP 408, 409, 429 and the 5xx family; connection err",,UNMATCHED
-409,"manuscript.md: retries. The retried classes were HTTP 408, 409, 429 and the 5xx family; connection errors,",cost_envelope.csv:usd_out (tol=1pct-relative),MATCHED
-429,"manuscript.md: ies. The retried classes were HTTP 408, 409, 429 and the 5xx family; connection errors, read",run_manifest.json.principal_run.episode_set.tier_counts.3 (tol=2x-display-rounding),MATCHED
-5,"manuscript.md: ried classes were HTTP 408, 409, 429 and the 5xx family; connection errors, read timeouts,",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-"8,098","manuscript.md: and was never retried. In the analysed data 8,098 retry attempts were made across 141,879 requ",followup_dataset_inventory.csv:retry attempts (tol=exact),MATCHED
-"141,879","manuscript.md: d data 8,098 retry attempts were made across 141,879 requests, and 3,656 of 50,230 episode runs (",followup_dataset_inventory.csv:API requests (tol=exact),MATCHED
-"3,656","manuscript.md: empts were made across 141,879 requests, and 3,656 of 50,230 episode runs (7.3%) recorded at le",followup_dataset_inventory.csv:episode runs with at least one retry (tol=exact),MATCHED
-"50,230","manuscript.md: e made across 141,879 requests, and 3,656 of 50,230 episode runs (7.3%) recorded at least one re",followup_dataset_inventory.csv:episode runs (tol=exact),MATCHED
-7.3%,"manuscript.md: requests, and 3,656 of 50,230 episode runs (7.3%) recorded at least one retry. The number of","repeated_attempt_replay.csv:e_retries_abstain_lo (tol=display-rounding, as-fraction-of-percent)",MATCHED
-1,"manuscript.md: de; this experiment is not part of eMethods S1, which enumerates only the six pre-specified",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-200,"manuscript.md: e six pre-specified datasets. It reused the 200 naturalistic episodes verbatim, at their rea",figure5_naturalistic.csv:n (tol=exact),MATCHED
-0.34,"manuscript.md: their realized decoding-error prevalence of 0.34 (68 of 200 error-bearing), rather than drawi",figure5_naturalistic.csv:err_prevalence (tol=exact),MATCHED
-68,"manuscript.md: realized decoding-error prevalence of 0.34 (68 of 200 error-bearing), rather than drawing a",followup_task13_confirmation.csv:executed (tol=exact),MATCHED
-200,"manuscript.md: zed decoding-error prevalence of 0.34 (68 of 200 error-bearing), rather than drawing a fresh",figure5_naturalistic.csv:n (tol=exact),MATCHED
-9,"manuscript.md: t a new benchmark. The arms were executed on 9 and 10 September 2026, producing 6,400 episo",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
-10,"manuscript.md: w benchmark. The arms were executed on 9 and 10 September 2026, producing 6,400 episode runs",IGNORED: DATE_TOKEN,IGNORED
-2026,"manuscript.md: The arms were executed on 9 and 10 September 2026, producing 6,400 episode runs and 14,336 too",IGNORED: DATE_TOKEN,IGNORED
-"6,400","manuscript.md: ecuted on 9 and 10 September 2026, producing 6,400 episode runs and 14,336 tool-calling request",semantic_fair_dataset_inventory.csv:episode runs (tol=exact),MATCHED
-"14,336","manuscript.md: ember 2026, producing 6,400 episode runs and 14,336 tool-calling requests at a measured cost of",semantic_fair_dataset_inventory.csv:API requests (tol=exact),MATCHED
-$19.46,manuscript.md: ol-calling requests at a measured cost of US $19.46. Every request was served by its pinned prov,semantic_fair_dataset_inventory.csv:measured cost (US $) (tol=exact),MATCHED
-4.6,"manuscript.md: on the primary benchmark's five: `x-ai/grok-4.6`, `qwen/qwen3.8-max-0902`, `moonshotai/kimi-",IGNORED: VERSION_SLUG,IGNORED
-3.8,"manuscript.md: benchmark's five: `x-ai/grok-4.6`, `qwen/qwen3.8-max-0902`, `moonshotai/kimi-k3`, `nvidia/nem",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-0902,"manuscript.md: k's five: `x-ai/grok-4.6`, `qwen/qwen3.8-max-0902`, `moonshotai/kimi-k3`, `nvidia/nemotron-3.5",IGNORED: VERSION_SLUG,IGNORED
-3,"manuscript.md: , `qwen/qwen3.8-max-0902`, `moonshotai/kimi-k3`, `nvidia/nemotron-3.5-lightning`, and `mist",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-3.5,"manuscript.md: 902`, `moonshotai/kimi-k3`, `nvidia/nemotron-3.5-lightning`, and `mistralai/mistral-medium-3-",IGNORED: VERSION_SLUG,IGNORED
-3,"manuscript.md: .5-lightning`, and `mistralai/mistral-medium-3-5`, pinned to the `xai`, `alibaba`, `alibaba",IGNORED: VERSION_SLUG,IGNORED
-5,"manuscript.md: -lightning`, and `mistralai/mistral-medium-3-5`, pinned to the `xai`, `alibaba`, `alibaba`,",IGNORED: VERSION_SLUG,IGNORED
-16,"manuscript.md: he `xai`, `alibaba`, `alibaba`, `deepinfra/bf16`, and `mistral` endpoints respectively. Endp",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-101,manuscript.md: posals were recorded once and swept across a 101-point threshold grid downstream. `fair:hybri,naturalistic_manifest.json.natural_episodes[101].index (tol=exact),MATCHED
-1,manuscript.md: y the relation derived in Supplementary Note 1 orders episodes approximately the same way $,cost_envelope.csv:price_in (tol=exact),MATCHED
+5.3,"manuscript.md: net-5`, `google/gemini-3.7-flash`, `z-ai/glm-5.3-flash`, and `deepseek/deepseek-v4-flash`. Th",IGNORED: VERSION_SLUG,IGNORED
+4,"manuscript.md: z-ai/glm-5.3-flash`, and `deepseek/deepseek-v4-flash`. The fair-information comparison belo",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+5,manuscript.md: nder the same rule. `anthropic/claude-sonnet-5` ran a frozen 500-episode subset of the prim,IGNORED: VERSION_SLUG,IGNORED
+500,manuscript.md: le. `anthropic/claude-sonnet-5` ran a frozen 500-episode subset of the primary pool rather th,efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
+"1,065","manuscript.md: e subset of the primary pool rather than all 1,065, because its measured cost exceeded the pres",efigure2_recalibration_paired.csv:n_shared_episodes (tol=exact),MATCHED
+1,"manuscript.md: ls, with full subset provenance in eMethods S1. Every request pinned a single provider end",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+0.7,"manuscript.md: and max_tokens were transmitted explicitly (0.7, 1.0, 512). Each episode was run once per ce",episode_confidence_per_episode.csv:min (tol=exact),MATCHED
+1.0,"manuscript.md: max_tokens were transmitted explicitly (0.7, 1.0, 512). Each episode was run once per cell pe",cost_envelope.csv:price_in (tol=exact),MATCHED
+512,"manuscript.md: okens were transmitted explicitly (0.7, 1.0, 512). Each episode was run once per cell per mod",cost_probe.json.max_tokens (tol=exact),MATCHED
+"141,879","manuscript.md: er, and no claim of determinism is made. All 141,879 requests were served by the pinned provider;",followup_dataset_inventory.csv:API requests (tol=exact),MATCHED
+1,"manuscript.md: counts, and prompt digests are in eMethods S1, S5, and S2. ### Semantic Fair-Information",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+5,"manuscript.md: nts, and prompt digests are in eMethods S1, S5, and S2. ### Semantic Fair-Information Comp",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+2,"manuscript.md: prompt digests are in eMethods S1, S5, and S2. ### Semantic Fair-Information Comparison",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+200,manuscript.md: threshold could not also use. It reused the 200 naturalistic episodes at their realized 0.34,figure5_naturalistic.csv:n (tol=exact),MATCHED
+0.34,"manuscript.md: 200 naturalistic episodes at their realized 0.34 error prevalence, producing 6,400 episode ru",figure5_naturalistic.csv:err_prevalence (tol=exact),MATCHED
+"6,400","manuscript.md: ir realized 0.34 error prevalence, producing 6,400 episode runs (US $19.46) across a panel wide",semantic_fair_dataset_inventory.csv:episode runs (tol=exact),MATCHED
+$19.46,"manuscript.md: prevalence, producing 6,400 episode runs (US $19.46) across a panel widened from five models to",semantic_fair_dataset_inventory.csv:measured cost (US $) (tol=exact),MATCHED
+11,"manuscript.md: , endpoints, and run totals are in eMethods S11. Three arms carried a language model: `fair",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+1,"manuscript.md: ximately as $p$ does, per Supplementary Note 1), and $\tau$ for that threshold, the hybrid",cost_envelope.csv:price_in (tol=exact),MATCHED
 6,"manuscript.md: \\ \varnothing, & s < \tau, \end{cases} $$ (6) the same threshold rule as equation (3), n",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-3,"manuscript.md: $$ (6) the same threshold rule as equation (3), now admitting a semantic correction rather",IGNORED: DEFINED_THRESHOLD,IGNORED
-5,manuscript.md: ecture separates the two functions equation (5) shows an agent can legitimately contribute:,followup_dataset_inventory.csv:models (tol=exact),MATCHED
-3,"manuscript.md: ion outside the model. This reuses equation (3)'s threshold FORM, not its optimality proof:",IGNORED: DEFINED_THRESHOLD,IGNORED
-6,"manuscript.md: s below test empirically, not what equation (6) assumes. Results below report how often thi",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-2,manuscript.md: lexical resolution at a maximum distance of 2 paired with that same gate. Both were comput,cost_envelope.csv:price_in (tol=exact),MATCHED
-6,manuscript.md: ### Agent Harness The loop ran for at most 6 turns. Each turn submitted the conversation,followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-512,"manuscript.md: ts were not valid JSON. Since max_tokens was 512, a response truncated before it emitted a to",cost_probe.json.max_tokens (tol=exact),MATCHED
-0,manuscript.md: ence that it had understood the message on a 0 to 1 scale. The stated value was never read,cost_envelope.csv:cached_frac (tol=exact),MATCHED
-1,"manuscript.md: that it had understood the message on a 0 to 1 scale. The stated value was never read back,",cost_envelope.csv:price_in (tol=exact),MATCHED
-28,manuscript.md: he live OpenRouter model list as it stood on 28 August 2026. One current-generation model wa,IGNORED: DATE_TOKEN,IGNORED
-2026,manuscript.md: enRouter model list as it stood on 28 August 2026. One current-generation model was taken per,IGNORED: DATE_TOKEN,IGNORED
-3,manuscript.md: defined as execution of an unrequested tier 3 action. Coverage was the proportion of episo,IGNORED: TIER_LABEL,IGNORED
+3,"manuscript.md: $$ (6) the same threshold rule as equation (3), now admitting a semantic correction: $h_{\",IGNORED: DEFINED_THRESHOLD,IGNORED
+5,"manuscript.md: eta}$ supplies the information $H$ equation (5) shows an agent can legitimately contribute,",followup_dataset_inventory.csv:models (tol=exact),MATCHED
+3,"manuscript.md: ion outside the model. This reuses equation (3)'s threshold FORM, not its optimality proof,",IGNORED: DEFINED_THRESHOLD,IGNORED
+2,"manuscript.md: ate` (edit-distance resolution, max distance 2), paired with the same gate. The lexical res",cost_envelope.csv:price_in (tol=exact),MATCHED
+11,manuscript.md: ation-symmetric; full detail is in eMethods S11. ### Agent Harness The loop ran for at mos,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+6,"manuscript.md: ### Agent Harness The loop ran for at most 6 turns, terminating when the model called `ex",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+3,"manuscript.md: n, parsing, and retry rules are in eMethods S3. ### Self-Confidence Elicitation Under adv",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+0,"manuscript.md: s confidence that it understood the message, 0 to 1; the value was never read back, calibra",cost_envelope.csv:cached_frac (tol=exact),MATCHED
+1,"manuscript.md: fidence that it understood the message, 0 to 1; the value was never read back, calibrated,",cost_envelope.csv:price_in (tol=exact),MATCHED
+28,manuscript.md: he live OpenRouter model list as it stood on 28 August 2026: one current-generation model pe,IGNORED: DATE_TOKEN,IGNORED
+2026,"manuscript.md: enRouter model list as it stood on 28 August 2026: one current-generation model per vendor, ch",IGNORED: DATE_TOKEN,IGNORED
+3,"manuscript.md: e endpoint, execution of an unrequested tier 3 action. Coverage was the proportion of episo",IGNORED: TIER_LABEL,IGNORED
 0,"manuscript.md: ) = \Pr(s \geq \tau), \qquad R(\tau) = \Pr(F=0 \mid s \geq \tau) $$ (7) and two policies a",cost_envelope.csv:cached_frac (tol=exact),MATCHED
 7,manuscript.md: quad R(\tau) = \Pr(F=0 \mid s \geq \tau) $$ (7) and two policies are compared at matched c,followup_semantic_fair_cells.csv:n_beyond_comparator (tol=exact),MATCHED
 8,manuscript.md: mathrm{agent}}(C) - R_{\mathrm{gate}}(C) $$ (8) where $\Delta R(C) < 0$ indicates the agen,followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
 0,manuscript.md: athrm{gate}}(C) $$ (8) where $\Delta R(C) < 0$ indicates the agent improved on determinist,IGNORED: PVALUE_OR_THRESHOLD,IGNORED
-0,"manuscript.md: this comparison as a single fixed point $(C_0, R_0)$ tested for dominance against the gate",cost_envelope.csv:cached_frac (tol=exact),MATCHED
-0,"manuscript.md: comparison as a single fixed point $(C_0, R_0)$ tested for dominance against the gate's fu",cost_envelope.csv:cached_frac (tol=exact),MATCHED
-0,"manuscript.md: ce against the gate's full swept curve at $C_0$, rather than as a function of $\tau$, becau",cost_envelope.csv:cached_frac (tol=exact),MATCHED
-0.10,manuscript.md: risk-coverage curve with a coverage floor of 0.10; the floor is stated because risk is undefin,IGNORED: DEFINED_THRESHOLD,IGNORED
-95%,manuscript.md: -execution proportions and are reported with 95% confidence intervals from a participant-clus,semantic_fair_resolver_curves.csv:n_covered (tol=exact),MATCHED
-"2,000","manuscript.md: from a participant-clustered bootstrap with 2,000 resamples; the seed was 20260828. Every betw",IGNORED: DATE_TOKEN,IGNORED
-20260828,"manuscript.md: bootstrap with 2,000 resamples; the seed was 20260828. Every between-arm contrast uses one joint p",run_manifest.json.seed (tol=exact),MATCHED
-47,"manuscript.md: roughout because episodes are contributed by 47 participants in the primary set, and 42 in t",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
-42,"manuscript.md: d by 47 participants in the primary set, and 42 in the exploratory set, and are not independ",semantic_primary_comparison.csv:n_comparator_episodes_missed (tol=exact),MATCHED
-12,"manuscript.md: -model uncertainty-source contrasts, and the 12-wording caution battery. Statistical signifi",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
-.05,manuscript.md: Statistical significance threshold was *P* < .05. A cell whose parse-failure rate exceeded 1,IGNORED: PVALUE_OR_THRESHOLD,IGNORED
-15%,manuscript.md: 5. A cell whose parse-failure rate exceeded 15% is labelled under a rule fixed before the ru,cost_envelope.csv:price_out (tol=exact),MATCHED
-4,"manuscript.md: d cells are enumerated in Results and eTable 4, and the parse-failure sensitivity sweep rep",IGNORED: SECTION_LABEL,IGNORED
-3.11,"manuscript.md: removed. Analyses were performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.1",IGNORED: PACKAGE_VERSION,IGNORED
-.14,"manuscript.md: oved. Analyses were performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1",semantic_fair_resolver_curves.csv:threshold (tol=exact),MATCHED
-2.4,"manuscript.md: were performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn",IGNORED: PACKAGE_VERSION,IGNORED
-.6,"manuscript.md: re performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.",episode_confidence_per_episode.csv:min (tol=exact),MATCHED
-3.0,"manuscript.md: d in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyA",IGNORED: PACKAGE_VERSION,IGNORED
-.5,"manuscript.md: n Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArr",cost_envelope.csv:price_in (tol=exact),MATCHED
-1.17,"manuscript.md: .11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow. Figures",IGNORED: PACKAGE_VERSION,IGNORED
-.1,"manuscript.md: 14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow. Figures we",efigure2_recalibration_paired.csv:parse_failure (tol=exact),MATCHED
-1.9,"manuscript.md: .6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow. Figures were produced with M",IGNORED: PACKAGE_VERSION,IGNORED
-.0,"manuscript.md: pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow. Figures were produced with Mat",cost_envelope.csv:cached_frac (tol=exact),MATCHED
-3.9,"manuscript.md: ecomputed under a second interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13",IGNORED: PACKAGE_VERSION,IGNORED
-.6,"manuscript.md: mputed under a second interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1",episode_confidence_per_episode.csv:min (tol=exact),MATCHED
-2.0,"manuscript.md: second interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-le",IGNORED: PACKAGE_VERSION,IGNORED
-.2,"manuscript.md: cond interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-lear",episode_confidence_per_episode.csv:isotonic_episode (tol=exact),MATCHED
-2.3,"manuscript.md: reter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and",IGNORED: PACKAGE_VERSION,IGNORED
-.3,"manuscript.md: er, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and t",episode_confidence_per_episode.csv:isotonic_episode (tol=exact),MATCHED
-1.13,"manuscript.md: 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary,",IGNORED: PACKAGE_VERSION,IGNORED
-.1,"manuscript.md: .6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary, ma",efigure2_recalibration_paired.csv:parse_failure (tol=exact),MATCHED
-1.6,"manuscript.md: pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary, matched-coverage, contra",IGNORED: PACKAGE_VERSION,IGNORED
-.1,"manuscript.md: das 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary, matched-coverage, contrast",efigure2_recalibration_paired.csv:parse_failure (tol=exact),MATCHED
-4,"manuscript.md: it. The calibration diagnostics do: eTables S4a and S4c, eFigure 1 and eFigure 4 are comput",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-4,"manuscript.md: calibration diagnostics do: eTables S4a and S4c, eFigure 1 and eFigure 4 are computed out o",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-1,"manuscript.md: diagnostics do: eTables S4a and S4c, eFigure 1 and eFigure 4 are computed out of fold, and",IGNORED: SECTION_LABEL,IGNORED
-4,"manuscript.md: : eTables S4a and S4c, eFigure 1 and eFigure 4 are computed out of fold, and because GroupK",IGNORED: SECTION_LABEL,IGNORED
-0.005,"manuscript.md: ir expected calibration errors move by up to 0.005, the largest being the product rule's episod",figure5_naturalistic.csv:parse_failure (tol=exact),MATCHED
-0.080,manuscript.md: ng the product rule's episode-level value at 0.080 against 0.076. The values reported throughou,figure5_naturalistic.csv:parse_failure (tol=exact),MATCHED
-0.076,manuscript.md: rule's episode-level value at 0.080 against 0.076. The values reported throughout are those of,repeated_attempt_replay.csv:e_retries_abstain_lo (tol=display-rounding),MATCHED
-200,manuscript.md: tempt. To quantify that cost we replayed the 200 naturalistic episodes as repeated-attempt ta,figure5_naturalistic.csv:n (tol=exact),MATCHED
-"2,000","manuscript.md: me from a participant-cluster bootstrap with 2,000 resamples, seed 20260901, taking one joint p",IGNORED: DATE_TOKEN,IGNORED
-20260901,"manuscript.md: cluster bootstrap with 2,000 resamples, seed 20260901, taking one joint participant draw per repli",naturalistic_manifest.json.draw.seed (tol=1pct-relative),MATCHED
-"20,000","manuscript.md: cate and applying it to every policy. Across 20,000 such draws no replicate lost any of the nine",,UNMATCHED
-16,"manuscript.md: the nine commands, each being contributed by 16 to 20 of the 46 participants, so the estiman",number_audit_enumeration_claims.csv:stated_count (tol=exact),MATCHED
-20,"manuscript.md: ne commands, each being contributed by 16 to 20 of the 46 participants, so the estimand does",followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
-46,"manuscript.md: s, each being contributed by 16 to 20 of the 46 participants, so the estimand does not vary",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
-200,"manuscript.md: crease the neural sample size, which remains 200 episodes from 46 participants. All seventeen",figure5_naturalistic.csv:n (tol=exact),MATCHED
-46,"manuscript.md: sample size, which remains 200 episodes from 46 participants. All seventeen policies, both d",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
-10,"manuscript.md: against parse failure are reported in eTable 10. This is a system-level replay analysis, no",IGNORED: SECTION_LABEL,IGNORED
-16,manuscript.md: the data force: a command is contributed by 16 to 20 participants but only 6 of 155 partici,number_audit_enumeration_claims.csv:stated_count (tol=exact),MATCHED
-20,manuscript.md: ata force: a command is contributed by 16 to 20 participants but only 6 of 155 participant-b,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
-6,manuscript.md: ontributed by 16 to 20 participants but only 6 of 155 participant-by-command pairs hold the,followup_dataset_inventory.csv:cells (tol=exact),MATCHED
-155,manuscript.md: buted by 16 to 20 participants but only 6 of 155 participant-by-command pairs hold the three,naturalistic_manifest.json.natural_episodes[155].index (tol=exact),MATCHED
+0.10,manuscript.md: arised by the area above a coverage floor of 0.10 over the shared support. Secondary outcomes,IGNORED: DEFINED_THRESHOLD,IGNORED
+6,manuscript.md: alibration. Full procedures are in eMethods S6. ### Statistical Analysis Primary analyses,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+95%,"manuscript.md: es in unfaithful-execution proportions, with 95% confidence intervals from a participant-clus",semantic_fair_resolver_curves.csv:n_covered (tol=exact),MATCHED
+"2,000","manuscript.md: vals from a participant-clustered bootstrap (2,000 resamples, seed 20260828), each replicate dr",IGNORED: DATE_TOKEN,IGNORED
+20260828,"manuscript.md: t-clustered bootstrap (2,000 resamples, seed 20260828), each replicate drawing one joint participa",run_manifest.json.seed (tol=exact),MATCHED
+47,"manuscript.md: lustering on participant applied throughout (47 primary, 42 exploratory participants). Risk",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
+42,"manuscript.md: participant applied throughout (47 primary, 42 exploratory participants). Risk ratios use t",semantic_primary_comparison.csv:n_comparator_episodes_missed (tol=exact),MATCHED
+12,manuscript.md: r-model uncertainty-source contrasts and the 12-wording caution battery. Significance thresh,followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
+.05,manuscript.md: on battery. Significance threshold was *P* < .05. A cell whose parse-failure rate exceeded 1,IGNORED: PVALUE_OR_THRESHOLD,IGNORED
+15%,"manuscript.md: 5. A cell whose parse-failure rate exceeded 15%, fixed before the runs, is labelled rather t",cost_envelope.csv:price_out (tol=exact),MATCHED
+4,"manuscript.md: in; labelled cells are in Results and eTable 4, with a sensitivity sweep removing them prog",IGNORED: SECTION_LABEL,IGNORED
+6,manuscript.md: reter reproducibility check are in eMethods S6. ### Repeated-Attempt Empirical Replay The,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+200,"manuscript.md: st attempt again. To quantify that cost, the 200 naturalistic episodes were replayed as repea",figure5_naturalistic.csv:n (tol=exact),MATCHED
+10,"manuscript.md: w tree. All seventeen policies are in eTable 10. This is a system-level replay, not validat",IGNORED: SECTION_LABEL,IGNORED
+10,manuscript.md: pant-specific. Full methodology is in eTable 10's methods note. ### Standard Protocol Appro,IGNORED: SECTION_LABEL,IGNORED
 256,"manuscript.md: schemas, and action codebook with their SHA-256 digests, are available at https://github.com",IGNORED: VERSION_SLUG,IGNORED
 1,"manuscript.md: -Lab/AI-Agents-in-BCIs. --- ## References 1. Farwell LA, Donchin E. Talking off the top",IGNORED: REFERENCES_SECTION,IGNORED
 1988,manuscript.md: als. *Electroencephalogr Clin Neurophysiol*. 1988;70(6):510-523. doi:10.1016/0013-4694(88)9014,IGNORED: REFERENCES_SECTION,IGNORED
@@ -847,6 +763,7 @@ $19.46,manuscript.md: ol-calling requests at a measured cost of US $19.46. Every
 2,supplement.md: ecoder_confidence}:{advisory|enforced}:s{0|1|2}`). Twelve were the caution-wording battery,cost_envelope.csv:price_in (tol=exact),MATCHED
 0,"supplement.md: were the caution-wording battery (`caution:w0` through `caution:w11`), each a single wordi",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 11,"supplement.md: ding battery (`caution:w0` through `caution:w11`), each a single wording added to the no-unc",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+12,"supplement.md: r than on the two factors alone, because the 12 caution cells and the single-shot cell share",followup_semantic_fair_cells.csv:n_unfaithful (tol=exact),MATCHED
 20260828,"supplement.md: run_manifest.json`) records the random seed (20260828), the complete cell list below, the frozen e",run_manifest.json.seed (tol=exact),MATCHED
 256,"supplement.md: costs, the human-set budget ceiling, and SHA-256 digests of the action codebook (`c6637ec6...",IGNORED: VERSION_SLUG,IGNORED
 6637,"supplement.md: nd SHA-256 digests of the action codebook (`c6637ec6...`), the tool schemas (`920e31ef...`), a",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
@@ -1235,6 +1152,8 @@ $86.62,supplement.md: ol-calling requests at a measured cost of US $86.62. Every
 1,"supplement.md: ctions spanned three consequence tiers: tier 1 (`save_note`, `play_media`, `set_light`), ti",IGNORED: TIER_LABEL,IGNORED
 2,"supplement.md: save_note`, `play_media`, `set_light`), tier 2 (`send_message`, `place_call`, `post_update`",IGNORED: TIER_LABEL,IGNORED
 3,"supplement.md: message`, `place_call`, `post_update`), tier 3 (`summon_staff`, `record_refusal`, `record_c",IGNORED: TIER_LABEL,IGNORED
+6,"supplement.md: hout acting. The agent loop ran for at most 6 turns, terminating when the model called `ex",followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+512,"supplement.md: ts were not valid JSON; since max_tokens was 512, a response truncated before it emitted a to",cost_probe.json.max_tokens (tol=exact),MATCHED
 1,"supplement.md: d was offered in exactly one cell, `caution:w1+confirmation` (eMethods S9). It is reachable",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 9,"supplement.md: e cell, `caution:w1+confirmation` (eMethods S9). It is reachable only through `nag.tools.to",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 95,"supplement.md: . The five-tool surface has its own digest, `95b5414c...`: ```json [ { ""type"": ""funct",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
@@ -1360,8 +1279,35 @@ $86.62,supplement.md: ol-calling requests at a measured cost of US $86.62. Every
 0.10,supplement.md: urve were computed above a coverage floor of 0.10 and over the common support shared by every,IGNORED: DEFINED_THRESHOLD,IGNORED
 15%,supplement.md: ied cost for no additional information. The 15% parse-failure rule LABELS a cell as behaviou,cost_envelope.csv:price_out (tol=exact),MATCHED
 8,"supplement.md: hing from any table in this document. eTable 8 sweeps the threshold, because a conclusion t",IGNORED: SECTION_LABEL,IGNORED
-7,"supplement.md: s a conclusion about the line. ## eMethods S7. Task 19: recalibrated confidence, full prim",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
-19,"supplement.md: lusion about the line. ## eMethods S7. Task 19: recalibrated confidence, full primary-eligi",IGNORED: SECTION_LABEL,IGNORED
+3.11,"supplement.md: the line. Analyses were performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.1",IGNORED: PACKAGE_VERSION,IGNORED
+.14,"supplement.md: line. Analyses were performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1",semantic_fair_resolver_curves.csv:threshold (tol=exact),MATCHED
+2.4,"supplement.md: were performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn",IGNORED: PACKAGE_VERSION,IGNORED
+.6,"supplement.md: re performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.",episode_confidence_per_episode.csv:min (tol=exact),MATCHED
+3.0,"supplement.md: d in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyA",IGNORED: PACKAGE_VERSION,IGNORED
+.5,"supplement.md: n Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArr",cost_envelope.csv:price_in (tol=exact),MATCHED
+1.17,"supplement.md: .11.14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow; figures",IGNORED: PACKAGE_VERSION,IGNORED
+.1,"supplement.md: 14 with NumPy 2.4.6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow; figures we",efigure2_recalibration_paired.csv:parse_failure (tol=exact),MATCHED
+1.9,"supplement.md: .6, pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow; figures were produced with M",IGNORED: PACKAGE_VERSION,IGNORED
+.0,"supplement.md: pandas 3.0.5, SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow; figures were produced with Mat",cost_envelope.csv:cached_frac (tol=exact),MATCHED
+3.9,"supplement.md: ecomputed under a second interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13",IGNORED: PACKAGE_VERSION,IGNORED
+.6,"supplement.md: mputed under a second interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1",episode_confidence_per_episode.csv:min (tol=exact),MATCHED
+2.0,"supplement.md: second interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-le",IGNORED: PACKAGE_VERSION,IGNORED
+.2,"supplement.md: cond interpreter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-lear",episode_confidence_per_episode.csv:isotonic_episode (tol=exact),MATCHED
+2.3,"supplement.md: reter, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and",IGNORED: PACKAGE_VERSION,IGNORED
+.3,"supplement.md: er, Python 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and t",episode_confidence_per_episode.csv:isotonic_episode (tol=exact),MATCHED
+1.13,"supplement.md: 3.9.6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary,",IGNORED: PACKAGE_VERSION,IGNORED
+.1,"supplement.md: .6 with NumPy 2.0.2, pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary, ma",efigure2_recalibration_paired.csv:parse_failure (tol=exact),MATCHED
+1.6,"supplement.md: pandas 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary, matched-coverage, contra",IGNORED: PACKAGE_VERSION,IGNORED
+.1,"supplement.md: das 2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary, matched-coverage, contrast",efigure2_recalibration_paired.csv:parse_failure (tol=exact),MATCHED
+4,"supplement.md: it. The calibration diagnostics do: eTables S4a and S4c, eFigure 1 and eFigure 4 are comput",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+4,"supplement.md: calibration diagnostics do: eTables S4a and S4c, eFigure 1 and eFigure 4 are computed out o",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+1,"supplement.md: diagnostics do: eTables S4a and S4c, eFigure 1 and eFigure 4 are computed out of fold, and",IGNORED: SECTION_LABEL,IGNORED
+4,"supplement.md: : eTables S4a and S4c, eFigure 1 and eFigure 4 are computed out of fold, and because GroupK",IGNORED: SECTION_LABEL,IGNORED
+0.005,"supplement.md: ir expected calibration errors move by up to 0.005, the largest being the product rule's episod",figure5_naturalistic.csv:parse_failure (tol=exact),MATCHED
+0.080,supplement.md: ng the product rule's episode-level value at 0.080 against 0.076. The values reported throughou,figure5_naturalistic.csv:parse_failure (tol=exact),MATCHED
+0.076,supplement.md: rule's episode-level value at 0.080 against 0.076. The values reported throughout are those of,repeated_attempt_replay.csv:e_retries_abstain_lo (tol=display-rounding),MATCHED
+7,"supplement.md: se of the primary environment. ## eMethods S7. Task 19: recalibrated confidence, full prim",IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
+19,"supplement.md: e primary environment. ## eMethods S7. Task 19: recalibrated confidence, full primary-eligi",IGNORED: SECTION_LABEL,IGNORED
 19,"supplement.md: confidence, full primary-eligible pool Task 19 re-runs `factorial:decoder_confidence:adviso",IGNORED: SECTION_LABEL,IGNORED
 0,supplement.md: runs `factorial:decoder_confidence:advisory:s0` on the same full primary-eligible pool the,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
 4,supplement.md: ally miscalibrated at episode level (eTable S4c): a directly fitted episode-level isotonic,IGNORED: EMBEDDED_IN_IDENTIFIER,IGNORED
@@ -4351,7 +4297,11 @@ $1,"supplement.md: rho \approx 0.115$ empirically, close to the $1/9 \approx 0.1
 46,"supplement.md: s, each being contributed by 16 to 20 of the 46 participants, so uniform weighting over comm",efigure2_recalibration_paired.csv:n_participants (tol=exact),MATCHED
 3,supplement.md: from the pool of episodes. Unintended tier-3 state changes were 0.00 for every policy and,IGNORED: VERSION_SLUG,IGNORED
 0.00,supplement.md: sodes. Unintended tier-3 state changes were 0.00 for every policy and the column is therefore,cost_envelope.csv:cached_frac (tol=exact),MATCHED
-100,supplement.md: cord. | Policy | Completed | Unintended per 100 | Unresolved (%) | Attempts | Successes per,followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
+16,supplement.md: the data force: a command is contributed by 16 to 20 participants but only 6 of 155 partici,number_audit_enumeration_claims.csv:stated_count (tol=exact),MATCHED
+20,supplement.md: ata force: a command is contributed by 16 to 20 participants but only 6 of 155 participant-b,followup_semantic_fair_cells.csv:n_comparator_episodes_missed (tol=exact),MATCHED
+6,supplement.md: ontributed by 16 to 20 participants but only 6 of 155 participant-by-command pairs hold the,followup_dataset_inventory.csv:cells (tol=exact),MATCHED
+155,supplement.md: buted by 16 to 20 participants but only 6 of 155 participant-by-command pairs hold the three,naturalistic_manifest.json.natural_episodes[155].index (tol=exact),MATCHED
+100,supplement.md: tion. | Policy | Completed | Unintended per 100 | Unresolved (%) | Attempts | Successes per,followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
 100,supplement.md: | Unresolved (%) | Attempts | Successes per 100 attempts (95% CI) | Abstention retries | Par,followup_dataset_inventory.csv:episodes (tol=exact),MATCHED
 95%,supplement.md: (%) | Attempts | Successes per 100 attempts (95% CI) | Abstention retries | Parse-failure ret,semantic_fair_resolver_curves.csv:n_covered (tol=exact),MATCHED
 100,"supplement.md: ention retries | Parse-failure retries | Per 100, with replacement | |---|---|---|---|---|---",followup_dataset_inventory.csv:episodes (tol=exact),MATCHED

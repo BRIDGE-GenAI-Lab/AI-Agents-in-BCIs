@@ -356,6 +356,13 @@ def section_cells(manifest: dict, digest: dict, loaded: dict[str, pd.DataFrame])
     )
     out.append("")
     out.append(
+        "Arms are formed by selecting cells on the `factorial:` name prefix rather "
+        "than on the two factors alone, because the 12 caution cells and the "
+        "single-shot cell share an uncertainty source and a control mechanism with "
+        "the no-uncertainty advisory cells and would otherwise be pooled into them."
+    )
+    out.append("")
+    out.append(
         f"The run manifest (`output/tables/run_manifest.json`) records the random seed "
         f"({manifest['seed']}), the complete cell list below, the frozen episode "
         f"identifiers of both datasets, the model panel with per-model observed unit "
@@ -582,6 +589,33 @@ def section_tools(mapping_raw: str) -> str:
         "`abstain` terminated the episode without acting."
     )
     out.append("")
+    out.append(
+        "The agent loop ran for at most 6 turns, terminating when the model called "
+        "`execute` or `abstain`, when a response contained no parseable tool call, or "
+        "when the turn limit was reached, whichever came first. `read_buffer` was not "
+        "mandatory, and a model was free to execute on its first turn without reading. "
+        "`lookup_action` was non-terminal and could be called repeatedly, including on "
+        "strings the model invented, since the frozen codebook is a hash and is not "
+        "derivable from a string alone. Every tool call in a response was executed, in "
+        "the order returned, so a response carrying `read_buffer` and `execute` "
+        "together did not lose the `execute`. A response was recorded as a parse "
+        "failure, and ended the episode, when it carried no tool calls at all, when it "
+        "lacked the expected message structure, when a tool call carried no function "
+        "name, or when a tool call's arguments were not valid JSON; since max_tokens "
+        "was 512, a response truncated before it emitted a tool call fell into this "
+        "class too. An episode that reached the turn limit without a terminal call was "
+        "scored as uncovered rather than dropped. Invalid enumeration values were "
+        "never repaired or retried: an `execute` call naming an action outside the "
+        "closed enumeration recorded no action, ended the episode, and was scored as "
+        "uncovered, not as a parse failure and not as an unfaithful execution. Where a "
+        "model emitted `execute` and `abstain` in one parallel batch, both were "
+        "counted and the first was taken as the decision; any later terminal call in "
+        "the same batch was refused by the environment rather than honoured. Retries "
+        "operated at the transport layer, below the loop: a retried request replaced "
+        "an attempt that never yielded a response, so it did not constitute a fresh "
+        "generation and no episode contributed more than one completed trajectory."
+    )
+    out.append("")
     confirm_only = [t for t in tool_schemas(confirmation=True) if t not in TOOL_SCHEMAS]
     confirm_digest = hashlib.sha256(
         json.dumps(tool_schemas(confirmation=True), sort_keys=True,
@@ -687,7 +721,8 @@ def section_provider(manifest: dict) -> str:
         "Because OpenRouter omits absent parameters upstream and permits each provider "
         "to apply its own defaults, temperature (0.7), top_p (1.0), and max_tokens "
         "(512) were transmitted explicitly on every request.\n\n"
-        "Three models (`openai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, "
+        "Each request carried a 120-second timeout. Three models "
+        "(`openai/gpt-5.6-luna`, `anthropic/claude-sonnet-5`, "
         "`google/gemini-3.7-flash`) were subject to an account-level cap of 20 requests "
         "per minute per model, measured with a sustained 30-request probe; a "
         "12-request burst sits under the cap and returns a false negative. Those models "
@@ -754,7 +789,21 @@ def section_stats(principal: dict, digest: dict) -> str:
         f"The {digest['parse_failure_label_threshold']:.0%} parse-failure rule LABELS "
         "a cell as behaviourally interpretable and excludes nothing from any table in "
         "this document. eTable 8 sweeps the threshold, because a conclusion that "
-        "depends on where that line is drawn is a conclusion about the line."
+        "depends on where that line is drawn is a conclusion about the line.\n\n"
+        "Analyses were performed in Python 3.11.14 with NumPy 2.4.6, pandas 3.0.5, "
+        "SciPy 1.17.1, scikit-learn 1.9.0, and PyArrow; figures were produced with "
+        "Matplotlib. Every primary result was verified to be identical when "
+        "recomputed under a second interpreter, Python 3.9.6 with NumPy 2.0.2, pandas "
+        "2.3.3, SciPy 1.13.1, and scikit-learn 1.6.1, and the primary, "
+        "matched-coverage, contrast and abstention tables reproduce byte for byte "
+        "under both. The confidence the arms and the gate act on is calibrated on all "
+        "selections rather than out of fold, so it does not depend on a "
+        "cross-validation split. The calibration diagnostics do: eTables S4a and S4c, "
+        "eFigure 1 and eFigure 4 are computed out of fold, and because GroupKFold's "
+        "fold assignment changed between those two versions of scikit-learn their "
+        "expected calibration errors move by up to 0.005, the largest being the "
+        "product rule's episode-level value at 0.080 against 0.076. The values "
+        "reported throughout are those of the primary environment."
     )
 
 
@@ -2050,6 +2099,23 @@ def section_replay(replay: pd.DataFrame) -> str:
         "Unintended tier-3 state changes were 0.00 for every policy and the column is therefore omitted",
         "rather than printed as a column of zeros; the value is stated here so that it is on the record.",
         "",
+        "The primary analyses that produce these policies score a single decision per episode, so an",
+        "abstention there is charged as coverage lost and nothing further; a person using a speller whose",
+        "system declines has not finished the task and must make another attempt, which is the cost this",
+        "replay quantifies. This is a system-level replay, not validation of an interactive assistive",
+        "system, and three properties bound what it establishes. The agent is memoryless across attempts:",
+        "it replays recorded decisions, so it never perceives the sandbox and never learns that a previous",
+        "attempt failed, and the loop closed here is the retry rather than the agent's own feedback. The",
+        "replay models the mechanical consequence of repeated attempts only, not user frustration,",
+        "adaptation, learning, fatigue, or willingness to retry. And the replay is population-level rather",
+        "than participant-specific, which the data force: a command is contributed by 16 to 20",
+        "participants but only 6 of 155 participant-by-command pairs hold the three episodes a",
+        "same-participant retry would need, so a retry is drawn from the population of donors for that",
+        "command and may come from a participant whose decoding was better than that of the participant",
+        "who made the first attempt. Completion within three attempts is therefore an optimistic estimate",
+        "for a user whose decoding is persistently poor, and the replay describes a population of users",
+        "retrying rather than one user retrying. It is not prospective validation.",
+        "",
     ]
     rows = []
     for r in wo.itertuples():
@@ -2469,8 +2535,8 @@ def section_note_fidelity() -> str:
         "constant across episodes, so equation (S1) is stated as an idealised relationship",
         "under a constant collision probability, not an exactly-proven identity.",
         "Under the fixed nine-action codebook, 88.5% of error-bearing episodes",
-        "change the entailed action after decoding error (main text, Agent, Tools, and",
-        "Ground Truth), so $\\rho \\approx 0.115$ empirically, close to the",
+        "change the entailed action after decoding error (main text, When a Downstream",
+        "Agent Can Improve on a Threshold), so $\\rho \\approx 0.115$ empirically, close to the",
         "$1/9 \\approx 0.111$ a uniform hash over nine actions would produce. Equation (1)",
         "of the main text defines $p = p_F$, the fidelity probability the loss-minimising",
         "rule in equation (3) is derived for; the reconstructed decoder confidence used",
