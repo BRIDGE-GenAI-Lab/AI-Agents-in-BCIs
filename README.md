@@ -1,13 +1,11 @@
-# AI agents at the brain-computer interface: separating inference from control
+# Can AI Agents Decide When to Act on a Brain-Computer Interface Command?
 
 Analysis code, the frozen experimental instruments, the run manifest, and the derived
-result tables for a computational benchmark study of what happens when a language-model
+result tables for a computational benchmark study of what happens when an LLM
 agent is placed downstream of a P300 speller decoder.
 
 **Status: not yet submitted.** Repository: <https://github.com/BRIDGE-GenAI-Lab/AI-Agents-in-BCIs>. The archive DOI is
 filled in below once it exists.
-
-Target journal: *Nature Machine Intelligence*.
 
 ## The question
 
@@ -360,7 +358,7 @@ one.
 The five-model panel above is the **primary study's** panel. The post-hoc fair-information
 comparison (`25_semantic_fair_comparison.py`, below) widened the panel to ten models over
 the same 200 naturalistic episodes: 6,400 episode runs, 14,336 tool-calling requests (400 of
-them model-free, from the two resolver-plus-gate arms), measured cost US $19.46, tabulated
+them model-free, from the two resolver-plus-gate arms), tabulated
 separately in `output/tables/semantic_fair_dataset_inventory.csv` because it falls outside
 the six pre-specified datasets' inventory.
 
@@ -405,8 +403,8 @@ which is enriched 50:50 on decoding error and whose absolute rates are therefore
 benchmark risks at the observed prevalence.
 
 Six pre-specified datasets, 50,230 episode runs, 141,879 tool-calling requests, no failed
-rows, measured API spend US $86.62. The seventh, the fair-information comparison above,
-added 6,400 runs, 14,336 requests and US $19.46.
+rows. The seventh, the fair-information comparison above, added 6,400 runs and 14,336
+requests.
 
 ## Reporting and ethics
 
@@ -447,7 +445,7 @@ Repository: <https://github.com/BRIDGE-GenAI-Lab/AI-Agents-in-BCIs>
 > deposited. Until then, cite the repository URL and the commit.
 
 Gorenshtein A, Omar M, Jia E, Adiniaev Y, Daniel O, Kruskal J, Ahmed M, Brook O, Klang E,
-Barash Y. *AI agents at the brain-computer interface: separating inference from control.* Manuscript under review.
+Barash Y. *Can AI Agents Decide When to Act on a Brain-Computer Interface Command?* Manuscript in preparation.
 
 ## Licence
 
